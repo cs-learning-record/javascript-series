@@ -35,6 +35,9 @@
 6. [JavaScript 设计模式核⼼原理与应⽤实践](https://juejin.im/book/5c70fc83518825428d7f9dfb/section/5c70fc845188256282697b96)
 7. [15 分钟带你了解前端工程师必知的 javascript 设计模式](https://juejin.im/post/5e32bbc9f265da3e1a59b2ab)
 8. [从 JavaScript 中看设计模式(总结)](https://juejin.im/post/5e4a87776fb9a07ca714ae54)
+9. [心谭博客——设计模式手册](https://xxoo521.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%89%8B%E5%86%8C/)
+10. [cousin——设计模式](https://www.yuque.com/wubinhp/uxiv5i/pvqh1b)
+11. [Cute——设计模式](http://js.pingan8787.com/)
 
 ## 联系作者
 
