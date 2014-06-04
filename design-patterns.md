@@ -38,6 +38,7 @@
 9. [心谭博客——设计模式手册](https://xxoo521.com/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E6%89%8B%E5%86%8C/)
 10. [cousin——设计模式](https://www.yuque.com/wubinhp/uxiv5i/pvqh1b)
 11. [Cute——设计模式](http://js.pingan8787.com/)
+12. [汤姆大叔的设计模式](https://www.cnblogs.com/TomXu/tag/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/)
 
 ## 联系作者
 
