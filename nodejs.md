@@ -80,6 +80,7 @@
 57. [我用 EggJS 开发了一个日增量过亿的数据可视化平台](https://mp.weixin.qq.com/s/-rtvHQnFrUe4QhLQRArkgw)
 58. [《大前端进阶 Node.js》系列 异步非阻塞（上）](https://mp.weixin.qq.com/s/gEhIa1OW_R61fb4RA6GE0g)
 59. [《大前端进阶 Node.js》系列 异步非阻塞（下）](https://mp.weixin.qq.com/s/G_NMZ8MqFo9FTC0FLcOxCw)
+60. [《深入理解 Node.js：核心思想与源码分析》](https://yjhjstz.gitbooks.io/deep-into-node/content/)
 
 ## 联系作者
 
