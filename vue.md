@@ -19,6 +19,7 @@
 6. [吃透 Vue 项目开发实践｜ 16 个方面深入前端工程化开发技巧《中》](https://juejin.im/post/5e15932ee51d4540f02fae27)
 7. [vue 插件开发、文档书写、github 发布、npm 包发布一波流](https://juejin.im/post/5b96586de51d450e7d0984a6)
 8. [2年vue项目实战经验汇总](https://juejin.im/post/5e390a6df265da57503cb415)
+9. [干货：快速开发一个Antd级别的组件库](https://juejin.im/post/5df062da6fb9a0162a0b6e58)
 
 ## 联系作者
 
