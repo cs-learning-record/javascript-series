@@ -74,6 +74,7 @@
 51. [基于 nodejs 线上代码热部署原理与实现](https://juejin.im/post/5e4e9c6451882549331ce8d4)
 52. [看优酷 Node 重构之路，Serverless SSR 未来可期](https://mp.weixin.qq.com/s/ofLVwcCvbWLCfUD7ldvm5A)
 53. [Node 应用没有错误监控怎么行？](https://mp.weixin.qq.com/s?__biz=MzA4Nzg0MDM5Nw==&mid=2247484574&idx=1&sn=939f45a0316bce3b47c5efe24a985c94&=41#wechat_redirect)
+54. [Node 学习笔记](https://github.com/Wscats/node-tutorial)
 
 ## 联系作者
 
