@@ -69,12 +69,11 @@
 46. [「万字整理 」这里有一份 Node.js 入门指南和实践,请注意查收](https://juejin.im/post/5e0006c251882512795675f9)
 47. [Node.js 模块系统源码探微](https://juejin.im/post/5dec60e8f265da33d645a631)
 48. [Node.js 在企业中的应用实践集锦](https://mp.weixin.qq.com/s/sJUtfEP_aJTXp0uQXi9Mug)
-49. [如何分析 Node.js 中的内存泄漏？](https://mp.weixin.qq.com/s/JAu6TInlwWtbs-dHD2jBKg)
-50. [这些年的体验技术部 Node.js 基础服务 - 摸爬滚打才不负功名尘土](https://www.yuque.com/afx/about/nodejs)
-51. [基于 nodejs 线上代码热部署原理与实现](https://juejin.im/post/5e4e9c6451882549331ce8d4)
-52. [看优酷 Node 重构之路，Serverless SSR 未来可期](https://mp.weixin.qq.com/s/ofLVwcCvbWLCfUD7ldvm5A)
-53. [Node 应用没有错误监控怎么行？](https://mp.weixin.qq.com/s?__biz=MzA4Nzg0MDM5Nw==&mid=2247484574&idx=1&sn=939f45a0316bce3b47c5efe24a985c94&=41#wechat_redirect)
-54. [Node 学习笔记](https://github.com/Wscats/node-tutorial)
+49. [这些年的体验技术部 Node.js 基础服务 - 摸爬滚打才不负功名尘土](https://www.yuque.com/afx/about/nodejs)
+50. [基于 nodejs 线上代码热部署原理与实现](https://juejin.im/post/5e4e9c6451882549331ce8d4)
+51. [看优酷 Node 重构之路，Serverless SSR 未来可期](https://mp.weixin.qq.com/s/ofLVwcCvbWLCfUD7ldvm5A)
+52. [Node 应用没有错误监控怎么行？](https://mp.weixin.qq.com/s?__biz=MzA4Nzg0MDM5Nw==&mid=2247484574&idx=1&sn=939f45a0316bce3b47c5efe24a985c94&=41#wechat_redirect)
+53. [Node 学习笔记](https://github.com/Wscats/node-tutorial)
 
 ## 联系作者
 
