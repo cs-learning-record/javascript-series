@@ -76,6 +76,7 @@
 53. [Node 学习笔记](https://github.com/Wscats/node-tutorial)
 54. [深入 Nodejs 源码探究 CPU 信息的获取与利用率计算](https://mp.weixin.qq.com/s/1VyMB7bpYIRQYzYFLFYZAQ)
 55. [使用 Node.js 搭建一个 API 网关(助力微服务)](https://mp.weixin.qq.com/s/uZWXDjqBQQIAMESQBoR2IQ)
+56. [我用 EggJS 开发了一个日增量过亿的数据可视化平台](https://mp.weixin.qq.com/s/-rtvHQnFrUe4QhLQRArkgw)
 
 ## 联系作者
 
