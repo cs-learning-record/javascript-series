@@ -65,6 +65,7 @@
 46. [看完这几道 JavaScript 面试题，让你与考官对答如流（中）](https://juejin.im/post/5e1bb37a5188254dbc25de92)
 47. [看完这几道 JavaScript 面试题，让你与考官对答如流（下）](https://juejin.im/post/5e1faa3d51882520a167df0e)
 48. [8102 年如何写一个现代的 JavaScript 库](https://juejin.im/post/5bbafd78f265da0ad947e6ba)
+49. [动画：《大前端吊打面试官系列》 之原生 JavaScript 精华篇](https://juejin.im/post/5e34d19de51d4558864b1d1f)
 
 ## 联系作者
 
