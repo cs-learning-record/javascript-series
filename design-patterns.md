@@ -35,6 +35,7 @@
 6. [JavaScript 设计模式 es6（23 种)](https://juejin.im/post/5e021eb96fb9a01628014095)
 7. [JavaScript 设计模式核⼼原理与应⽤实践](https://juejin.im/book/5c70fc83518825428d7f9dfb/section/5c70fc845188256282697b96)
 8. [15 分钟带你了解前端工程师必知的 javascript 设计模式](https://juejin.im/post/5e32bbc9f265da3e1a59b2ab)
+9. [从JavaScript中看设计模式(总结)](https://juejin.im/post/5e4a87776fb9a07ca714ae54)
 
 ## 联系作者
 
