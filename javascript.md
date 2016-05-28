@@ -68,6 +68,8 @@
 49. [动画：《大前端吊打面试官系列》 之原生 JavaScript 精华篇](https://juejin.im/post/5e34d19de51d4558864b1d1f)
 50. [127 个常用的 JS 代码片段，每段代码花 30 秒就能看懂（一）](https://juejin.im/post/5e4a6f815188254963275704)
 51. [127 个常用的 JS 代码片段，每段代码花 30 秒就能看懂（二）](https://mp.weixin.qq.com/s/kHYgFfO0aF2_bnH0zIRkAg)
+52. [127个常用的JS代码片段，每段代码花30秒就能看懂（三）](https://mp.weixin.qq.com/s/-zgQGaFkUHqFLhBi42zdNQ)
+53. [127个常用的JS代码片段，每段代码花30秒就能看懂（四）](https://mp.weixin.qq.com/s/i_Yqi2NclgMK6IUL4hXv3A)
 
 ## 联系作者
 
