@@ -65,15 +65,14 @@
 42. [浅谈 Node.js 模块机制及常见面试问题解答](https://mp.weixin.qq.com/s/e2c4NF2U6B2hVqTTfPx8DQ)
 43. [分享 10 道 Nodejs 进程相关面试题](https://mp.weixin.qq.com/s/dKN95zcRI7qkwGYKhPXrcg)
 44. [Node.js 环境性能监控](https://juejin.im/post/5c71324b6fb9a049d37fbb7c)
-45. [Nodejs 之 RPC 协议简介](https://mp.weixin.qq.com/s/AhKoUpYA4mCwhbxMRRqjBA)
-46. [聊聊 Node.js RPC（一）— 协议](https://zhuanlan.zhihu.com/p/38012481)
-47. [腾讯视频 Node.js 服务是如何支撑国庆阅兵直播高并发的？](https://mp.weixin.qq.com/s/WKhALCAarFNOCQylBUryfQ)
-48. [消息队列助你成为高薪 Node.js 工程师](https://juejin.im/post/5dd8cd7ae51d4523501f7331)
-49. [nodejs 基本原理总结](https://mp.weixin.qq.com/s/XFMAIoac4KH1bvoqRlnGlA)
-50. [不容错过的 Node.js 项目架构](https://mp.weixin.qq.com/s/nivph5JV_sovSDDSCsKmAA)
-51. [浅谈阿里 Node 框架 Midway 在企业产品中的应用实践](https://mp.weixin.qq.com/s/W_XuZGYCQMbfeEQEPAkTTg)
-52. [【第 1808 期】2019 年终云时代的 Node FaaS 技术展望](https://mp.weixin.qq.com/s/N-XwPTVPDBHUKaaZ5mrAtA)
-53. [「万字整理 」这里有一份 Node.js 入门指南和实践,请注意查收](https://juejin.im/post/5e0006c251882512795675f9)
+45. [腾讯视频 Node.js 服务是如何支撑国庆阅兵直播高并发的？](https://mp.weixin.qq.com/s/WKhALCAarFNOCQylBUryfQ)
+46. [消息队列助你成为高薪 Node.js 工程师](https://juejin.im/post/5dd8cd7ae51d4523501f7331)
+47. [nodejs 基本原理总结](https://mp.weixin.qq.com/s/XFMAIoac4KH1bvoqRlnGlA)
+48. [不容错过的 Node.js 项目架构](https://mp.weixin.qq.com/s/nivph5JV_sovSDDSCsKmAA)
+49. [浅谈阿里 Node 框架 Midway 在企业产品中的应用实践](https://mp.weixin.qq.com/s/W_XuZGYCQMbfeEQEPAkTTg)
+50. [【第 1808 期】2019 年终云时代的 Node FaaS 技术展望](https://mp.weixin.qq.com/s/N-XwPTVPDBHUKaaZ5mrAtA)
+51. [「万字整理 」这里有一份 Node.js 入门指南和实践,请注意查收](https://juejin.im/post/5e0006c251882512795675f9)
+52. [Node.js 模块系统源码探微](https://juejin.im/post/5dec60e8f265da33d645a631)
 
 ## 联系作者
 
