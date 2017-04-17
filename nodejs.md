@@ -74,6 +74,7 @@
 51. [「万字整理 」这里有一份 Node.js 入门指南和实践,请注意查收](https://juejin.im/post/5e0006c251882512795675f9)
 52. [Node.js 模块系统源码探微](https://juejin.im/post/5dec60e8f265da33d645a631)
 53. [Node.js 在企业中的应用实践集锦](https://mp.weixin.qq.com/s/sJUtfEP_aJTXp0uQXi9Mug)
+54. [如何分析 Node.js 中的内存泄漏？](https://mp.weixin.qq.com/s/JAu6TInlwWtbs-dHD2jBKg)
 
 ## 联系作者
 
