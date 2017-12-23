@@ -63,6 +63,7 @@
 44. [可爱的 JavaScript](http://js.pingan8787.com/)
 45. [常用正则表达式](https://juejin.im/post/5dccdd24f265da0c09156fb3)
 46. [浅谈如何学习 JavaScript？](https://zhuanlan.zhihu.com/p/23265155)
+47. [一道常被人轻视的前端 JS 面试题](https://www.cnblogs.com/xxcanghai/p/5189353.html)
 
 ## 联系作者
 
