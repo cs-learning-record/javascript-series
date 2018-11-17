@@ -14,8 +14,8 @@ URL 模块提供了解析和处理 URL 字符串的便利工具，当你需要�
 - [模块方法](#一模块方法)
 - [url 解析：url.parse()](#二url-解析urlparse)
 - [关于 urlObject](#三关于-urlobject)
-- [url 拼接：url.format(urlObject)](#url-拼接urlformaturlobject)
-- [url.resolve(from, to)](#urlresolvefrom-to)
+- [url 拼接：url.format(urlObject)](#四url-拼接urlformaturlobject)
+- [url.resolve(from, to)](#五urlresolvefrom-to)
 
 ### 一、模块方法
 
@@ -170,13 +170,13 @@ Url {
   }
 ```
 
-### url 拼接：url.format(urlObject)
+### 四、url 拼接：url.format(urlObject)
 
 > 完整语法：url.format(urlObject)
 
 `url.parse(str)`的反向操作，没什么好说的。`urlObject` 包含了很多字段，比如 protocol、slashes、protocol 等，且不一定需要全部传，所以有一套解析逻辑。
 
-### url.resolve(from, to)
+### 五、url.resolve(from, to)
 
 ```
 url.resolve('/one/two/three', 'four')         // '/one/two/four'

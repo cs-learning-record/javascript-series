@@ -158,7 +158,6 @@ inFile.pipe(gzip).pipe(out);
 - [理解Stream模块](https://github.com/chyingp/nodejs-learning-guide/blob/master/%E6%A8%A1%E5%9D%97/stream.md)
 - [想学Node.js，stream先有必要搞清楚](https://juejin.im/post/5d25ce36f265da1ba84ab97a)
 
-
 ## 联系作者
 
 <div align="center">
