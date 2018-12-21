@@ -61,6 +61,8 @@
 38. [NodeJS中文文档](https://0532.gitbooks.io/nodejs/content/)
 39. [七天学会NodeJS](http://nqdeng.github.io/7-days-nodejs/)
 40. [Node入门](https://www.nodebeginner.org/index-zh-cn.html)
+41. [浅谈 Node.js 模块机制及常见面试问题解答](https://mp.weixin.qq.com/s/e2c4NF2U6B2hVqTTfPx8DQ)
+42. [分享 10 道 Nodejs 进程相关面试题](https://mp.weixin.qq.com/s/dKN95zcRI7qkwGYKhPXrcg)
 
 ## 联系作者
 
