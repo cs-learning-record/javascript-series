@@ -15,8 +15,6 @@
 2. [Vue 项目里戳中你痛点的问题及解决办法](https://juejin.im/post/5b174de8f265da6e410e0b4e)
 3.  [渲染器](http://hcysun.me/vue-design/zh/)
 4.  [VUE 组件汇总](https://juejin.im/post/5af16a2cf265da0b8636353b)
-5.  [vue 组件间通信六种方式（完整版）](https://juejin.im/post/5cde0b43f265da03867e78d3)
-7.  [vue 组件通信全揭秘(共 7 章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
 8.  [jQuery 源码分析](https://github.com/JsAaron/jQuery)
 9.  [jQuery-3.3.1 源码解析](https://github.com/AttackXiaoJinJin/jQueryExplain)
 10. [underscore-1.8.3.js 源码解读 & 系列文章（完）](https://github.com/lessfish/underscore-analysis)
