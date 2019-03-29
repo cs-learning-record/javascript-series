@@ -58,6 +58,9 @@
 35. [Node.js 服务 Docker 容器化应用实践](https://mp.weixin.qq.com/s/vTD63u6F1hQYZcMkoSaj6g)
 36. [深入学习 Node.js](https://github.com/semlinker/node-deep)
 37. [记一次京东Nodejs性能优化，从分析问题到解决问题](https://mp.weixin.qq.com/s/hsxaKrS3Vil0swOtQhb4lA)
+38. [NodeJS中文文档](https://0532.gitbooks.io/nodejs/content/)
+39. [七天学会NodeJS](http://nqdeng.github.io/7-days-nodejs/)
+40. [Node入门](https://www.nodebeginner.org/index-zh-cn.html)
 
 ## 联系作者
 
