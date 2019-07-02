@@ -68,6 +68,7 @@
 11. [Node.js 应用故障排查手册](https://github.com/aliyun-node/Node.js-Troubleshooting-Guide)
 12. [orm2 中文文档](https://github.com/wizardforcel/orm2-doc-zh-cn)
 13. [Node.js 教程目录](https://github.com/Wscats/node-tutorial)
+14. [基于Node.js的HTTPS MITM(中间人)代理的原理和实现](https://github.com/wuchangming/https-mitm-proxy-handbook)
 
 ## 框架
 1. [前端组件设计原则](https://mp.weixin.qq.com/s/ofmfQFAVlTCvKFnZ6A-0_Q)
