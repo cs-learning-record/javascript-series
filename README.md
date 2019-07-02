@@ -29,8 +29,9 @@
 1. [JS 中可以提升幸福度的小技巧](https://mp.weixin.qq.com/s/pu2NmyWCQM7oN8H_WRKheA)
 1. [JavaScript 教程](https://wangdoc.com/javascript/)
 1. [【译】JavaScript 完整手册](https://juejin.im/post/5bff57fee51d45021a167991)
-1. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
-1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
+2. [重新介绍 JavaScript（JS 教程）](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+3. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
+4. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 
 ## es6
 1. [let、var和const的区别](https://github.com/mqyqingfeng/Blog/issues/82)
@@ -84,6 +85,8 @@
 1. [学习 Vue 源码的必要知识储备](https://juejin.im/post/5ce5565d6fb9a07ed2244513)
 1. [vue组件通信全揭秘(共7章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
 1. [Vue2.x源码解析系列一：我的源码阅读心得](https://github.com/lihongxun945/myblog/issues/22)
+2. [jQuery源码分析](https://github.com/JsAaron/jQuery)
+3. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)
 
 ## 监控&部署&构建
 
