@@ -90,4 +90,4 @@
 1. [Vue2.x源码解析系列一：我的源码阅读心得](https://github.com/lihongxun945/myblog/issues/22)
 2. [jQuery源码分析](https://github.com/JsAaron/jQuery)
 3. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)
-
+4. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
