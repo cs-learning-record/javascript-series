@@ -19,6 +19,8 @@
 
 ## 五、javascript 基础
 
+## 六、联系作者
+
 <div align="center">
     <p>
         在颠覆世界的同时，也要好好关照自己。
