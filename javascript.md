@@ -36,7 +36,7 @@
 1. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
 1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 
-## 六、联系作者
+## 联系作者
 
 <div align="center">
     <p>
