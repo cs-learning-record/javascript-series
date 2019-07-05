@@ -1,3 +1,8 @@
+![image](./img/timg.jpg)
+<br>
+
+## 目录
+
 1. [前端组件设计原则](https://mp.weixin.qq.com/s/ofmfQFAVlTCvKFnZ6A-0_Q)
 1. [Vue 项目里戳中你痛点的问题及解决办法](https://juejin.im/post/5b174de8f265da6e410e0b4e)
 1. [vue 响应式原理及实现](https://github.com/ftTony/blog/issues/18)
@@ -19,3 +24,12 @@
 1. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)
 1. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
 1. [虚拟 DOM 到底是什么？](https://mp.weixin.qq.com/s/oAlVmZ4Hbt2VhOwFEkNEhw)
+
+## 联系作者
+
+<div align="center">
+    <p>
+        在颠覆世界的同时，也要好好关照自己。
+    </p>
+    <img src="./img/contact.png" />
+</div>
