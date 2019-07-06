@@ -1,3 +1,14 @@
+![image](./img/timg.jpg)
+<br>
+## 前言
+
+本人平时学习及收集内容，欢迎参入一起讨论。
+
+## 关于作者
+
+暂时欠着
+
+## 目录
 1. [如何正确的学习Node.js](https://github.com/i5ting/How-to-learn-node-correctly)
 2. [Node.js 最佳实践](https://github.com/i0natan/nodebestpractices/blob/master/README.chinese.md)
 3. [Node.js 调试指南](https://github.com/nswbmw/node-in-debugging)
@@ -13,3 +24,13 @@
 13. [Node.js 教程目录](https://github.com/Wscats/node-tutorial)
 14. [基于Node.js的HTTPS MITM(中间人)代理的原理和实现](https://github.com/wuchangming/https-mitm-proxy-handbook)
 15. [node 源码粗读系列](https://github.com/xtx1130/blog)
+16. [Node.js 最佳实践](https://github.com/i0natan/nodebestpractices/blob/master/README.chinese.md)
+
+## 联系作者
+
+<div align="center">
+    <p>
+        在颠覆世界的同时，也要好好关照自己。
+    </p>
+    <img src="./img/contact.png" />
+</div>
