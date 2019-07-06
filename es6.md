@@ -1,3 +1,15 @@
+![image](./img/timg.jpg)
+<br>
+## 前言
+
+本人平时学习及收集内容，欢迎参入一起讨论。
+
+## 关于作者
+
+暂时欠着
+
+## 目录
+
 1. [let、var 和 const 的区别](https://github.com/mqyqingfeng/Blog/issues/82)
 2. 模板字符串
 3. 箭头函数
@@ -15,3 +27,13 @@
 15. [import、require、export、module.exports 混合使用详解](https://juejin.im/post/5a2e5f0851882575d42f5609)
 16. [前端模块化：CommonJS,AMD,CMD,ES6](https://juejin.im/post/5aaa37c8f265da23945f365c)
 17. [深入理解 ES6](https://github.com/hyy1115/ES6-learning)
+
+
+## 联系作者
+
+<div align="center">
+    <p>
+        在颠覆世界的同时，也要好好关照自己。
+    </p>
+    <img src="./img/contact.png" />
+</div>
