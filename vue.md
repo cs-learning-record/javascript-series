@@ -21,9 +21,10 @@
 1. [vue 组件通信全揭秘(共 7 章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
 1. [Vue2.x 源码解析系列一：我的源码阅读心得](https://github.com/lihongxun945/myblog/issues/22)
 1. [jQuery 源码分析](https://github.com/JsAaron/jQuery)
-1. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)
-1. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
-1. [虚拟 DOM 到底是什么？](https://mp.weixin.qq.com/s/oAlVmZ4Hbt2VhOwFEkNEhw)
+2. [jQuery-3.3.1源码解析](https://github.com/AttackXiaoJinJin/jQueryExplain)
+3. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)
+4. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
+5. [虚拟 DOM 到底是什么？](https://mp.weixin.qq.com/s/oAlVmZ4Hbt2VhOwFEkNEhw)
 
 ## 联系作者
 
