@@ -3,6 +3,16 @@
 
 ## 目录
 
+|         I          |     II     |      III       |    IV     |   V    |  VI  |    VII     |    VIII    |  IX  |     X      |    XI    | XII |
+| :----------------: | :--------: | :------------: | :-------: | :----: | :--: | :--------: | :--------: | :--: | :--------: | :------: | :-: |
+| 数据类型及类型转换 | 执行上下文 | 表达式与运算符 | this 理解 | 原型链 | 对象 | 作用域闭包 | 词法作用域 | 函数 | 正则表达式 | 面向对象 | BOM |
+
+|  I  |  II  |    III    |     IV     |        V        |  VI  |    VII     |  VIII  |  IX  |     X      |    XI    | XII |
+| :-: | :--: | :-------: | :--------: | :-------------: | :--: | :--------: | :----: | :--: | :--------: | :------: | :-: |
+| DOM | 事件 | html5 api | 客户端存储 | apply&bind&call | 函数 | 函数柯里化 | 深拷贝 | 函数 | 正则表达式 | 面向对象 | BOM |
+
+## 参考目录
+
 1. [javascript 执行上下文与执行上下文栈](https://github.com/ftTony/blog/issues/22)
 1. [javaScript 变量对象](https://github.com/mqyqingfeng/Blog/issues/5)
 1. [javaScript 作用域](https://juejin.im/post/5c3b7133e51d45520a76862c)
@@ -23,20 +33,20 @@
 1. [JavaScript 是如何工作的系列](https://github.com/qq449245884/xiaozhi)
 1. [你不懂 JS（系列丛书）](https://github.com/getify/You-Dont-Know-JS/tree/1ed-zh-CN)
 1. [[译]送你 43 道 JavaScript 面试题](https://github.com/lydiahallie/javascript-questions/blob/master/README-zh_CN.md)
-2. [Javascript 面试核心考点](https://mp.weixin.qq.com/s/Bk07WB9hBagL590RRjC4FA)
-3. [Javascript高频面试题解析](https://mp.weixin.qq.com/s/g5Cr0N32W_z9X3qIMLOX6Q)
-4. [一个合格的中级前端工程师必须要掌握的 28 个 JavaScript 技巧](https://juejin.im/post/5cef46226fb9a07eaf2b7516)
-5. [JavaScript 手写代码无敌秘籍](https://mp.weixin.qq.com/s/4uzNKQcKB5YJbtXF4NQyWg)
-6. [JavaScript30 - 一个月纯 JS 挑战中文指南](https://github.com/soyaine/JavaScript30)
-7. [JavaScript 复杂判断的更优雅写法](https://juejin.im/post/5bdfef86e51d453bf8051bf8)
-8. [深入理解 JavaScript 系列](https://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)
-9. [JavaScript 深入系列](https://github.com/mqyqingfeng/Blog/issues/17)
-10. [JS 中可以提升幸福度的小技巧](https://mp.weixin.qq.com/s/pu2NmyWCQM7oN8H_WRKheA)
-11. [JavaScript 教程](https://wangdoc.com/javascript/)
-12. [【译】JavaScript 完整手册](https://juejin.im/post/5bff57fee51d45021a167991)
-13. [重新介绍 JavaScript（JS 教程）](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
-14. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
-15. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
+1. [Javascript 面试核心考点](https://mp.weixin.qq.com/s/Bk07WB9hBagL590RRjC4FA)
+1. [Javascript 高频面试题解析](https://mp.weixin.qq.com/s/g5Cr0N32W_z9X3qIMLOX6Q)
+1. [一个合格的中级前端工程师必须要掌握的 28 个 JavaScript 技巧](https://juejin.im/post/5cef46226fb9a07eaf2b7516)
+1. [JavaScript 手写代码无敌秘籍](https://mp.weixin.qq.com/s/4uzNKQcKB5YJbtXF4NQyWg)
+1. [JavaScript30 - 一个月纯 JS 挑战中文指南](https://github.com/soyaine/JavaScript30)
+1. [JavaScript 复杂判断的更优雅写法](https://juejin.im/post/5bdfef86e51d453bf8051bf8)
+1. [深入理解 JavaScript 系列](https://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html)
+1. [JavaScript 深入系列](https://github.com/mqyqingfeng/Blog/issues/17)
+1. [JS 中可以提升幸福度的小技巧](https://mp.weixin.qq.com/s/pu2NmyWCQM7oN8H_WRKheA)
+1. [JavaScript 教程](https://wangdoc.com/javascript/)
+1. [【译】JavaScript 完整手册](https://juejin.im/post/5bff57fee51d45021a167991)
+1. [重新介绍 JavaScript（JS 教程）](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/A_re-introduction_to_JavaScript)
+1. [JavaScript 轻量级函数式编程](https://wizardforcel.gitbooks.io/functional-light-js/content/)
+1. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 
 ## 联系作者
 
