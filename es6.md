@@ -30,7 +30,7 @@
 
 ### 九、Set和Map数据结构
 
-### 十、Proxy和Reflec
+### 十、Proxy和Reflect
 
 ### 十一、Promise对象
 
