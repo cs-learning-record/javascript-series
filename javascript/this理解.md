@@ -172,14 +172,9 @@ var bar = new foo(2); console.log( bar.a ); // 2
 
 ### 参考资料
 
-《你不知道的javascript(上)》
-
-[this与对象原型 第二章：this豁然开朗](http://www.jianshu.com/p/fcbc21a2c507)
-
-[this与对象原型 第一章：this是什么？](http://www.jianshu.com/p/11d84af237c0)
-
-[深入理解JavaScript系列（13）：This? Yes,this!](http://www.cnblogs.com/TomXu/archive/2012/01/17/2310479.html)
-
-[全面理解 JavaScript 中的 this](https://juejin.im/entry/5a29df626fb9a045211e9c2a?utm_source=gold_browser_extension)
-
-[JavaScript This 的六道坎](https://mp.weixin.qq.com/s/b_SojysoGA_Z7WLJrilizg)
+- 《你不知道的javascript(上)》
+- [this与对象原型 第二章：this豁然开朗](http://www.jianshu.com/p/fcbc21a2c507)
+- [this与对象原型 第一章：this是什么？](http://www.jianshu.com/p/11d84af237c0)
+- [深入理解JavaScript系列（13）：This? Yes,this!](http://www.cnblogs.com/TomXu/archive/2012/01/17/2310479.html)
+- [全面理解 JavaScript 中的 this](https://juejin.im/entry/5a29df626fb9a045211e9c2a?utm_source=gold_browser_extension)
+- [JavaScript This 的六道坎](https://mp.weixin.qq.com/s/b_SojysoGA_Z7WLJrilizg)
