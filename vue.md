@@ -21,11 +21,13 @@
 5. [学习 Vue 源码的必要知识储备](https://juejin.im/post/5ce5565d6fb9a07ed2244513)
 6. [vue 组件通信全揭秘(共 7 章)](https://juejin.im/post/5bd97e7c6fb9a022852a71cf)
 7. [Vue2.x 源码解析系列一：我的源码阅读心得](https://github.com/lihongxun945/myblog/issues/22)
-8. [jQuery 源码分析](https://github.com/JsAaron/jQuery)
-9. [jQuery-3.3.1源码解析](https://github.com/AttackXiaoJinJin/jQueryExplain)
-10. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)
-11. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
-12. [虚拟 DOM 到底是什么？](https://mp.weixin.qq.com/s/oAlVmZ4Hbt2VhOwFEkNEhw)
+8. [vuex-analysis](https://github.com/wabish/vuex-analysis)
+9. [VUEX源码学习笔记](https://github.com/DuLinRain/vuex-sourcecode-analysis)
+10. [jQuery 源码分析](https://github.com/JsAaron/jQuery)
+11. [jQuery-3.3.1源码解析](https://github.com/AttackXiaoJinJin/jQueryExplain)
+12. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)
+13. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
+14. [虚拟 DOM 到底是什么？](https://mp.weixin.qq.com/s/oAlVmZ4Hbt2VhOwFEkNEhw)
 
 ## 联系作者
 
