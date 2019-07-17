@@ -29,6 +29,7 @@
 14. [基于 Node.js 的 HTTPS MITM(中间人)代理的原理和实现](https://github.com/wuchangming/https-mitm-proxy-handbook)
 15. [node 源码粗读系列](https://github.com/xtx1130/blog)
 16. [Node.js 最佳实践](https://github.com/i0natan/nodebestpractices/blob/master/README.chinese.md)
+17. [轻量级实时 Node.js 内核性能监控分析工具](https://github.com/hyj1991/easy-monitor)
 
 ## 联系作者
 
