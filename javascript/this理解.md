@@ -1,4 +1,15 @@
-## 主要内容
+![image](../img/timg.jpg)
+<br>
+
+## 前言
+
+本人平时学习及收集内容，欢迎参入一起讨论。
+
+## 关于作者
+
+一个工作八年的草根程序员。
+
+## 内容
 
 - [默认绑定](#一默认绑定)
 - [隐式绑定](#二隐式绑定)
@@ -179,3 +190,12 @@ var bar = new foo(2); console.log( bar.a ); // 2
 - [深入理解JavaScript系列（13）：This? Yes,this!](http://www.cnblogs.com/TomXu/archive/2012/01/17/2310479.html)
 - [全面理解 JavaScript 中的 this](https://juejin.im/entry/5a29df626fb9a045211e9c2a?utm_source=gold_browser_extension)
 - [JavaScript This 的六道坎](https://mp.weixin.qq.com/s/b_SojysoGA_Z7WLJrilizg)
+
+## 联系作者
+
+<div align="center">
+    <p>
+        在颠覆世界的同时，也要好好关照自己。
+    </p>
+    <img src="../img/contact.png" />
+</div>
