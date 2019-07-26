@@ -198,9 +198,7 @@ undefined
 ### 参考资料
 
 1. [JS中的call、apply、bind方法](http://ghmagical.com/article/page/id/UPLfoGI9vJ91)
-
 2. [js中call、apply、bind那些事](https://qianlongo.github.io/2016/04/26/js%E4%B8%ADcall%E3%80%81apply%E3%80%81bind%E9%82%A3%E4%BA%9B%E4%BA%8B/#more)
-
 3. [巧妙理解 call 和 apply](https://juejin.im/post/59019f9fa22b9d0065c51ef8)
 
 ## 联系作者
