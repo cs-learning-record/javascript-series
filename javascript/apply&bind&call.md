@@ -18,20 +18,20 @@
 
 ### 一、call方法
 
+`call()` 方法使用一个指定的 `this` 值和单独给出的一个或多个参数来调用一个函数。
+
 **语法：**call([thisObj[,arg1[, arg2[, [,.argN]]]]]) 
 
 **定义：**调用一个对象的一个方法，以另一个对象替换当前对象。
 
 **说明：**call 方法可以用来代替另一个对象调用一个方法。
 
-call 方法可将一个函数的对象上下文从初始的上下文改变为由 thisObj 指定的新对象。
-
 thisObj的取值有以下4种情况：
 
 1. 不传，或者传null,undefined， 函数中的this指向window对象
-1. 传递另一个函数的函数名，函数中的this指向这个函数的引用
-1. 传递字符串、数值或布尔类型等基础类型，函数中的this指向其对应的包装对象，如 String、Number、Boolean
-1. 传递一个对象，函数中的this指向这个对象
+2. 传递另一个函数的函数名，函数中的this指向这个函数的引用
+3. 传递字符串、数值或布尔类型等基础类型，函数中的this指向其对应的包装对象，如 String、Number、Boolean
+4. 传递一个对象，函数中的this指向这个对象
 
 ```
 function a(){   
@@ -128,16 +128,14 @@ Animal.call(this) 的意思就是使用 Animal对象代替this对象，那么Dog
 
 ### 二、apply方法
 
-语法：apply([thisObj[,argArray]])
+`apply()`方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。
 
-定义：应用某一对象的一个方法，用另一个对象替换当前对象。
+**语法：**apply([thisObj[,argArray]])
 
-说明：
-如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。
+**定义：**应用某一对象的一个方法，用另一个对象替换当前对象。
+
+**说明：**如果 argArray 不是一个有效的数组或者不是 arguments 对象，那么将导致一个 TypeError。
 如果没有提供 argArray 和 thisObj 任何一个参数，那么 Global 对象将被用作 thisObj， 并且无法被传递任何参数。
-
-call 和 apply的区别
-对于 apply、call 二者而言，作用完全一样，只是接受参数的方式不太一样。
 
 ```
 function class1(args1,args2){       
@@ -155,13 +153,14 @@ function class2(){
 var c=new class2();   
 c.name();
 输出：1 2
+
 ```
 
 call 需要把参数按顺序传递进去，而 apply 则是把参数放在数组里。
 
 既然两者功能一样，那该用哪个呢？
 
-在JavaScript 中，某个函数的参数数量是不固定的，因此要说适用条件的话，当你的参数是明确知道数量时用 call ；而不确定的时候用 apply，然后把参数 push 进数组传递进去。当参数数量不确定时，函数内部也可以通过 arguments 这个数组来遍历所有的参数。
+在JavaScript 中，某个函数的参数数量是不固定的，因此要说适用条件的话，当你的参数是明确知道数量时用`call()`而不确定的时候用`apply()`，然后把参数 push 进数组传递进去。当参数数量不确定时，函数内部也可以通过 arguments 这个数组来遍历所有的参数。
 
 ### 三、bind方法
 
@@ -192,9 +191,9 @@ undefined
 ### 四、call、apply、bind方法的共同点和区别
 
 1. `apply、call、bind`三都是用来改变函数的this对象的指向的；
-1. `apply、call、bind`三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——本次调用的上下文(context)——这就是this关键字的值。）；
-1. `apply 、 call 、bind` 三者都可以利用后续参数传参；
-1. bind 是返回对应函数，便于稍后调用，apply 、call 则是立即调用 。
+2. `apply、call、bind`三者第一个参数都是this要指向的对象，也就是想指定的上下文（函数的每次调用都会拥有一个特殊值——本次调用的上下文(context)——这就是this关键字的值。）；
+3. `apply 、 call 、bind` 三者都可以利用后续参数传参；
+4. bind 是返回对应函数，便于稍后调用，apply 、call 则是立即调用 。
 
 ### 参考资料
 
