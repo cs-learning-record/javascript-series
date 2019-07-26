@@ -14,7 +14,7 @@
 - [call方法](#一call方法)
 - [apply方法](#二apply方法)
 - [bind方法](#三bind方法)
-- [call、apply、bind方法的共同点和区别](#四call、apply、bind方法的共同点和区别)
+- [call、apply、bind方法的共同点和区别](#四callapplybind方法的共同点和区别)
 
 ### 一、call方法
 
