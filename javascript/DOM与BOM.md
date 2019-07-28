@@ -21,50 +21,84 @@
 
 `DOM`树由节点构成，节点有以下种类：元素节点、文本节点和属性节点。
 
-- 获取节点
+- 获取 DOM 节点
+- 层次节点指针
 - 节点操作
 - 属性操作
 - 文本操作
+- 获取元素大小
 
-### 1.1 获取节点
+### 1.1 获取 DOM 节点
 
-| 方法                   | 说明                   | 备注             |
-| ---------------------- | ---------------------- | ---------------- |
-| getElementById         | 获取特定 ID 元素的节点 | 获取单个节点对象 |
-| getElementsByClassName | row 2 col 2            | row 1 col 2      |
-| getElementsByTagName   | row 2 col 2            | row 1 col 2      |
-| getElementsByName      | row 2 col 2            | row 1 col 2      |
-| querySelector          | row 2 col 2            | row 1 col 2      |
+| 方法                   | 说明                        | 备注                 |
+| ---------------------- | --------------------------- | -------------------- |
+| getElementById         | 获取特定 ID 元素的节点      | 获取单个节点对象     |
+| getElementsByClassName | 获取指定 class 类的节点列表 | 返回值为节点数组     |
+| getElementsByTagName   | 获取相同元素的节点列表      | 返回值为节点数组     |
+| getElementsByName      | 获取相同名称的节点列表      | 返回值为节点数组     |
+| querySelector          | 获取 class 第一或 id 的节点 | 返回值为一个节点对象 |
+| querySelectorAll       | row 2 col 2                 | 返回值为节点数组     |
 
-### 1.2 节点操作
+### 1.2 层次节点指针
 
-| 方法                   | 说明                   | 备注             |
-| ---------------------- | ---------------------- | ---------------- |
-| getElementById         | 获取特定 ID 元素的节点 | 获取单个节点对象 |
-| getElementsByClassName | row 2 col 2            | row 1 col 2      |
-| getElementsByTagName   | row 2 col 2            | row 1 col 2      |
-| getElementsByName      | row 2 col 2            | row 1 col 2      |
-| querySelector          | row 2 col 2            | row 1 col 2      |
+| 方法            | 说明                                    |
+| --------------- | --------------------------------------- |
+| childNodes      | 获取当前元素节点的所有节点              |
+| firstChild      | 获取当前元素节点的第一个子节点          |
+| lastChild       | 获取当前元素节点的最后一个子节点        |
+| ownerDocument   | 获取该节点的文档根节点，相当与 document |
+| parentNode      | 获取当前节点的父节点                    |
+| previousSibling | 获取当前节点的前一个同级节点            |
+| nextSibling     | 获取当前节点的后一个同级节点            |
+| attributes      | 获取当前元素节点的所有属性节点集合      |
 
-### 1.3 属性操作
+### 1.3 节点操作
 
-| 方法                   | 说明                   | 备注             |
-| ---------------------- | ---------------------- | ---------------- |
-| getElementById         | 获取特定 ID 元素的节点 | 获取单个节点对象 |
-| getElementsByClassName | row 2 col 2            | row 1 col 2      |
-| getElementsByTagName   | row 2 col 2            | row 1 col 2      |
-| getElementsByName      | row 2 col 2            | row 1 col 2      |
-| querySelector          | row 2 col 2            | row 1 col 2      |
+| 方法            | 说明                                                                                                        |
+| --------------- | ----------------------------------------------------------------------------------------------------------- |
+| createElement   | 创建一个元素节点                                                                                            |
+| createAttribute | 创建一个属性节点                                                                                            |
+| createTextNode  | 创建一个文本节点                                                                                            |
+| appendChild     | 向节点的子节点列表的末尾添加新的子节点                                                                      |
+| insertBefore    | 在已知的子节点前插入一个新的子节点                                                                          |
+| replaceChild    | 将某个子节点替换为另一个                                                                                    |
+| cloneNode       | 创建指定节点的副本，有一个参数，其值为 true 或 false，true 复制当前节点及其所有子节点，false 仅复制当前节点 |
+| removeChild     | 删除指定的节点                                                                                              |
 
-### 1.4 文本操作
+### 1.4 属性操作
 
-| 方法                   | 说明                   | 备注             |
-| ---------------------- | ---------------------- | ---------------- |
-| getElementById         | 获取特定 ID 元素的节点 | 获取单个节点对象 |
-| getElementsByClassName | row 2 col 2            | row 1 col 2      |
-| getElementsByTagName   | row 2 col 2            | row 1 col 2      |
-| getElementsByName      | row 2 col 2            | row 1 col 2      |
-| querySelector          | row 2 col 2            | row 1 col 2      |
+| 方法            | 说明                     |
+| --------------- | ------------------------ |
+| id              | 元素节点的 id 名称       |
+| title           | 元素节点的 title 属性值  |
+| style           | css 内联样式属性值       |
+| className       | CSS 元素的类             |
+| getAttribute    | 获取特定元素节点属性的值 |
+| setAttribute    | 设置特定元素节点属性的值 |
+| removeAttribute | 移除特定元素节点属性     |
+
+### 1.5 文本操作
+
+| 方法                          | 说明                                 |
+| ----------------------------- | ------------------------------------ |
+| insertData(offset,String)     | 从 offset 指定的位置插入 string      |
+| appendData(string)            | 将 string 插入到文本节点的末尾处     |
+| deleteDate(offset,count)      | 从 offset 起删除 count 个字符        |
+| replaceData(off,count,string) | 从 off 将 count 个字符用 string 替代 |
+| splitData(offset)             | 从 offset 起将文本节点分成两个节点   |
+| substring(offset,count)       | 返回由 offset 起的 count 个节点      |
+
+### 1.6 获取元素大小
+
+#### 1.6.1 clientWidth 和 clientHeight
+
+#### 1.6.2 scrollWidth 和 scrollHeight
+
+#### 1.6.3 scrollTop 和 scrollLeft
+
+#### 1.6.4 offsetWidth 和 offsetHeight
+
+#### 1.6.5 offsetLeft 和 offsetTop
 
 ### 二、BOM
 
