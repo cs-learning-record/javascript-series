@@ -11,9 +11,9 @@
 
 ## 内容
 
-- [call 模拟实现](#一 call 模拟实现)
-- [apply 模拟实现](#二 apply 模拟实现)
-- [bind 模拟实现](#三 bind 模拟实现)
+- [call模拟实现](#一call模拟实现)
+- [apply模拟实现](#二apply模拟实现)
+- [bind模拟实现](#三bind模拟实现)
 
 ### 一、call 模拟实现
 
