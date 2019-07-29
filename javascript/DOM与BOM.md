@@ -176,7 +176,11 @@ dom.offsetTop;  //20
 
 ### 二、BOM
 
-`BOM`主要处理浏览器窗口和框架，不过通常浏览器特定的`JavaScript`扩展都被看做 BOM 的一部分。
+`BOM`浏览器对象模型（Browser Object Model）`BOM`对象是在Web中使用JavaScript的核心，该对象提供了与浏览器交互相关对象结构。`BOM`由多个子对象组成，其核心为window对象，它是`BOM`的顶层对象，表示在浏览器环境中的一个全局的顶级对象，所有在浏览器环境中使用的对象都是window对象的子对象。
+
+`BOM`中的对象主要包括：DOM相关对象、frames对象、navigator对象、history对象、location对象、screen对象
+
+![](./img/bom.png)
 
 ### 三、思维导图
 
