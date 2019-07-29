@@ -186,6 +186,7 @@ dom.offsetTop;  //20
 
 - 《高程第三版》
 - 《权威第 6 版》
+- [温故js系列（6）-DOM](https://segmentfault.com/a/1190000006623511)
 
 ## 联系作者
 
