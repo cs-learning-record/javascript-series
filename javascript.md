@@ -9,7 +9,7 @@
 
 |                                                        I                                                        |  II  |    III    |     IV     |  V  |      VI      |    VII     |  VIII  |  IX  |     X      |                                                      XI                                                      |     XII      |
 | :-------------------------------------------------------------------------------------------------------------: | :--: | :-------: | :--------: | :-: | :----------: | :--------: | :----: | :--: | :--------: | :----------------------------------------------------------------------------------------------------------: | :----------: |
-| [DOM 与 BOM](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/DOM%E4%B8%8EBOM.md) | 事件 | html5 api | 客户端存储 | BOM | new 模拟实现 | 函数柯里化 | 深拷贝 | 函数 | 正则表达式 | [继承](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E7%BB%A7%E6%89%BF.md) | 防抖动与节流 |
+| [DOM 与 BOM](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/DOM%E4%B8%8EBOM.md) | [事件](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E4%BA%8B%E4%BB%B6.md) | html5 api | 客户端存储 | BOM | new 模拟实现 | 函数柯里化 | 深拷贝 | 函数 | 正则表达式 | [继承](https://github.com/cs-learning-record/javascript-series/blob/master/javascript/%E7%BB%A7%E6%89%BF.md) | 防抖动与节流 |
 
 ## 参考目录
 
