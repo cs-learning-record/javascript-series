@@ -92,13 +92,87 @@
 
 #### 1.6.1 clientWidth 和 clientHeight
 
+这组属性可以获取元素可视区的大小，可以得到元素内容及内边距所占据的空间大小。
+
+```
+dom.clientWidth; //400
+dom.clientHeight //400
+
+```
+
+返回了元素大小，但没有单位，默认单位是px
+
+1. 增加边框，无变化
+2. 增加外边距，无变化
+3. 增加滚动条，最张值等于原本大小减去滚动条的大小
+4. 增加内边距，最终值等于原本大小加上内边距的大小
+
+![](./img/dom01.gif)
+
 #### 1.6.2 scrollWidth 和 scrollHeight
+
+这组属性可以获取滚动内容的元素大小
+
+```
+dom.scrollWidth
+dom.scrollHeight
+
+```
+
+1. 增加内边距，最终值会等于原本大小加上内边距大小
+2. 增加滚动条，最张值会等于原本大小送去滚动条大小
+
 
 #### 1.6.3 scrollTop 和 scrollLeft
 
+这组属性可以获取滚动条被隐藏的区域大小，也可设置定位到该区域。
+
+```
+dom.scrollTop;  //获取滚动内容上方的位置
+dom.scrollLeft; //获取滚动内容左方的位置
+
+```
+
+![](./img/dom03.gif)
+
 #### 1.6.4 offsetWidth 和 offsetHeight
 
+```
+dom.offsetWidth;  //400
+dom.offsetHeight; //400
+
+```
+
+返回了元素大小，默认单位是px。如果没有设置任何CSS的宽度和高度，他会得到计算后的宽度和高度。
+
+1. offsetHeight元素在垂直方向上占用的空间大小，以像素计。包括元素的高度、（可见的）水平滚动条的高度、上边框高度和下边框高度。
+2. offsetWidth元素在水平方向上占用的空间大小，以像素计。包括元素的宽度、（可见的）垂直滚动笨拙宽度、左边框宽度和右边框宽度。
+
 #### 1.6.5 offsetLeft 和 offsetTop
+
+这组属性可以获取当前元素相对于父元素的位置。
+
+```
+dom.offsetLeft; //20
+dom.offsetTop;  //20
+
+```
+
+![](./img/dom02.gif)
+
+#### 1.6.6 获取元素位置的快速方法
+
+除了上面的函数以外，还有一种快速方法，可以立刻获得网页元素的位置。
+
+那就是使用getBoundingClientRect()方法。它返回一个对象，其中包含了left、right、top、bottom四个属性，分别对应了该元素的左上角和右下角相对于浏览器窗口（viewport）左上角的距离。
+
+所以，网页元素的相对位置就是
+
+```
+　　var X= this.getBoundingClientRect().left;
+
+　　var Y =this.getBoundingClientRect().top;
+```
 
 ### 二、BOM
 
