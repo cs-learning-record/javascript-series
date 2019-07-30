@@ -40,7 +40,11 @@
 
 ### 一、canvas
 
+关于canvas用法，请关注[相应文章](https://github.com/cs-learning-record/javascript-series/blob/master/canvas.md)。
+
 ### 二、svg
+
+关于svg用法，请关注后续相应文章。
 
 ### 三、requestAnimationFrame()
 
