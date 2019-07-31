@@ -31,6 +31,7 @@
 16. [Node.js 最佳实践](https://github.com/i0natan/nodebestpractices/blob/master/README.chinese.md)
 17. [轻量级实时 Node.js 内核性能监控分析工具](https://github.com/hyj1991/easy-monitor)
 18. [一篇文章构建你的 NodeJS 知识体系](https://juejin.im/post/5c4c0ee8f265da61117aa527)
+19. [Node.js技术栈](https://github.com/Q-Angelo/Nodejs-Roadmap)
 
 ## 联系作者
 
