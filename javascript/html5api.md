@@ -24,8 +24,13 @@
   - [五、Web Workers](#%e4%ba%94web-workers)
   - [六、Geolocation API](#%e5%85%adgeolocation-api)
   - [七、History](#%e4%b8%83history)
+    - [7.1 属性](#71-%e5%b1%9e%e6%80%a7)
+    - [7.2 方法](#72-%e6%96%b9%e6%b3%95)
+      - [7.2.1 History.back()、History.forward()、History.go()](#721-historybackhistoryforwardhistorygo)
+      - [7.2.2 History.pushState()](#722-historypushstate)
+      - [7.2.3 History.replaceState()](#723-historyreplacestate)
+    - [7.3 popstate事件](#73-popstate%e4%ba%8b%e4%bb%b6)
   - [八、WebSocket](#%e5%85%abwebsocket)
-  - [九、postMessage](#%e4%b9%9dpostmessage)
 - [联系作者](#%e8%81%94%e7%b3%bb%e4%bd%9c%e8%80%85)
 
 ### 一、canvas
@@ -131,14 +136,86 @@ FileReader提供了如下几个实例方法：
 
 ### 五、Web Workers
 
+Web Worker 的作用，就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。
+
+Web Worker 有以下几个使用注意点。
+
+- 同源限制
+- DOM限制
+- 全局对象限制
+- 通信联系
+- 脚本限制
+- 文件限制
 
 ### 六、Geolocation API
 
+Geolocation API这套API，JavaScript代码能够访问到用户的当前位置信息。
+
+Geolocation有以下三个方法：
+
+- `getCurrentPosition()`确定设备的位置并返回一个携带位置信息的 Position 对象。
+- `watchPosition()`注册一个位置改变监听器，每当设备位置改变时，返回一个 long 类型的该监听器的ID值。
+- `clearWatch()`取消由 watchPosition()注册的位置监听器。
+
 ### 七、History
+
+`window.history`属性指向 History 对象，它表示当前窗口的浏览历史。
+
+- [属性](#7.1-属性)
+- [方法](#7.2-方法)
+- [popstate事件](#7.3-popstate事件)
+
+#### 7.1 属性
+
+History 对象主要有两个属性。
+
+- `History.length`:当前窗口访问的网址数量（包括当前网页）
+- `History.state`:History堆栈最上层的状态值
+
+
+#### 7.2 方法
+
+- History.back()、History.forward()、History.go()
+- History.pushState()
+- History.replaceState()
+
+##### 7.2.1 History.back()、History.forward()、History.go()
+
+- History.back():移动到上一个网址，等同于点击浏览器的后退键。对于第一个访问的网址，该方法无效果。
+- History.forward():移动到下一个网址，等同于点浏览器的前进键。对于最后一个访问的网址，方法无效果。
+- History.go():接受一个整数作为参数，以当前网址为基准，移动到参数指定的网址，比如`go(1)`相当于`forward()`，`go(-1)`相当于`back()`。如果参数超过实际存在的网址范围，该方法无效果；如果不指定参数，默认参数为0，相当于刷新当前页面。
+
+##### 7.2.2 History.pushState()
+
+`History.pushState()`方法用于在历史中添加一条记录。
+
+`window.history.pushState(state, title, url)`
+
+该方法接受三个参数，依次为：
+
+- `state`:一个与添加的记录相关联的状态对象，主要用于popstate事件。该事件触发时，该对象会传入回调函数。也就是说，浏览器会将这个对象序列化以后保留在本地，重新载入这个页面的时候，可以拿到这个对象。如果不需要这个对象，此处可以填null。
+- `title`:新页面的标题。但是，现在所有浏览器都忽视这个参数，所以这里可以填空字符串。
+- `url`:新的网址，必须与当前页面处在同一个域。浏览器的地址栏将显示这个网址。
+
+##### 7.2.3 History.replaceState() 
+
+`History.replaceState()`方法用来修改`History`对象的当前记录，其他都与pushState()方法一模一样。
+
+#### 7.3 popstate事件
+
+每当同一个文档的浏览历史（即history对象）出现变化时，就会触发popstate事件。
+
+```
+window.onpopstate = function (event) {
+  console.log('location: ' + document.location);
+  console.log('state: ' + JSON.stringify(event.state));
+};
+
+```
 
 ### 八、WebSocket
 
-### 九、postMessage
+后续文章会详细介绍WebSocket。
 
 ## 联系作者
 
