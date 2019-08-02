@@ -28,6 +28,7 @@
 12. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)
 13. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
 14. [虚拟 DOM 到底是什么？](https://mp.weixin.qq.com/s/oAlVmZ4Hbt2VhOwFEkNEhw)
+15. [你想要的 vue 源码分析](https://github.com/dirkhe1051931999/hjBlog/tree/master/blog-vue-sourcecode-study)
 
 ## 联系作者
 
