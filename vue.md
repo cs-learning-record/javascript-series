@@ -26,11 +26,12 @@
 1. [jQuery 源码分析](https://github.com/JsAaron/jQuery)
 1. [jQuery-3.3.1 源码解析](https://github.com/AttackXiaoJinJin/jQueryExplain)
 1. [underscore-1.8.3.js 源码解读](https://github.com/lessfish/underscore-analysis)
-1. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
-1. [虚拟 DOM 到底是什么？](https://mp.weixin.qq.com/s/oAlVmZ4Hbt2VhOwFEkNEhw)
-1. [你想要的 vue 源码分析](https://github.com/dirkhe1051931999/hjBlog/tree/master/blog-vue-sourcecode-study)
-1. [面试必备的 13 道可以举一反三的 Vue 面试题](https://juejin.im/post/5d41eec26fb9a06ae439d29f)
-1. [渲染器](http://hcysun.me/vue-design/zh/)
+2. [underscore-1.8.3.js 源码解读 & 系列文章（完）](https://github.com/lessfish/underscore-analysis)
+3. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
+4. [虚拟 DOM 到底是什么？](https://mp.weixin.qq.com/s/oAlVmZ4Hbt2VhOwFEkNEhw)
+5. [你想要的 vue 源码分析](https://github.com/dirkhe1051931999/hjBlog/tree/master/blog-vue-sourcecode-study)
+6. [面试必备的 13 道可以举一反三的 Vue 面试题](https://juejin.im/post/5d41eec26fb9a06ae439d29f)
+7. [渲染器](http://hcysun.me/vue-design/zh/)
 
 ## 联系作者
 
