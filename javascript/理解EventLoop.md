@@ -11,20 +11,20 @@
 
 ## 内容
 
-- [堆，栈、队列](##一堆栈队列)
-- 线程与进程
+- [堆，栈、队列](#一堆栈队列)
+- [线程与进程](#二线程与进程)
 - [Event Loop](#三event-loop)
-- 浏览器中的Event Loop
-- 例子
-- NodeJS的Event Loop
+- [浏览器中的Event Loop](#四浏览器中的event-loop)
+- [例子](#五例子)
+- [NodeJS的Event Loop](#六nodejs的event-loop)
 
 ### 一、堆，栈、队列
 
 ![](./img/eventloop.png)
 
-- 堆
-- 栈
-- 队列
+- [堆](#11-堆)
+- [栈](#12-栈)
+- [队列](#13-队列)
 
 #### 1.1 堆
 
@@ -69,8 +69,8 @@
 
 在`JavaScript`中，任务被分为两种，一种宏任务（`MacroTask`）也叫`Task`，一种叫微任务（`MicroTask`）。
 
-- MacroTask（宏任务）
-- MicroTask（微任务）
+- [MacroTask（宏任务）](#31-macrotask宏任务)
+- [MicroTask（微任务）](#32-microtask微任务)
 
 #### 3.1 MacroTask（宏任务）
 
@@ -84,9 +84,9 @@
 
 `Javascript`有一个`main thread`主线程和`call-stack`调用栈(执行栈)，所有的任务都会被放到调用栈等待主线程执行。
 
-- JS调用栈
-- 同步任务和异步任务
-- Event Loop 过程解析
+- [JS调用栈](#41-js调用栈)
+- [同步任务和异步任务](#42-同步任务和异步任务)
+- [Event Loop 过程解析](#43-event-loop-过程解析)
 
 #### 4.1 JS调用栈
 
@@ -122,6 +122,9 @@ JS调用栈采用的是后进先出的规则，当函数执行的时候，会被
 ![](./img/eventloop06.png)
 
 ### 五、例子
+
+- [例一](#5.1-例一)
+- [例二](#5.2-例二)
 
 #### 5.1 例一
 
@@ -179,10 +182,10 @@ setTimeout(()=>{
 
 ### 六、NodeJS的Event Loop
 
-- 6.1 Node简介
-- 6.2 六个阶段
-- 6.3 Micro-Task 与 Macro-Task
-- 6.4 注意点
+- [Node简介](#61-node简介)
+- [六个阶段](#62-六个阶段)
+- [Micro-Task 与 Macro-Task](#63-micro-task-与-macro-task)
+- [注意点](#64-注意点)
 
 #### 6.1 Node简介
 
