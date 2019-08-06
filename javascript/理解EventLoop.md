@@ -86,7 +86,7 @@
 
 - JS调用栈
 - 同步任务和异步任务
-- 事件循环的进程模型
+- Event Loop 过程解析
 
 #### 3.1 JS调用栈
 
@@ -100,12 +100,58 @@ JS调用栈采用的是后进先出的规则，当函数执行的时候，会被
 
 任务队列`Task Queue`，即队列，是一种先进先出的一种数据结构。
 
+#### 3.3 Event Loop 过程解析
+
 ![](./img/eventloop04.png)
 
-#### 3.3 事件循环的进程模型
+- 一开始执行栈空我们可以把**执行栈认为是一个存储函数调用的栈结构，遵循先进后出的原则。**micro队列空，macro队列里有且只有一个script脚本（整体代码）。
+- 全局上下文（script标签）被推入执行栈，同步代码执行。在执行的过程中，会判断是同步任务还是异步任务，通过对一些接口的调用，可以产生新的 macro-task 与 micro-task，它们会分别被推入各自的任务队列里，同步代码执行完了，script脚本会被移出macro队列，这个过程本质上是队列的macro-task的执行和出队的过程。
+- 上一步我们出队的是一个macro-task,这一步我们处理的是micro-task。但需要注意的是：当macro-task出队时，任务是**一个一个**执行的；而micro-task出队时，任务是**一队一队**执行的。因此我们处理micro队列这一步，会逐个执行队列中的任务并把它出队，直到队列被清空。
+- **执行渲染操作，更新界面**
+- 检查是否存在Web worker任务，如果有，则对其进行处理
+- 上述过程循环往复，直到两个队列都清空
 
+我们总结一下，每一次循环都是一个这样的过程：
+
+![](./img/eventloop07.png)
+
+**当某个宏任务执行完后，会查看是否有微任务队列，如果有，先执行微任务队列中的所有任务，如果没有，会读取宏任务队列中排在最前的任务，执行宏任务的过程中，遇到微任务，依次加入微任务队列。栈空后，再依次读取微任务队列里的任务，依次类推。**
+
+**mactotask & microtask的执行顺序**
+
+![](./img/eventloop06.png)
 
 ### 四、例子
+
+#### 4.1 例一
+
+```
+    console.log('start');
+    
+    setTimeout(function(){
+        console.log('setTimeout')
+    },0)
+
+    Promise.resolve().then(function(){
+        console.log('promise1')
+    }).then(function(){
+        console.log('promise2')
+    })
+
+    console.log('end')
+
+```
+
+打印台输出的log顺序是什么？结合上述的步骤分析。
+
+![](./img/browser-deom1-excute-animate.gif)
+
+- 首先，全局代码（main()）压入调用栈执行，打印`start`;
+- 接下来`setTimeout`压入`macrotask`队列，`promise.then`回调放入`microtask`队列，最后执行`console.log('end')`，打印出`end`;
+- 至此，调用栈中的代码被执行完成，回顾`macrotask`的定义，我们知道全局代码属于`macrotask`，`macrotask`执行完，那接下来就是执行`microtask`队列的任务了，执行`promise`回调打印`promise1`;
+- `promise`回调函数默认返回`undefined`，promise状态变为`fullfill`触发接下来的`then`架设，继续压入`microtask`队列，**event loop会把当前的microtask队列一直执行完**，此时执行第二个`promise.then`回调打印出`promise2`;
+- 这时`microtask`队列已经为空，从上面的流程图可以知道，接下来主线程会去做一些UI渲染工作，然后开始下一轮`event loop`,执行`setTimeout`的回调，打印出`setTimeout`;
+
 
 ### NodeJS的Event Loop
 
