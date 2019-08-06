@@ -28,10 +28,9 @@
 13. [Node.js 教程目录](https://github.com/Wscats/node-tutorial)
 14. [基于 Node.js 的 HTTPS MITM(中间人)代理的原理和实现](https://github.com/wuchangming/https-mitm-proxy-handbook)
 15. [node 源码粗读系列](https://github.com/xtx1130/blog)
-16. [Node.js 最佳实践](https://github.com/i0natan/nodebestpractices/blob/master/README.chinese.md)
-17. [轻量级实时 Node.js 内核性能监控分析工具](https://github.com/hyj1991/easy-monitor)
-18. [一篇文章构建你的 NodeJS 知识体系](https://juejin.im/post/5c4c0ee8f265da61117aa527)
-19. [Node.js技术栈](https://github.com/Q-Angelo/Nodejs-Roadmap)
+16. [轻量级实时 Node.js 内核性能监控分析工具](https://github.com/hyj1991/easy-monitor)
+17. [一篇文章构建你的 NodeJS 知识体系](https://juejin.im/post/5c4c0ee8f265da61117aa527)
+18. [Node.js技术栈](https://github.com/Q-Angelo/Nodejs-Roadmap)
 
 ## 联系作者
 
