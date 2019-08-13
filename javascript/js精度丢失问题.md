@@ -324,6 +324,7 @@ withinErrorMargin(0.1+0.2,0.3)
 - [揭秘 0.1 + 0.2 != 0.3](https://www.barretlee.com/blog/2016/09/28/ieee754-operation-in-js/)
 - [js中0.1+0.2为什么不等于0.3](https://coolcao.com/2016/10/12/js%E4%B8%AD0-1-0-2%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%AD%89%E4%BA%8E0-3/)
 - [JavaScript 浮点数陷阱及解法](https://github.com/camsong/blog/issues/9)
+- [JS魔法堂：彻底理解0.1 + 0.2 === 0.30000000000000004的背后](https://www.cnblogs.com/fsjohnhuang/p/5115672.html)
 
 ## 联系作者
 
