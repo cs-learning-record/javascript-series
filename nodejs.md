@@ -39,7 +39,8 @@
 16. [轻量级实时 Node.js 内核性能监控分析工具](https://github.com/hyj1991/easy-monitor)
 17. [一篇文章构建你的 NodeJS 知识体系](https://juejin.im/post/5c4c0ee8f265da61117aa527)
 18. [Node.js技术栈](https://github.com/Q-Angelo/Nodejs-Roadmap)
-19. [深入理解Node.js 进程与线程(8000长文彻底搞懂)]()
+19. [深入理解Node.js 进程与线程(8000长文彻底搞懂)](https://segmentfault.com/a/1190000020077274)
+20. [Node.js区块链开发](https://github.com/imfly/bitcoin-on-nodejs)
 
 ## 联系作者
 
