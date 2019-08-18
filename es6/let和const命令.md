@@ -11,17 +11,18 @@
 
 ## 内容
 
-- let 和 const 基本用法
-- 不存在变量提升
+- [let 和 const 基本用法](#一let-和-const-基本用法)
+- [不存在变量提升](#二不存在变量提升)
+- 不绑定全局作用域
 - 暂时性死区
 - 不允许重复声明
-- 不绑定全局作用域
 - 块级作用域
+- let 和 const 的区别
 
 ### 一、let 和 const 基本用法
 
-- let 基本用法
-- const 基本用法
+- [let 基本用法](#11-let-基本用法)
+- [const 基本用法](#12-const-基本用法)
 
 #### 1.1 let 基本用法
 
@@ -70,7 +71,7 @@ let value = 1;
 console.log(window.value); // undefined
 ```
 
-### 三、暂时性死区
+### 四、暂时性死区
 
 let 和 const 声明的变量不会被提升到作用域顶部，如果在声明之前访问这些变量，会导致报错：
 
@@ -79,7 +80,7 @@ console.log(typeof value); // Uncaught ReferenceError: value is not defined
 let value = 1;
 ```
 
-### 四、不允许重复声明
+### 五、不允许重复声明
 
 `let`不允许在相同作用域内，重复声明同一个变量。
 
@@ -88,7 +89,7 @@ var value = 1;
 let value = 2; // Uncaught SyntaxError: Identifier 'value' has already been declared
 ```
 
-### 五、块级作用域
+### 六、块级作用域
 
 `let`实际上为 JavaScript 新增了块级作用域。
 
@@ -102,7 +103,7 @@ function f1() {
 }
 ```
 
-### 六、let 和 const 的区别
+### 七、let 和 const 的区别
 
 const 用于声明常量，其值一旦被设定不能再被修改，否则会报错。
 
