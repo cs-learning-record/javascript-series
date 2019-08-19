@@ -11,6 +11,11 @@
 
 ## 内容
 
+
+### 参考资料
+
+- [你了解Promise吗？](https://mp.weixin.qq.com/s/mvqR4oEq1VcTYB57QqGIvQ)
+
 ## 联系作者
 
 <div align="center">
