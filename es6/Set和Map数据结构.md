@@ -11,16 +11,16 @@ ES6 中新几种数组结构分别是 Set、WeakSet、Map、WeakMap 数组结构
 
 ## 内容
 
-- Set
-- WeakSet
-- Map
-- WeakMap
+- [Set](#一set)
+- [WeakSet](#二weakset)
+- [Map](#三map)
+- [WeakMap](#四weakmap)
 
 ### 一、Set
 
-- 基本用法
-- Set 实例的属性和方法
-- 遍历操作
+- [基本用法](#11-基本用法)
+- [Set 实例的属性和方法](#12-set-实例的属性和方法)
+- [遍历操作](#13-遍历操作)
 
 #### 1.1 基本用法
 
@@ -147,11 +147,26 @@ let difference = new Set([...a].filter(x=>!b.has(x)));
 - 含义
 - 语法
 
+#### 2.1 含义
+
+WeakSet结构与Set类似，也是重复的值的集合。但是，它与Set有两个区别。
+
+- WeakSet的成员只能是对象，而不能是其他类型的值。
+- WeakSet中的对象都是弱引用，即垃圾回收机制不考虑WeakSet对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存。
+
+#### 2.2 语法
+
+WeakSet是一个构造函数，可以使用`new`命令，创建WeakSet数据结构。
+
+```
+const ws = new WeakSet();
+```
+
 ### 三、Map
 
-- 基本用法
-- 实例的属性和操作方法
-- 遍历方法
+- [基本用法](#31-基本用法)
+- [实例的属性和操作方法](#32-实例的属性和操作方法)
+- [遍历方法](#33-遍历方法)
 
 ### 3.1 基本用法
 
@@ -171,12 +186,12 @@ m.has(o)       // false
 
 ### 3.2 实例的属性和操作方法
 
-- size 属性
-- set(key,value)
-- get(key)
-- has(key)
-- delete(key)
-- clear()
+- [size 属性](#321-size-属性)
+- [set(key,value)](#322-setkeyvalue)
+- [get(key)](#323-getkey)
+- [has(key)](#324-haskey)
+- [delete(key)](#325-deletekey)
+- [clear()](#326-clear)
 
 #### 3.2.1 size 属性
 
@@ -264,15 +279,30 @@ map.size // 0
 
 Map 结构原生提供三个遍历器生成函数和一个遍历方法。
 
-- `keys()`：
-- `values()`：
-- `entries()`：
-- `forEach()`：
+- `keys()`：返回键名的遍历器。
+- `values()`：返回键值的遍历器。
+- `entries()`：返回所有成员的遍历器。
+- `forEach()`：遍历Map的所有成员。
 
 ### 四、WeakMap
 
 - 含义
-- 用途
+- 语法
+
+#### 4.1 含义
+
+`WeakMap`结构与`Map`结构类似，也是用于生成键值对的集合。`WeakMap`与`Map`的区别有两点。
+
+- `WeakMap`只接受对象作为键名（`null`除外），不接受其他类型的值作为键名。
+- `WeakMap`的键名所指向的对象，不诗篇垃圾回收机制。
+
+#### 4.2 语法
+
+WeakMap 与 Map 在 API 上的区别主要是两个，一是没有遍历操作（即没有`keys()`、`values()`和`entries()`方法），也没有`size`属性。因为没有办法列出所有键名，某个键名是否存在完全不可预测，跟垃圾回收机制是否运行相关。二是无法清空，即不支持`clear`方法。
+
+```
+const wm = new WeakMap();
+```
 
 ### 参考资料
 
