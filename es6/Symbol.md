@@ -11,10 +11,10 @@ ES5 的对象属性名都是字符串，这容易造成属性名的冲突。ES6 
 
 ## 内容
 
-- 作为属性名的 Symbol
-- 属性名的遍历
-- Symbol.for()，Symbol.keyFor()
-- 内置的Symbol值
+- [作为属性名的 Symbol](#一作为属性名的-symbol)
+- [属性名的遍历](#二属性名的遍历)
+- [Symbol.for()，Symbol.keyFor()](#三symbolforsymbolkeyfor)
+- [内置的Symbol值](#四内置的symbol值)
 
 ### 一、作为属性名的 Symbol
 
