@@ -83,6 +83,7 @@ alert(iNum.toString(2));	//输出 "-10010"
 4. 负数的补码 = 它的反码+1;
 5. 0的反码、补码都是0；
 6. 在计算机运算的时候，都是以补码的方式来运算的；
+7. 对补码再求一次补码则得到原码；
 
 ### 二、js的按位操作符
 
@@ -137,6 +138,7 @@ alert(iNum.toString(2));	//输出 "-10010"
 
 ### 参考资料
 
+- [基础野：细说原码、反码和补码](https://www.cnblogs.com/fsjohnhuang/p/5060242.html)
 - [JavaScript中按位操作符的有趣应用](https://mp.weixin.qq.com/s/_0bprYb2akIR3CqKVSwE4w)
 
 ## 联系作者
