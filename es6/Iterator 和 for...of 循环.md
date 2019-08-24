@@ -20,12 +20,12 @@ Iterator 的遍历过程是这样的。
 
 ## 内容
 
-- 默认 Iterator 接口
-- 调用 Iterator 接口的场合
-- Iterator 接口与 Generator 函数
-- 遍历器对象的 return()，throw()
-- for...of 循环
-- 与其他遍历语法的比较
+- [默认 Iterator 接口](#一默认-iterator-接口)
+- [调用 Iterator 接口的场合](#二调用-iterator-接口的场合)
+- [Iterator 接口与 Generator 函数](#三iterator-接口与-generator-函数)
+- [遍历器对象的 return()，throw()](#四遍历器对象的-returnthrow)
+- [for...of 循环](#五forof-循环)
+- [与其他遍历语法的比较](#六与其他遍历语法的比较)
 
 ### 一、默认 Iterator 接口
 
@@ -41,10 +41,10 @@ Iterator 的遍历过程是这样的。
 
 ### 二、调用 Iterator 接口的场合
 
-- 解构赋值
-- 扩展运算符
-- yield\*
-- 其他场合
+- [解构赋值](#21-解构赋值)
+- [扩展运算符](#22-扩展运算符)
+- [yield\*](#23-yield)
+- [其他场合](#24-其他场合)
 
 #### 2.1 解构赋值
 
@@ -139,11 +139,11 @@ function readLineSync(file){
 
 ### 五、for...of 循环
 
-- 数组
-- Set 和 Map 结构
-- 计算生成的数据结构
-- 类似数组的对象
-- 对象
+- [数组](#51-数组)
+- [Set 和 Map 结构](#52-set-和-map-结构)
+- [计算生成的数据结构](#53-计算生成的数据结构)
+- [类似数组的对象](#54-类似数组的对象)
+- [对象](#55-对象)
 
 #### 5.1 数组
 
