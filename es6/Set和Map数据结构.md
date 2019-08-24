@@ -149,14 +149,14 @@ let difference = new Set([...a].filter(x=>!b.has(x)));
 
 #### 2.1 含义
 
-WeakSet结构与Set类似，也是重复的值的集合。但是，它与Set有两个区别。
+WeakSet 结构与 Set 类似，也是重复的值的集合。但是，它与 Set 有两个区别。
 
-- WeakSet的成员只能是对象，而不能是其他类型的值。
-- WeakSet中的对象都是弱引用，即垃圾回收机制不考虑WeakSet对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存。
+- WeakSet 的成员只能是对象，而不能是其他类型的值。
+- WeakSet 中的对象都是弱引用，即垃圾回收机制不考虑 WeakSet 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存。
 
 #### 2.2 语法
 
-WeakSet是一个构造函数，可以使用`new`命令，创建WeakSet数据结构。
+WeakSet 是一个构造函数，可以使用`new`命令，创建 WeakSet 数据结构。
 
 ```
 const ws = new WeakSet();
@@ -282,7 +282,7 @@ Map 结构原生提供三个遍历器生成函数和一个遍历方法。
 - `keys()`：返回键名的遍历器。
 - `values()`：返回键值的遍历器。
 - `entries()`：返回所有成员的遍历器。
-- `forEach()`：遍历Map的所有成员。
+- `forEach()`：遍历 Map 的所有成员。
 
 ### 四、WeakMap
 
@@ -308,6 +308,7 @@ const wm = new WeakMap();
 
 - [《ECMAScript 6 入门》 第三版](https://yjhenan.gitbooks.io/-ecmascript-6/content/docs/set-map.html)
 - [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/set-map)
+- [Set、Map、WeakSet 和 WeakMap](https://github.com/sisterAn/blog/issues/24)
 
 ## 联系作者
 

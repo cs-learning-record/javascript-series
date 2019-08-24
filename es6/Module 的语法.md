@@ -11,6 +11,11 @@
 
 ## 内容
 
+### 参考资料
+
+- [import、require、export、module.exports 混合使用详解](https://juejin.im/post/5a2e5f0851882575d42f5609)
+- [前端模块化：CommonJS,AMD,CMD,ES6](https://juejin.im/post/5aaa37c8f265da23945f365c)
+
 ## 联系作者
 
 <div align="center">
