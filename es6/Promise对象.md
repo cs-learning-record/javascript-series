@@ -18,13 +18,14 @@
 
 - 基本用法
 - then()
-- catch()
+- Promise 的异常捕获方式
 - finally()
 - all()
 - ace()
 - resolve()
 - reject()
 - try()
+- 错误用法及误区
 - promise 你可能不知道的 6 件事
 - 手写 Promise
 
@@ -32,7 +33,148 @@
 
 ### 二、then()
 
-### 三、catch()
+### 三、Promise 的异常捕获方式
+
+- 在 Promise 的构造体内进行错误处理
+- 通过 Promise.prototype.catch 来进行错误处理
+- Promise.all 中的异常捕获
+- Promise.try 中的异常捕获
+- 在 Promise 中无法被捕获的错误
+
+#### 3.1 在 Promise 的构造体内进行错误处理
+
+```
+var promise = new Promise(function(resolve,reject){
+    try{
+        throw new Error('test');
+    }catch(e){
+        reject(e)
+    }
+})
+```
+
+在 Promise 的构造体内进行错误处理，类似于我们在 ES5 中的错误处理方式。
+
+#### 3.2 通过 Promise.prototype.catch 来进行错误处理
+
+生成**Promise**实例后，我们可以通过**Promise**原型上的 catch 方法来捕获 Promise 实例内部的错误。
+
+```
+var promise = new Promise(function(resolve,reject){
+    reject(new Error('test'));
+})
+
+promise.catch(function(e){
+    // something to deal with the error
+    console.log(e);
+})
+```
+
+此外 catch 方法还可以处理链式调用中的错误，比如：
+
+```
+var promise = new Promise(function(resolve,reject){
+    resolve();
+})
+promise.then(function(){
+    // if some error throw
+}).then(function(){
+    // if some error throw
+}).catch(function(e){
+    // something to deal with the error
+    console.log(e)
+})
+
+// Error:test1
+
+```
+
+上述的代码，最后一个 catch 方法可以捕获前面链式调用过程中任何一步 then 方法里面所抛出的错误。catch 方面里面还可以再抛错误，这个错误会被后面的 catch 捕获
+
+```
+var promise = new Promise(function(resolve,reject){
+    reject(new Error('test1'))
+})
+promise.catch(function(e){
+    console.log(e);
+    throw new Error('test2')
+}).catch(function(e){
+    console.log(e)
+})
+
+// Error:test1
+// Error:test2
+```
+
+#### 3.3 Promise.all 中的异常捕获
+
+如果组成**Promise.all**的**promise**有自己的错误捕获方法，那么**Promise.all**中的 catch 就不能捕获该错误。
+
+```
+var p1= new Promise(function(resolve,reject){
+    reject(new Error('test1'));
+}).catch(function(e){
+    console.log('由p1自身捕获')
+});
+
+var p2= new Promise(function(resolve,reject){
+    resolve();
+})
+var p = Promise.all([p1,p2]);
+p.then(function(){
+
+}).catch(function(e){
+    // 在此处捕获不到p1中的error
+    console.log(e)
+})
+// 由p1贴身捕获Error:test1
+
+```
+
+#### 3.4 Promise.try 中的异常捕获
+
+ES2018 中可以通过**Promise.try**来同步处理，可能是异步也可能是同步的函数。
+
+```
+function f(){}
+Promise.try(f);
+console.log(2);
+
+```
+
+上述的方法，不管是同步还是异步，都会执行该方法，再输出 2.
+
+在**Promise.try**的错误处理中，通过 catch 方法既可以捕获 f 是同步函数情况下的错误，也可以捕获 f 是异步函数下的错误。
+
+```
+function f(){
+
+}
+
+Promise.try(f).then(function(){
+
+}).catch(function(e){
+
+})
+```
+
+#### 3.5 在 Promise 中无法被捕获的错误
+
+在**promise**实例**resolve**之后，错误无法被捕获。
+
+```
+var promise = new Promise(function(resolve,reject){
+    resolve();
+    throw new Error('test');    // 该错误无法被捕获
+})
+promise.then(function(){
+//
+}).then(function(e){
+    console.log(e)
+})
+```
+
+该错误可以用尾调用 resolve 来避免。
 
 ### 四、finally()
 
@@ -44,9 +186,26 @@
 
 ### 八、try()
 
-### 九、promise 你可能不知道的 6 件事
+### 九、错误用法及误区
 
-### 十、手写 Promise
+- 当作回调来用 Callback Hell
+- 怎样用 forEach() 处理 promise
+- 没有返回值
+- 没有 Catch
+- catch()与 then(null, fn)
+- 断链 The Broken Chain
+- 穿透 Fall Through
+
+### 十、promise 你可能不知道的 6 件事
+
+- `then()`返回一个 forked Promise(分叉的 Promise)
+- 回调函数应该传递结果
+- 只能捕获来自上一级的异常
+- 错误能被恢复
+- Promise 能被暂停
+- resolved 状态的 Promise 不会立即执行
+
+### 十一、手写 Promise
 
 ```
 const PENDING = 'pending';
@@ -240,7 +399,24 @@ Promise.race = function(promises){
 
 参考资料：[手写 promise](https://github.com/xieranmaya/blog/issues/3)
 
-### 十一、Promise 几道面试题
+### 十二、Promise 几道面试题
+
+> 问：下面四个使用 promise 的语句之间的不同点在哪儿？
+
+```
+doSomething().then(function () {
+    return doSomethingElse();
+})；
+
+doSomethin().then(functiuoin () {
+    doSomethingElse();
+});
+
+doSomething().then(doSomethingElse());
+
+doSomething().then(doSomethingElse);
+
+```
 
 ### 参考资料
 
