@@ -25,6 +25,7 @@
 - resolve()
 - reject()
 - try()
+- 应用
 - 错误用法及误区
 - promise 你可能不知道的 6 件事
 - 手写 Promise
@@ -359,7 +360,13 @@ Promise.resolve().then(f)
 
 上面的写法有一个缺点，就是如果 f 是同步函数，那么它会在本轮事件循环的末尾执行。
 
-### 十、错误用法及误区
+### 十一、应用
+
+- 加载图片
+- 通过 Promise 封装 ajax 解决回调地狱问题
+- Generator 函数与 Promise 的结合
+
+### 十一、错误用法及误区
 
 - 当作回调来用 Callback Hell
 - 怎样用 forEach() 处理 promise
@@ -369,7 +376,7 @@ Promise.resolve().then(f)
 - 断链 The Broken Chain
 - 穿透 Fall Through
 
-### 十一、promise 你可能不知道的 6 件事
+### 十二、promise 你可能不知道的 6 件事
 
 - `then()`返回一个 forked Promise(分叉的 Promise)
 - 回调函数应该传递结果
@@ -378,7 +385,7 @@ Promise.resolve().then(f)
 - Promise 能被暂停
 - resolved 状态的 Promise 不会立即执行
 
-### 十二、手写 Promise
+### 十三、手写 Promise
 
 ```
 const PENDING = 'pending';
@@ -572,7 +579,7 @@ Promise.race = function(promises){
 
 参考资料：[手写 promise](https://github.com/xieranmaya/blog/issues/3)
 
-### 十三、Promise 几道面试题
+### 十四、Promise 几道面试题
 
 > 问：下面四个使用 promise 的语句之间的不同点在哪儿？
 
