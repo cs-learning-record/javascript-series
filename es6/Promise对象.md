@@ -31,7 +31,33 @@
 
 ### 一、基本用法
 
+ES6 规定，`Promise`对象是一个构造函数，用来生成`Promise`实例。
+
+```
+const promise = new Promise(function(resolve,reject){
+
+    if(/* 异步操作成功*/){
+        resolve(value);
+    }else{
+        reject(error);
+    }
+})
+```
+
+`Promise` 构造函数接受一个函数作为参数，该函数的两个参数分别是 `resolve` 和 `reject`。
+
+`resolve`函数的作用是，将`Promise`对象的状态从“未完成”变成“成功”（即从 pending 变成 resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；
+
+`reject`函数的作用是，将`Promse`对象的状态从“未完成”变为“失败”（即从 pending 变为 rejected），在异步操作失败时调用，并将异步操作报出的错误，作为参数传递出去。
+
 ### 二、then()
+
+`then`方法是定义在原型对象`Promise.prototype`上的。`then`方法可以接受两个回调函数作为参数。第一个回调函数是`Promise`对象的状态变为`resolved`时调用。其中，第二个函数是可选的，不一定要提供。`then`方法返回的是一个新`Promise`实例。
+
+```
+getJSON("/post/1.json").then(post=>getJSON(post.commentURL)).then(comments=>console.log("resolved:",comments),err=>console.log("rejected:",err))
+
+```
 
 ### 三、Promise 的异常捕获方式
 
@@ -57,7 +83,7 @@ var promise = new Promise(function(resolve,reject){
 
 #### 3.2 通过 Promise.prototype.catch 来进行错误处理
 
-生成**Promise**实例后，我们可以通过**Promise**原型上的 catch 方法来捕获 Promise 实例内部的错误。
+生成**Promise**实例后，我们可以通过**Promise**原型上的 catch 方法来捕获 Promise 实例内部的错误。`catch`方法返回的还是一个 Promise 对象。
 
 ```
 var promise = new Promise(function(resolve,reject){
@@ -178,15 +204,143 @@ promise.then(function(){
 
 ### 四、finally()
 
+`finally`方法用于指定不管`Promise`对象最后状态如何，都会执行的操作。
+
+```
+promise.then(result=>{...}).catch(error=>{...}).finally(()=>{...});
+```
+
+不管`promise`最后的状态，在执行完`then`或`catch`指定的回调函数以后，都会执行`finally`方法指定的回调函数。
+
+简单实现 finally
+
+```
+    Promise.prototype.finally = function(callback){
+        let P = this.contructor;
+        return this.then(
+            value => P.resolve(callback()).then(()=>value),
+            reason => P.resolve(callback()).then(()=>{throw reason})
+        )
+    }
+```
+
 ### 五、all()
+
+`Promise.all`方法用于将多个 Promise 实例，包装成一个新的 Promise 实例。`Promise.all`方法接受一个数组作为参数，`p1`、`p2`、`p3`都是`Promise`实例，如果不是就会先调`Promise.resolve`方法，再进一步处理。
+
+```
+var p = Promise.all([p1,p2,p3]);
+```
+
+p 的状态由`p1`、`p2`、`p3`决定，分成两种情况。
+
+1. 只有`p1`、`p2`、`p3`的状态都变成`fulfilled`，`p`的状态才会变成`fulfilled`，此时`p1`、`p2`、`p3`返回值组成一个数组，传递给`p`的回调函数。
+2. 只要`p1`、`p2`、`p3`之中有一个被`rejected`，`p`的状态就变成`rejected`，此时第一个被`reject`的实例的返回值，会传递给`p`的回调函数。
+
+```
+// 生成一个Promise对象的数组
+var promises = [2, 3, 5, 7, 11, 13].map(function (id) {
+  return getJSON('/post/' + id + ".json");
+});
+
+Promise.all(promises).then(function (posts) {
+  // ...
+}).catch(function(reason){
+  // ...
+});
+
+```
 
 ### 六、ace()
 
+`Promise.race`方法同样是将多个 Promise 实例，包装成一个新的 Promise 实例。
+
+```
+var p = Promise.race([p1,p2,p3]);
+```
+
+只要`p1`、`p2`、`p3`之中有一个实例率先改变状态，`p`的状态就跟着改变。那个率先改变的 Promise 实例的返回值，就传递给`p`的回调函数。
+
+`Promise.race`方法的参数与`Promise.all`方法一样，如果不是`Promise`实例，就会先调用`Promise.resolve`方法，将参数转为`Promise`实例，再进一步处理。
+
+```
+const p = Promise.race([
+  fetch('/resource-that-may-take-a-while'),
+  new Promise(function (resolve, reject) {
+    setTimeout(() => reject(new Error('request timeout')), 5000)
+  })
+]);
+p.then(response => console.log(response));
+p.catch(error => console.log(error));
+```
+
 ### 七、resolve()
 
-### 八、try()
+有时需要将现有对象转为 Promise 对象，`Promise.resolve`方法就赶到这个作用。
 
-### 九、错误用法及误区
+`Promise.resolve`等价于下面的写法。
+
+```
+Promise.resolve('foo')
+//  等价于
+new Promise(resolve=>resolve('foo'))
+```
+
+`resolve`方法的参数分成四种情况
+
+1. 参数是一个 `Promise`实例
+2. 参数是一个`thenable`对象
+3. 参数不是具有`then`方法的对象，或根本就不是对象
+4. 不带有任何参数
+
+#### 7.1 参数是一个 `Promise`实例
+
+如果参数是 Promise 实例，那么`Promise.resolve`将不做任何修改、原封不动地返回这个实例。
+
+#### 7.2 参数是一个`thenable`对象
+
+`thenable`对象指的是具有`then`方法的对象，`Promise.resolve`方法会将这个对象转为 Promise 对象，然后就立即执行`thenable`对象的`then`方法。
+
+```
+let thenable = {
+    then: function(resolve,reject){
+        resolve(42);
+    }
+};
+
+let p1 = Promise.resolve(thenable);
+p1.then(function(value){
+    console.log(value);     // 42
+})
+```
+
+`thenable`对象的`then`方法执行后，对象`p1`的状态就变为`resolved`，从而立即执行最后那个`then`方法指定的回调函数，输出 42。
+
+#### 7.3 参数不是具有`then`方法的对象，或根本就不是对象
+
+`Promise.resolve`方法允许调用时不带参数，直接返回一个`resolved`状态的`Promise`对象。
+
+#### 7.4 不带有任何参数
+
+### 八、reject()
+
+`reject(reason)`方法也会返回一个新的`Promise`实例，该实例的状态为`rejected`。
+
+```
+var p = Promise.reject('出错了');
+
+// 等同于
+var p = new Promise((resolve,reject)=> reject('出错了'))
+
+p.then(null,function(s){
+    console.log(s)
+})
+// 出错了
+```
+
+### 九、try()
+
+### 十、错误用法及误区
 
 - 当作回调来用 Callback Hell
 - 怎样用 forEach() 处理 promise
@@ -196,7 +350,7 @@ promise.then(function(){
 - 断链 The Broken Chain
 - 穿透 Fall Through
 
-### 十、promise 你可能不知道的 6 件事
+### 十一、promise 你可能不知道的 6 件事
 
 - `then()`返回一个 forked Promise(分叉的 Promise)
 - 回调函数应该传递结果
@@ -205,7 +359,7 @@ promise.then(function(){
 - Promise 能被暂停
 - resolved 状态的 Promise 不会立即执行
 
-### 十一、手写 Promise
+### 十二、手写 Promise
 
 ```
 const PENDING = 'pending';
@@ -399,7 +553,7 @@ Promise.race = function(promises){
 
 参考资料：[手写 promise](https://github.com/xieranmaya/blog/issues/3)
 
-### 十二、Promise 几道面试题
+### 十三、Promise 几道面试题
 
 > 问：下面四个使用 promise 的语句之间的不同点在哪儿？
 
