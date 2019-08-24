@@ -318,9 +318,20 @@ p1.then(function(value){
 
 #### 7.3 参数不是具有`then`方法的对象，或根本就不是对象
 
-`Promise.resolve`方法允许调用时不带参数，直接返回一个`resolved`状态的`Promise`对象。
+如果参数是一个原始值，或者是一个不具有`then`方法的对象，则`Promise.resolve`方法返回一个新的 Promise 对象，状态为`resolved`。
+
+```
+var p = Promise.resolve('Hello');
+
+p.then(function (s){
+  console.log(s)
+});
+// Hello
+```
 
 #### 7.4 不带有任何参数
+
+`Promise.resolve`方法允许调用时不带参数，直接返回一个`resolved`状态的`Promise`对象。
 
 ### 八、reject()
 
@@ -339,6 +350,14 @@ p.then(null,function(s){
 ```
 
 ### 九、try()
+
+实际开发中，经常遇到一种情况：不知道或者不想区分，函数`f`是同步函数还是异步操作，但是想用 Promise 来处理它。因为这样就可以不管`f`是否饮食异步操作，都用`then`方法指定下一步流程，用`catch`方法处理`f`抛出的错误。
+
+```
+Promise.resolve().then(f)
+```
+
+上面的写法有一个缺点，就是如果 f 是同步函数，那么它会在本轮事件循环的末尾执行。
 
 ### 十、错误用法及误区
 
