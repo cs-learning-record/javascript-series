@@ -203,6 +203,8 @@ promise.then(function(){
 
 该错误可以用尾调用 resolve 来避免。
 
+参考资料：[总结一下 ES6/ES7 中 promise、generator 和 async/await 中的异常捕获方法 ](https://github.com/forthealllight/blog/issues/16)
+
 ### 四、finally()
 
 `finally`方法用于指定不管`Promise`对象最后状态如何，都会执行的操作。
@@ -366,6 +368,24 @@ Promise.resolve().then(f)
 - 通过 Promise 封装 ajax 解决回调地狱问题
 - Generator 函数与 Promise 的结合
 
+#### 11.1 加载图片
+
+```
+
+```
+
+#### 11.2 通过 Promise 封装 ajax 解决回调地狱问题
+
+```
+
+```
+
+#### 11.3 Generator 函数与 Promise 的结合
+
+```
+
+```
+
 ### 十一、错误用法及误区
 
 - 当作回调来用 Callback Hell
@@ -376,6 +396,83 @@ Promise.resolve().then(f)
 - 断链 The Broken Chain
 - 穿透 Fall Through
 
+#### 11.1 当作回调来用 Callback Hell
+
+```
+loadAsync1().then(function(data1){
+    loadAsync2(data1).then(function(data2){
+        loadAsync3(data2).then(okFn,failFn)
+    });
+});
+```
+
+Promise 用来解决异步嵌套回调的，这种写法虽然可靠，但违背了 Promise 的设计初衷改成下面的写法，会让结构更加清晰
+
+```
+loadAsync1().then(function(data1){
+    return loadAsync2(data1)
+}).then(function(data2){
+    return loadAsync3(data2)
+}).then(okFn,failFn)
+```
+
+#### 11.2 怎样用 forEach() 处理 promise
+
+```
+db.allDocs({include_docs:true}).then(function(result){
+    result.rows.forEach(function(row){
+        db.remove(row.doc);
+    })
+}).then(function(){
+
+})
+```
+
+这段代码的问题在于第一个回调函数实际上返回的是`undefined`，也就意味着第二个函数并不是在所有的`db.remove()`执行结束之后才执行。
+
+```
+db.allDocs({include_docs:true}).then(function(result){
+    return Promise.all(result.rows.map(function(row){
+        return db.remove(row.doc);
+    }))
+}).then(function(arrayObject){
+    // All docs have
+})
+
+```
+
+#### 11.3 没有返回值
+
+```
+
+```
+
+#### 11.4 没有 Catch
+
+```
+
+```
+
+#### 11.5 catch()与 then(null, fn)
+
+```
+
+```
+
+#### 11.6 断链 The Broken Chain
+
+```
+
+```
+
+#### 11.7 穿透 Fall Through
+
+```
+
+```
+
+参考资料：[谈谈使用 promise 时候的一些反模式](https://efe.baidu.com/blog/promises-anti-pattern/)
+
 ### 十二、promise 你可能不知道的 6 件事
 
 - `then()`返回一个 forked Promise(分叉的 Promise)
@@ -384,6 +481,44 @@ Promise.resolve().then(f)
 - 错误能被恢复
 - Promise 能被暂停
 - resolved 状态的 Promise 不会立即执行
+
+#### 12.1 `then()`返回一个 forked Promise(分叉的 Promise)
+
+```
+
+```
+
+#### 12.2 回调函数应该传递结果
+
+```
+
+```
+
+#### 12.3 只能捕获来自上一级的异常
+
+```
+
+```
+
+#### 12.4 错误能被恢复
+
+```
+
+```
+
+#### 12.5 Promise 能被暂停
+
+```
+
+```
+
+#### 12.6 resolved 状态的 Promise 不会立即执行
+
+```
+
+```
+
+参考资料：[关于 Promise：你可能不知道的 6 件事](https://github.com/dwqs/blog/issues/1)
 
 ### 十三、手写 Promise
 
