@@ -441,16 +441,26 @@ db.allDocs({include_docs:true}).then(function(result){
 
 ```
 
+从根本上说，`Promise.all()`以一个 promise 对象组成的数组为输入，返回另一个 promise 对象。
+
 #### 11.3 没有返回值
 
 ```
-
+loadAsync1().then(function(data1){
+    loadAsync2(data1)
+}).then(function(data2){
+    loadAsync3(data2)
+}).then(res=>console.log(res))
 ```
 
 #### 11.4 没有 Catch
 
 ```
+loadAsync1().then(function(data1){
 
+}).then(function(data2){
+
+}).then(okFn,failFn)
 ```
 
 #### 11.5 catch()与 then(null, fn)
@@ -462,7 +472,16 @@ db.allDocs({include_docs:true}).then(function(result){
 #### 11.6 断链 The Broken Chain
 
 ```
+function loadAsyncFnX(){return Promise.resolve(1);}
+function doSth(){return 2;}
 
+function asyncFn(){
+    var promise = loadAsyncFnx()
+    promise.then(function(){
+            reutrn doSth();
+    })
+    return promise;
+}
 ```
 
 #### 11.7 穿透 Fall Through
