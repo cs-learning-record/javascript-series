@@ -18,7 +18,7 @@
 
 - 基本用法
 - then()
-- Promise 的异常捕获方式
+- catch()
 - finally()
 - all()
 - ace()
@@ -56,11 +56,49 @@ const promise = new Promise(function(resolve,reject){
 `then`方法是定义在原型对象`Promise.prototype`上的。`then`方法可以接受两个回调函数作为参数。第一个回调函数是`Promise`对象的状态变为`resolved`时调用。其中，第二个函数是可选的，不一定要提供。`then`方法返回的是一个新`Promise`实例。
 
 ```
-getJSON("/post/1.json").then(post=>getJSON(post.commentURL)).then(comments=>console.log("resolved:",comments),err=>console.log("rejected:",err))
+getJSON("/post/1.json")
+.then(post=>getJSON(post.commentURL))
+.then(
+    comments=>console.log("resolved:",comments),
+    err=>console.log("rejected:",err)
+);
 
 ```
 
-### 三、Promise 的异常捕获方式
+### 三、catch()
+
+`Promise.prototype.catch`方法是`.then(null, rejection)`的别名，用于指定发生错误时的回调函数。
+
+- 基本用法
+- Promise 的异常捕获方式
+
+#### 3.1 基本用法
+
+```
+getJSON('/posts.json').then(function(posts) {
+  // ...
+}).catch(function(error) {
+  // 处理 getJSON 和 前一个回调函数运行时发生的错误
+  console.log('发生错误！', error);
+});
+```
+
+上面代码中，`getJSON`方法返回一个`Promise`对象，如果该对象状态变为`resolved`，则会调用`then`方法指定的回调函数；如果异步操作抛出错误，状态就会变为`rejected`，就会调用`catch`方法指定的回调函数，处理这个错误。另外，`then`方法指定的回调函数，如果运行中抛出错误，也会被`catch`方法捕获。
+
+```
+var promise = new Promise(function(resolve, reject) {
+  resolve('ok');
+  throw new Error('test');
+});
+promise
+  .then(function(value) { console.log(value) })
+  .catch(function(error) { console.log(error) });
+// ok
+```
+
+上面代码中，`Promise`在`resolve`语句后面，再抛出错误，不会被捕获，等于没有抛出。因为 `Promise`的状态一旦改变，就永久保持该状态，不会再变了。
+
+#### 3.2 Promise 的异常捕获方式
 
 - 在 Promise 的构造体内进行错误处理
 - 通过 Promise.prototype.catch 来进行错误处理
@@ -68,7 +106,7 @@ getJSON("/post/1.json").then(post=>getJSON(post.commentURL)).then(comments=>cons
 - Promise.try 中的异常捕获
 - 在 Promise 中无法被捕获的错误
 
-#### 3.1 在 Promise 的构造体内进行错误处理
+##### 3.2.1 在 Promise 的构造体内进行错误处理
 
 ```
 var promise = new Promise(function(resolve,reject){
@@ -82,7 +120,7 @@ var promise = new Promise(function(resolve,reject){
 
 在 Promise 的构造体内进行错误处理，类似于我们在 ES5 中的错误处理方式。
 
-#### 3.2 通过 Promise.prototype.catch 来进行错误处理
+##### 3.2.2 通过 Promise.prototype.catch 来进行错误处理
 
 生成**Promise**实例后，我们可以通过**Promise**原型上的 catch 方法来捕获 Promise 实例内部的错误。`catch`方法返回的还是一个 Promise 对象。
 
@@ -133,7 +171,7 @@ promise.catch(function(e){
 // Error:test2
 ```
 
-#### 3.3 Promise.all 中的异常捕获
+##### 3.2.3 Promise.all 中的异常捕获
 
 如果组成**Promise.all**的**promise**有自己的错误捕获方法，那么**Promise.all**中的 catch 就不能捕获该错误。
 
@@ -158,7 +196,7 @@ p.then(function(){
 
 ```
 
-#### 3.4 Promise.try 中的异常捕获
+##### 3.2.4 Promise.try 中的异常捕获
 
 ES2018 中可以通过**Promise.try**来同步处理，可能是异步也可能是同步的函数。
 
@@ -185,7 +223,7 @@ Promise.try(f).then(function(){
 })
 ```
 
-#### 3.5 在 Promise 中无法被捕获的错误
+##### 3.2.5 在 Promise 中无法被捕获的错误
 
 在**promise**实例**resolve**之后，错误无法被捕获。
 
@@ -370,20 +408,57 @@ Promise.resolve().then(f)
 
 #### 11.1 加载图片
 
-```
+我们可以将图片的加载写成一个`Promise`，一旦加载完成，`Promise`的状态就发生变化。
 
+```
+const preloadImage = function(path){
+    return new Promise(function(resolve,reject){
+        var image = new Image();
+        image.onload = resolve;
+        image.onerror = reject;
+        image.src = path;
+    });
+}
 ```
 
 #### 11.2 通过 Promise 封装 ajax 解决回调地狱问题
 
 ```
 
+function getJSON(url){
+    return new Promise((resolve,reject) => {
+        var XHR = new XMLHttpRequest();
+        XHR.open('GET',url);
+        client.onreadystatechange = handler;
+        client.responseType = 'json';
+        client.setRequestHeader('Accept','application/json');
+        client.send();
+
+        function handler(){
+            if(this.readyState !==4){
+                return;
+            }
+            if(this.status === 200){
+                resolve(this.response);
+            }else{
+                reject(new Error(this.statusText));
+            }
+        };
+    });
+
+    return promise;
+}
+
 ```
 
 #### 11.3 Generator 函数与 Promise 的结合
 
-```
+使用`Generator`函数管理流程，遇到异步操作的时候，通常返回一个`Promise`对象。
 
+```
+function getFoo(){
+
+}
 ```
 
 ### 十一、错误用法及误区
@@ -462,12 +537,36 @@ loadAsync1().then(function(data1){
 
 }).then(okFn,failFn)
 ```
-
-#### 11.5 catch()与 then(null, fn)
-
-```
+这里的调用，并没有添加catch方法，那么如果中间某个环节发生错误，将不会被捕获，控制台将看不到任何错误，不利于调试查错，所以最好在最后添加catch方法用于捕获错误。
 
 ```
+loadAsync1()
+    .then(function(data1){
+        return loadAsync2(data1)
+    })
+    .then(function(data2){
+        return loadAsync3(data2)
+    }).then(okFn,failFn)
+    .catch(err=>console.log(err))
+```
+
+#### 11.5 `catch()`与 `then(null, fn)`并不完全相同
+
+```
+somePromise().then(function () {
+  throw new Error('oh noes');
+}).catch(function (err) {
+  // I caught your error! :)
+});
+
+somePromise().then(function () {
+  throw new Error('oh noes');
+}, function (err) {
+  // I didn't catch your error! :(
+});
+```
+
+当使用`then(resolveHandler,rejectHandler)`，`rejectHandler`不会捕获在`resolveHandler`中抛出的错误。
 
 #### 11.6 断链 The Broken Chain
 
@@ -482,15 +581,39 @@ function asyncFn(){
     })
     return promise;
 }
+
+asyncFn().then(res=>console.log(res)).catch(err=>console.log(err))      // 1
+```
+
+从执行结果来看，then中架设的参数其实并不是doSth()返回的结果，而是loadAsyncFnX()返回的结果，catch到的错误也是loadAsyncFnX()中的错误，所以doSth()的结果和错误将不会被后而的then中的回调捕获到，形成了断链，因为then方法将返回一个新的Promise对象，而不是原来的Promise对象
+
+```
+function loadAsyncFnX(){ return Promise.resolve(1); }
+function doSth(){ return 2; }
+
+function asyncFn(){
+	var promise = loadAsyncFnX()
+    return promise.then(function(){
+		return doSth();
+    })
+}
+
+asyncFn().then(res=>console.log(res)).catch(err=>console.log(err))
 ```
 
 #### 11.7 穿透 Fall Through
 
 ```
-
+Promise.resolve('foo').then(Promise.resolve('bar')).then(function(result){
+    console.log(result);
+})
 ```
 
-参考资料：[谈谈使用 promise 时候的一些反模式](https://efe.baidu.com/blog/promises-anti-pattern/)
+如果你认为输出的是 bar，那么你就错了。实际上它输出的是 foo！
+
+产生这样的输出是因为你给then方法传递了一个非函数的值，代码会这样理解：`then(null)`，因此导致前一个promise的结果产生了坠落的效果。
+
+参考资料：[深入理解 Promise (上)](http://coderlt.coding.me/2016/12/03/promise-in-depth-an-introduction-1/)
 
 ### 十二、promise 你可能不知道的 6 件事
 
@@ -504,20 +627,61 @@ function asyncFn(){
 #### 12.1 `then()`返回一个 forked Promise(分叉的 Promise)
 
 ```
-
+// Exhitbit A
+var p = new Promise(/*...*/);
+p.then(func1);
+p.then(func2);
 ```
+```
+// Exhitbit B
+var p = new Promise(/*...*/);
+p.then(func1).then(func2);
+```
+
+如果你认为两段代码等价，那么你可能认为promise仅仅就是一维回调函数的数组。然而，这两段代码并不等价。`p`每次调用`then()`都会返回一个`forked promise`。因此，在A中，如果`func1`抛出一个异常，`func2`依然能执行，而在B中，`func2`不会被执行，因为第一次调用返回了一个新`promise`，由于`func1`中抛出异常，这个`promise`被`rejected`了，结果`func2`被跳过不执行了。
 
 #### 12.2 回调函数应该传递结果
 
 ```
+var p = new Promise(function(resolve,reject){
+    resolve("hello world");
+})
 
+p.then(function(str){
+
+}).then(function(str){
+    console.log(str)
+})
 ```
+
+第二个`then()`中的`console.log`显示的是`undefined`，因为在promise的上下文中，回调函数像普通的回调函数一样传递结果。promise 期望你的回调函数或者返回同一个结果，或者返回其它结果，返回的结果会被传给下一个回调。
 
 #### 12.3 只能捕获来自上一级的异常
 
 ```
+new Promise(function(resolve,reject){
+    resolve('hello world');
+}).then(function(str){
+    throw new Error('uh oh');
+},undefined).then(undefined,function(error){
+    console.log(error);
+})
+```
 
 ```
+// Exhibit B
+new Promise(function(resolve,reject){
+    resolve('hello world');
+}).then(function(str){
+    throw new Error('uh oh');
+},function(error){
+    console.log(error);
+});
+```
+
+在A中，当第一个`then`抛出异常时，第二个`then`能捕获到该异常，并会弹出`uh oh`。这符合只捕获来自上一级异常的规则。
+
+在B中，正确的回调函数和错误的回调函数在同一级，也就是说，尽管在回调中抛出了异常，但是这个异常不会被捕获。事实上，B中的错误回调只有在`promise`被`rejected`或者`promise`自身抛出一个异常时才会被执行。
 
 #### 12.4 错误能被恢复
 
