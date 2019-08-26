@@ -15,6 +15,11 @@
 | 基本用法 | 绘制形状 | 添加样式和颜色 | 绘制文本 | 使用图片 | 变形  | 合成和裁剪 | 动画  | 像素操作 | 案例  |
 
 
+参考资料
+
+- [深入浅出动画帧后，我再也不怕动画了](https://mp.weixin.qq.com/s/D-Nd6fAp-X0mjqYwoU0hKg)
+- [H5-Animation](https://github.com/supperjet/H5-Animation)
+
 ## 联系作者
 
 <div align="center">
