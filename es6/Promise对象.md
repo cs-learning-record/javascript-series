@@ -685,21 +685,63 @@ new Promise(function(resolve,reject){
 
 #### 12.4 错误能被恢复
 
-```
+在一个错误回调中，如果没有重新抛出错误，promise会认为你已经恢复了该错误，promise的状态会转变为`resolved`。
 
+```
+var p = new Promise(function(resolve,reject){
+    reject(new Error('pebkac'));
+});  
+
+p.then(
+    undefined,
+    function(error){ }
+)
+ .then(
+    function(str){
+        alert('I am saved!');
+    },
+    function(error){
+     alert('Bad computer!');
+    }
+);   
 ```
 
 #### 12.5 Promise 能被暂停
 
-```
+仅仅因为你已经在一个`then()`函数中执行过代码，并不意味着你不能够暂停promise去做其他事情。为了暂停当前的 promise，或者要它等待另一个 promise 完成，只需要简单地在 then() 函数中返回另一个 promise。
 
 ```
+var p = new Promise(/*...*/);   
+
+p.then(function(str){
+    if(!loggedIn){
+        return new Promise(/*...*/);
+    }
+}) 
+ .then(function(str){
+    alert("Done!");
+ });
+```
+
+在上面的代码中，直到新的`promise`的状态是`resolved`解析后，`alert`才会显示。如果要在已经存在的异步代码中引入更多的依赖，这是一个很便利的方式。例如，你发现用户会话已经超时了，因此，你可能想要在继续执行后面的代码之前发起第二次登录。
 
 #### 12.6 resolved 状态的 Promise 不会立即执行
 
 ```
+function runme() {
+  var i = 0;
 
+  new Promise(function(resolve) {
+    resolve();
+  })
+  .then(function() {
+    i += 2;
+  });
+  alert(i);
+}
 ```
+
+你可能会认为弹出2，因为 promise 已经是 resolved ，then() 会立即执行(同步)。然而，promise 规范要求所有回调都是异步的，因此，alert 执行时 i 的值还没有被修改。
 
 参考资料：[关于 Promise：你可能不知道的 6 件事](https://github.com/dwqs/blog/issues/1)
 
@@ -896,8 +938,10 @@ Promise.race = function(promises){
 ```
 
 参考资料：
+
 - [手写 promise](https://github.com/xieranmaya/blog/issues/3)
 - [BAT前端经典面试问题：史上最最最详细的手写Promise教程](https://juejin.im/post/5b2f02cd5188252b937548ab)
+- [Promise原理讲解 && 实现一个Promise对象 ](https://juejin.im/post/5aa7868b6fb9a028dd4de672)
 
 ### 十四、Promise 几道面试题
 
