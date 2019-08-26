@@ -731,7 +731,9 @@ Promise.race = function(promises){
 
 ```
 
-参考资料：[手写 promise](https://github.com/xieranmaya/blog/issues/3)
+参考资料：
+- [手写 promise](https://github.com/xieranmaya/blog/issues/3)
+- [BAT前端经典面试问题：史上最最最详细的手写Promise教程](https://juejin.im/post/5b2f02cd5188252b937548ab)
 
 ### 十四、Promise 几道面试题
 
@@ -751,6 +753,8 @@ doSomething().then(doSomethingElse());
 doSomething().then(doSomethingElse);
 
 ```
+
+[Promise 必知必会（十道题）](https://juejin.im/post/5a04066351882517c416715d)
 
 ### 参考资料
 
