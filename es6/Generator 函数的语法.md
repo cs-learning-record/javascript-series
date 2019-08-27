@@ -5,6 +5,21 @@
 
 Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为与传统函数完全不同。
 
+Generator函数有两个特征：
+
+- `function`关键字与函数名之间有一个星号；
+- 函数体内`yield`表达式，定义不同的内部状态；
+
+```
+function* helloWorldGenerator() {
+  yield 'hello';
+  yield 'world';
+  return 'ending';
+}
+
+var hw = helloWorldGenerator();
+```
+
 ## 关于作者
 
 一个工作八年的草根程序员。
@@ -39,6 +54,8 @@ Generator 函数是 ES6 提供的一种异步编程解决方案，语法行为�
 ```
 
 ### 二、`next`方法的参数
+
+`yield`表达式本身没有返回值，或者说总是返回`undefined`。`next`方法可以带一个参数，该参数就会被当作上一个`yield`表达式的返回值。
 
 ```
 ```
