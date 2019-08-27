@@ -45,12 +45,33 @@ var hw = helloWorldGenerator();
 
 #### 1.1 yield表达式
 
+由于Generator函数返回的遍历器对象，只有调用`next`方法才会遍历下一个内部状态，所以其实提供了一种可以暂停执行的函数。`yield`表达式就是暂停标志。
+
 ```
+function* gen() {
+  yield  123 + 456;
+}
 ```
+
+遍历器对象的`next`方法的运行逻辑如下：
+
+1. 遇到`yield`表达式，就暂停执行后面的操作，并将紧跟在`yield`后面的那个表达式的值，作为返回的对象的`value`属性值。
+2. 下一次调用`next`方法时，再继续往下执行，直到遇到下一个`yield`表达式。
+3. 如果没有再遇到新的`yield`表达式，就一直运行到函数结束，直到`return`语句为止，并将`return`语句后面的表达式的值，作为返回的对象的value属性值。
+4. 如果该函数没有`return`语句，则返回的对象的`value`属性值为`undefined`。
 
 #### 1.2 与Iterator接口的关系
 
+任意一个对象的`Symbol.iterator`方法，等于该对象的遍历器生成函数，调用该函数会返回该对象的一个遍历器对象。
+
 ```
+var myIterable = {};
+myIterable[Symbol.iterator] = function*(){
+  yield 1;
+  yield 2;
+  yield 3;
+};
+[...myIterable] // [1, 2, 3]
 ```
 
 ### 二、`next`方法的参数
@@ -62,7 +83,22 @@ var hw = helloWorldGenerator();
 
 ### 三、`for...of`循环
 
+`for...of`循环可以自动遍历Generator函数运行时生成的`Iterator`对象，且此时不再需要调用`next`方法。
+
 ```
+function * foo(){
+  yield 1;
+  yield 2;
+  yield 3;
+  yield 4;
+  yield 5;
+  return 6;
+}
+
+for(let v of foo()){
+  console.log(v);
+}
+// 1 2 3 4 5
 ```
 
 ### 四、Generator.prototype.throw()
