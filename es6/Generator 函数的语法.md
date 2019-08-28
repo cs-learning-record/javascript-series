@@ -191,41 +191,130 @@ gen.next(1);  // Object {value:1,done:true}
 `throw()`是将`yield`表达式替换成一个`throw`语句。
 
 ```
-gen.throw(new Error('出错了'))
+gen.throw(new Error('出错了'));   // Uncaught Error:出错了
+// 相当于将 let result = yield x+y
+// 替换成 let result = throw(new Error('出错了'));
 ```
 
 `return()`是将`yield`表达式替换成一个`return`语句。
 
 ```
+gen.return(2);    // Object {value:2,done:true}
+// 相当于将let result = yield x+y
+// 替换成 let result = return 2;
 ```
 
 ### 七、`yield*`表达式
 
+`yield*`表达式，用来在一个Generator函数里面执行另一个Generator函数。
+
 ```
+function * foo(){
+  yield 'a';
+  yield 'b';
+}
+
+function * bar(){
+  yield 'x';
+  yield* foo();
+  yield 'y';
+}
+
+// 等同于
+function * bar(){
+  yield 'x';
+  yield 'a';
+  yield 'b';
+  yield 'y';
+}
+
 ```
 
 ### 八、作为对象属性的Generator函数
 
+如果一个对象的属性是Generator函数，可以简写成下面的形式。
+
 ```
+let obj = {
+  * myGeneratorMethod(){
+    ...
+  }
+}
 ```
 
 ### 九、`Generator`函数的`this`
 
+ES6规定这个遍历器是Generator函数的实例，也继承了Generator函数的`prototype`对象上的方法。
+
+如果把`Generator`当作普通的构造函数，并不会生效，因为`Generator`返回的总是遍历器对象，而不是`this`对象。
+
 ```
+function* g(){
+  this.a= 11;
+}
+
+let obj = g();
+obj.a // undefined
+
+function* F() {
+  yield this.x = 2;
+  yield this.y = 3;
+}
+
+new F()
+// TypeError: F is not a constructor
+```
+
+有一个变通方法，首先，生成一个空对象，使用`call`方法绑定`Generator`函数的内部的`this`。这样，构造函数调用以后，这个空对象就是`Generator`函数的实例对象了。
+
+```
+function* F(){
+
+}
+var obj = {};
+var f = F.call(obj);
+
+f.next();   // Object {value:2,done:false}
+f.next();   // Object {value:3,done:false}
+f.next();   // Object {value:undefined,done:true}
+
+obj.a // 1
+obj.b // 2
+obj.c // 3
 ```
 
 ### 十、含义
-
-协程是一种程序运行的方式，可以理解成“”
 
 - Generator与状态机
 - Generator与协程
 
 #### 10.1 Generator与状态机
 
-传统的“子例”
+Generator 是实现状态机的最佳结构。
+
+```
+var clock = function *(){
+  while(true){
+    console.log('Tick!');
+    yield;
+    console.log('Tock!');
+    yield;
+  }
+}
+```
 
 #### 10.2 Generator与协程
+
+协程是一种程序运行的方式，可以理解成“协作的线程”或“协作的函数”，协程既可以用单线程实现，也可以用多线程实现。前者是一种特殊的子例程，后者是一种特殊的线程。
+
+- 协程与子例程的差异
+- 协程与普通线程的差异
+
+##### 10.2.1 协程与子例程的差异
+
+传统的“子例”
+
+##### 10.2.2 协程与普通线程的差异
 
 ### 十一、应用
 
