@@ -145,9 +145,63 @@ const MyClass = class Me{
 
 ### 二、静态方法
 
+类相当于实例的原型，所有在类中定义的方法，都会被实例继承。如果在一个方法前，加上static关键字，就表示该方法不会被实例继承，而是直接通过类来调用，这就称为“静态方法”。
+
+```
+class Foo{
+    static classMethod(){
+        return 'hello';
+    }
+}
+
+Foo.classMethod()   // hello
+```
+
 ### 三、实例属性的新写法
 
+实例属性除了定义在`constructor()`方法里面的`this`上面，也可以定义在类的最顶层。
+
+```
+class IncreasingCounter {
+  constructor() {
+    this._count = 0;
+  }
+  get value() {
+    console.log('Getting the current value!');
+    return this._count;
+  }
+  increment() {
+    this._count++;
+  }
+}
+```
+
+另一种写法是，这个属性也可以定义在类的最顶层，其他都不变。
+
+```
+class IncreasingCounter{
+    _count = 0;
+    get value(){
+        console.log('Getting the current value!');
+        return this._count;
+    }
+    increment(){
+        this._count++;
+    }
+}
+```
+
 ### 四、静态属性
+
+静态属性指的是Class本身的属性，即`Class.propName`，而不是定义在实例对象（`this`）上的属性。
+
+```
+class Foo {
+}
+
+Foo.prop = 1;
+Foo.prop // 1
+```
 
 ### 五、私有方法和私有属性
 
@@ -159,6 +213,63 @@ const MyClass = class Me{
 - 命名上加以区别
 - 将私有方法移出模块
 - 利用`Symbol`
+
+#### 5.1.1 命名上加以区别
+
+```
+class Widget{
+
+    // 公有方法
+    foo(baz){
+        this._bar(baz);
+    }
+
+    // 私有方法
+    _bar(baz){
+        return this.snaf = baz;
+    }
+}
+```
+
+#### 5.1.2 将私有方法移出模块
+
+模块内部的所有方法都是对外可见的
+
+```
+class Widget{
+    foo (baz){
+        bar.call(this,baz);
+    }
+}
+
+function bar(baz){
+    return this.snaf = baz;
+}
+```
+
+#### 5.1.3 利用`Symbol`
+
+利用`Symbol`值的唯一性，将私有方法的名字命名为一个`Symbol`值。
+
+```
+const bar = Symbol('bar');
+const snaf = Symbol('snaf');
+
+export default class myClass{
+
+  // 公有方法
+  foo(baz) {
+    this[bar](baz);
+  }
+
+  // 私有方法
+  [bar](baz) {
+    return this[snaf] = baz;
+  }
+
+  // ...
+};
+```
 
 #### 5.2 私有属性
 
@@ -178,6 +289,19 @@ class IncreasingCounter{
 ```
 
 ### 六、new.target属性
+
+`new`是从构造函数生成实例对象的命令，ES6为`new`命令引入了一个`new.target`属性，该属性一般用在构造函数之中，返回`new`命令作用于的那个构造函数。
+
+```
+function Person(name){
+    if(new.target !== undefined){
+        this.name = name;
+    }else{
+        throw new Error('必须使用new命令生成实例');
+    }
+}
+
+```
 
 ### 参考资料
 
