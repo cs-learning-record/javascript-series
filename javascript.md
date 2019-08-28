@@ -45,6 +45,7 @@
 26. [函数式编程](https://llh911001.gitbooks.io/mostly-adequate-guide-chinese/content/)
 27. [前端进阶系列](https://github.com/yygmind/blog)
 28. [JavaScript 深入系列](https://github.com/mqyqingfeng/Blog)
+29. [JS全局变量是如何工作的？](https://mp.weixin.qq.com/s/VFZ7Fvly4Zk8bHi0X-tXuA)
 
 ## 联系作者
 

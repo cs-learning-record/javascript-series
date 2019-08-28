@@ -40,7 +40,8 @@
 17. [一篇文章构建你的 NodeJS 知识体系](https://juejin.im/post/5c4c0ee8f265da61117aa527)
 18. [Node.js技术栈](https://github.com/Q-Angelo/Nodejs-Roadmap)
 19. [深入理解Node.js 进程与线程(8000长文彻底搞懂)](https://segmentfault.com/a/1190000020077274)
-20. [Node.js区块链开发](https://github.com/imfly/bitcoin-on-nodejs)
+20. [干货 | 浅谈Node.js在携程的应用](https://mp.weixin.qq.com/s/rAxzyZXB2tbdJpJkzfOT7A)
+21. [Node.js区块链开发](https://github.com/imfly/bitcoin-on-nodejs)
 
 ## 联系作者
 
