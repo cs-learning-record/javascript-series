@@ -79,7 +79,22 @@ myIterable[Symbol.iterator] = function*(){
 `yield`表达式本身没有返回值，或者说总是返回`undefined`。`next`方法可以带一个参数，该参数就会被当作上一个`yield`表达式的返回值。
 
 ```
+function * f(){
+  for(var i = 0; true;i++){
+    var reset = yield i;
+    if(reset) { i = -1; }
+  }
+}
+
+var g = f();
+
+g.next()  // {value:0,done:false}
+g.next()  // {value:1,done:false}
+g.next(true)  // {value:0,done:false}
+
 ```
+
+注意，由于`next`方法的参数表示上一个`yield`表达式的返回值，所以在第一次使用`next`方法时，传递参数是无效的。V8引擎直接忽略第一次使用`next`方法时的参数，只有从第二次使用`next`方法开始，参数才是有效的。
 
 ### 三、`for...of`循环
 
@@ -101,17 +116,85 @@ for(let v of foo()){
 // 1 2 3 4 5
 ```
 
+除了`for...of`循环以外，扩展运算符(`...`)、解构赋值和`Array.from`方法内部调用的，都是遍历器接口。这意味着，它们都可以将Generator函数返回的Iterator对象，作为参数。
+
+
 ### 四、Generator.prototype.throw()
 
+Generator函数返回的遍历器对象，都有一个`throw`方法，可以在函数体外抛出错误，然后在Generator函数体内捕获。
+
 ```
+var g = function*(){
+  try{
+    yield;
+  }catch(e){
+    console.log('内部捕获',e);
+  }
+}
+
+var i = g();
+i.next();
+
+try{
+  i.throw('a');
+  i.throw('b');
+}catch(e){
+  console.log('外部捕获',e);
+}
+
+// 内部捕获e
+// 外部捕获e
+
 ```
 
 ### 五、Generator.prototype.return()
 
+`Generator`函数返回的遍历器对象，还有一个`return`方法，可以返回给定的值，并且终结遍历Generator函数。
+
 ```
+function * gen(){
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+var g = gen();
+
+g.next()  // {value:1,done:false}
+g.next('foo')  // {value:'foo',done:true}
+g.next()  // {value:undefined,done:true}
 ```
 
+以面代码中，遍历器对象`g`调用`return`方法后，返回值的`value`属性就是`return`方法的参数`foo`。并且，Generator函数的遍历就终止了，返回值的`done`属性为`true`，以后再调用`next`方法，`done`属性总是返回`true`。
+
 ### 六、`next()、throw()、return()`的共同点
+
+`next()`、`throw()`、`return()`这三个方法本质上是同一件事，可以放在一起理解。它们的作用都是让Generator函数恢复执行，并且使用不同的语句替换`yield`表达式。
+
+`next()`是将`yield`表达式替换成一个值。
+
+```
+const g = function*(x,y){
+  let result = yield x+y;
+  return result;
+};
+
+const gen = g(1,2);
+gen.next();   // Object {value:3,done:false}
+gen.next(1);  // Object {value:1,done:true}
+
+// 相当于将 let result = yield x+y;
+// 替换成 let result = 1;
+
+```
+
+`throw()`是将`yield`表达式替换成一个`throw`语句。
+
+```
+gen.throw(new Error('出错了'))
+```
+
+`return()`是将`yield`表达式替换成一个`return`语句。
 
 ```
 ```
