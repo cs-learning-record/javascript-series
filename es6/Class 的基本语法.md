@@ -3,7 +3,30 @@
 
 ## 前言
 
-本人平时学习及收集内容，欢迎参入一起讨论。
+ES6 的类，完全可以看作构造函数的另一种写法。
+
+```
+class Ponit{
+   constructor(){
+       // ...
+   }
+
+   toString(){
+       // ...
+   }
+
+   toValue(){
+
+   }
+}
+
+// 等同于
+Point.prototype = {
+  constructor() {},
+  toString() {},
+  toValue() {},
+};
+```
 
 ## 关于作者
 
@@ -28,16 +51,97 @@
 
 #### 1.1 constructor方法
 
+`constructor`方法是类的默认方法，通过`new`命令生成对象实例时，自动调用该方法。一个类必须有`constructor`方法，如果没有显式定义，一个空的`constructor`方法会被默认添加。
+
 ```
+class Point{
+
+}
+
+// 等同于
+class Point[
+    construct(){}
+]
 ```
+
+类必须使用`new`调用，否则会报错。
 
 #### 1.2 类的实例
 
+生成类的实例的写法，与 ES5 完全一样，也是使用`new`命令。
+
+```
+class Point{
+    // ...
+}
+
+var point = new Point(2,3);
+```
+
 #### 1.3 取值函数和存值函数
+
+与ES5一样，在“类”的内部可以使用`get`和`set`关键字，对某个属性设置存值函数和取值函数，拦截该属性的存取行为。
+
+```
+class MyClass{
+    constructor(){
+        // ...
+    }
+    get prop(){
+        return 'getter';
+    }
+    set prop(value){
+        console.log('setter'+value);
+    }
+}
+
+let inst = new MyClass();
+
+inst.prop = 123;
+// setter:123
+
+inst.prop
+// 'getter'
+```
 
 #### 1.4 属性表达式
 
+类的属性名，可以采用表达式。
+
+```
+let methodName = 'getArea';
+
+class Square{
+    constructor(length){
+        //  ...
+    }
+    [methodName](){
+        // ...
+    }
+}
+```
+
 #### 1.5 Class表达式
+
+与函数一样，类也可以使用表达式的形式定义。
+
+```
+const MyClass = class Me{
+    getClassName(){
+        return Me.name;
+    }
+}
+```
+
+需要注意的是，这个类的名字是`MyClass`而不是`Me`，`Me`只在Class的内部代码可用，指代当前类。
+
+**注意点**
+
+- 严格模式
+- 不存在提升
+- name属性
+- Generator方法
+- this的指向
 
 ### 二、静态方法
 
@@ -46,6 +150,32 @@
 ### 四、静态属性
 
 ### 五、私有方法和私有属性
+
+- 私有方法
+- 私有属性
+
+#### 5.1 私有方法
+
+- 命名上加以区别
+- 将私有方法移出模块
+- 利用`Symbol`
+
+#### 5.2 私有属性
+
+方法是在属性名之前，使用`#`表示。
+
+```
+class IncreasingCounter{
+    #count = 0;
+    get value(){
+        console.log('Getting the current value!');
+        return this.#count;
+    }
+    increment(){
+        this.#count++;
+    }
+}
+```
 
 ### 六、new.target属性
 
