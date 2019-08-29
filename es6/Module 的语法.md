@@ -11,36 +11,132 @@
 
 ## 内容
 
-- export命令
-- import命令
+- export 命令
+- import 命令
 - 模块的整体加载
-- export default命令
-- export与import的复合写法
+- export default 命令
+- export 与 import 的复合写法
 - 模块的继承
 - 跨模块常量
 
-### 一、export命令
+### 一、export 命令
 
 `export`命令用于规定模块的对外接口，`import`命令用于输入其他模块提供的功能。
 
 ```
 export var firstName = 'Tony';
+export var lastName = 'Jackson';
+export var year = 1958;
+
+export {firstName,lastName,year};
 ```
 
-### 二、import命令
+`export`输出的变量就是本来名字，但是可以使用`as`关键字重命名。
 
 ```
+function v1(){...}
+function v2(){...}
+
+export{
+    v1 as streamV1,
+    v2 as streamV2,
+    v2 as streamLatestVersion
+}
+```
+
+`function`和`class`的输出
+
+```
+export function f(){};
+
+function f(){
+
+}
+export {f};
+
+```
+
+### 二、import 命令
+
+使用`export`命令定义了模块的对外接口以后，其他 JS 文件就可以通过`import`命令加载这个模块。
+
+```
+import {firstName,lastName,year} from './profile.js';
+
+function setName(element){
+    element.textContent = firstName + ' '+lastName;
+}
+```
+
+上面代码的`import`命令，用于加载`profile.js`文件，并从中输入变量。
+
+注意，`import`命令具有提升效果，会提升到整个模块的头部，首先执行。
+
+```
+foo();
+
+import {foo} from 'my_module';
+```
+
+上面的代码不会报错，因为`import`的执行早于`foo`的调用。
+
+`import`命令输入的变量都是只读，因为它的本质是输入接口。
+
+```
+import {a} from './xxx.js'
+
+a = {}; // Syntax Error : 'a' is read-only;
+```
+
+由于`import`是静态执行，所以不能使用表达式和变量，这些只有在运行时才能得到结果的语法结构。
+
+```
+// 报错
+import { 'f' + 'oo' } from 'my_module';
+
+// 报错
+let module = 'my_module';
+import { foo } from module;
+
+// 报错
+if (x === 1) {
+  import { foo } from 'module1';
+} else {
+  import { foo } from 'module2';
+}
 ```
 
 ### 三、模块的整体加载
 
-### 四、export default命令
+除了指定加载某个输出值，还可以使用整体加载，即用星号（`*`）指定一个对象，所有输出值都加载在这个对象上面
 
-### 五、export与import的复合写法
+```
+
+```
+
+### 四、export default 命令
+
+```
+
+```
+
+### 五、export 与 import 的复合写法
+
+```
+
+```
 
 ### 六、模块的继承
 
+```
+
+```
+
 ### 七、跨模块常量
+
+```
+
+```
 
 ### 参考资料
 
