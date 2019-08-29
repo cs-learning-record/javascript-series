@@ -16,7 +16,7 @@
 - 模块的整体加载
 - export default 命令
 - export 与 import 的复合写法
-- 模块的继承
+- import()
 - 跨模块常量
 
 ### 一、export 命令
@@ -145,12 +145,6 @@ export default function () {
 
 ### 五、export 与 import 的复合写法
 
-```
-
-```
-
-### 六、模块的继承
-
 如果在一个模块之中，先输入后输出同一个模块，`import`语句可以与`export`语句写在一起。
 
 ```
@@ -161,10 +155,29 @@ import { foo,bar} from 'my_module';
 export {foo,bar};
 ```
 
+### 六、import()
+
+`import()`类似于 Node 的`require`方法，区别主要是前者是异步加载，后者是同步加载。`import()`函数可以用在任何地方，不仅仅是模块，非模块的脚本也可以使用。
+
+**适用场合**
+
+- 按需加载
+- 条件加载
+- 动态的模块路径
+
 ### 七、跨模块常量
 
-```
+`const`声明的常量只在当前代码块有效。如果想设置跨模块的常量（即跨多个文件），或者说一个值要被多个模块共享，可以采用下面的写法。
 
+```
+export const db = {
+  url: 'http://my.couchdbserver.local:5984',
+  admin_username: 'admin',
+  admin_password: 'admin password'
+};
+
+// constants/user.js
+export const users = ['root', 'admin', 'staff', 'ceo', 'chief', 'moderator'];
 ```
 
 ### 参考资料
