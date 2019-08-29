@@ -205,7 +205,27 @@ Promise 的写法。
 ```
 
 function chainAnimationsPromise(elem,animations){
+    
+    // 变量ret用来保存上一个动画的返回值
+    let ret = null;
 
+    // 新建一个空的Promise
+    let p = Promise.resolve();
+
+    // 使用then方法，添加所有动画
+    for(let anim of animations){
+        p = p.then(function(val){
+            ret = val;
+            return anim(elem);
+        })
+    }
+
+    // 返回一个部署了错误捕捉机制的Promise
+    return p.catch(function(e){
+        //  ...
+    }).then(function(){
+        return ret;
+    })
 }
 
 ```
@@ -213,13 +233,35 @@ function chainAnimationsPromise(elem,animations){
 Generator 函数的写法。
 
 ```
-
+function chainAnimationsGenerator(elem,animations){
+    return spawn(function*(){
+        let ret = null;
+        try{
+            for(let anim of animations){
+                ret = yield anim(elem);
+            }
+        }catch(e){
+            //  ...
+        }
+        return ret;
+    })
+}
 ```
 
 async 函数的写法。
 
 ```
-
+async function chainAnimationsAsync(elem,animations){
+    let ret = null;
+    try{
+        for(let anim of animations){
+            ret = await anim(elem);
+        }
+    }catch(e){
+        /*忽略错误，继续执行*/
+    }
+    return ret;
+}
 ```
 
 可以看到 Async 函数的实现最简洁，最符合语义，几乎没有语义不相关的代码。它将 Generator 写法中的自动执行器，改在语言层面提供，不暴露给用户，因此代码量最少。如果使用 Generator 写法，自动执行器需要用户自己提供。
