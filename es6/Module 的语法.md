@@ -111,14 +111,37 @@ if (x === 1) {
 除了指定加载某个输出值，还可以使用整体加载，即用星号（`*`）指定一个对象，所有输出值都加载在这个对象上面
 
 ```
+// circle.js
 
+export function area(radius){
+    return  Math.PI * radius * radius;
+}
+
+export function circumference(radius){
+    return 2* Math.PI*radius;
+}
+
+// main.js
+import * as circle from './circle';
+
+console.log('圆面积：'+circle.area(4);)
+console.log('圆周长：'+circle.circumference(14);)
 ```
 
 ### 四、export default 命令
 
-```
+为模块指定默认输出，就要用到`export.default`命令。
 
 ```
+// export-default.js
+export default function () {
+  console.log('foo');
+}
+```
+
+`export default`命令用于指定模块的默认输出。显然，一个模块只能有一个默认输出，因此`export default`命令只能使用一次。
+
+正是因为 `export default` 命令其实只是输出一个叫做 `default` 的变量，所以它后面不能跟变量声明语句。
 
 ### 五、export 与 import 的复合写法
 
@@ -128,8 +151,14 @@ if (x === 1) {
 
 ### 六、模块的继承
 
-```
+如果在一个模块之中，先输入后输出同一个模块，`import`语句可以与`export`语句写在一起。
 
+```
+export {foo,bar} from 'my_module';
+
+//  可以简单理解为
+import { foo,bar} from 'my_module';
+export {foo,bar};
 ```
 
 ### 七、跨模块常量
