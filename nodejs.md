@@ -42,6 +42,7 @@
 19. [深入理解Node.js 进程与线程(8000长文彻底搞懂)](https://segmentfault.com/a/1190000020077274)
 20. [干货 | 浅谈Node.js在携程的应用](https://mp.weixin.qq.com/s/rAxzyZXB2tbdJpJkzfOT7A)
 21. [Node.js区块链开发](https://github.com/imfly/bitcoin-on-nodejs)
+22. [Node.js 是什么？为什么要用它？](https://mp.weixin.qq.com/s/_00iHL1a-CbLCRsDY2mi5A)
 
 ## 联系作者
 
