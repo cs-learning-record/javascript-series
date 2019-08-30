@@ -43,6 +43,7 @@
 20. [干货 | 浅谈Node.js在携程的应用](https://mp.weixin.qq.com/s/rAxzyZXB2tbdJpJkzfOT7A)
 21. [Node.js区块链开发](https://github.com/imfly/bitcoin-on-nodejs)
 22. [Node.js 是什么？为什么要用它？](https://mp.weixin.qq.com/s/_00iHL1a-CbLCRsDY2mi5A)
+23. [饿了么 Node.js 面试](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
 
 ## 联系作者
 
