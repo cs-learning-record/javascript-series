@@ -229,7 +229,7 @@ class DistributedEdit extends mix(Loggable, Serializable) {
 ### 参考资料
 
 - [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/class-extends)
-- [《ECMAScript 6 入门》 第三版]()
+- [《ECMAScript 6 入门》 第三版](https://yjhenan.gitbooks.io/-ecmascript-6/content/docs/class-extends.html)
 
 ## 联系作者
 
