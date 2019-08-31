@@ -192,58 +192,178 @@ result.value.then(function(data){
 
 ### 四、Thunk 函数
 
-- 参数的求值策略
+Thunk 函数是自动执行 Generator 函数的一种方法。
+
 - Thunk 函数的含义
 - js 语言的 Thuck 函数
-- Thunkify 模块
 - Generator 函数的流程管理
 - Thunk 函数的自动流程管理
 
-#### 4.1 参数的求值策略
+#### 4.1 Thunk 函数的含义
 
-#### 4.1 参数的求值策略
+编译器的“传名调用”实现，往往是将参数放到一个临时函数之中，再将这个临时函数传入函数体。这个临时函数就叫做 Thunk 函数。
 
-#### 4.1 参数的求值策略
+#### 4.2 js 语言的 Thuck 函数
 
-#### 4.1 参数的求值策略
+经过转换器处理，它变成了一个单参数函数，只接受回调函数作为参数。这个单参数版本，就叫做 Thunk 函数。
 
-#### 4.1 参数的求值策略
+Thunk 函数转换器。
+
+```
+// ES5版本
+var Thunk = function(fn){
+    return function(){
+        var args = Array.prototype.slice.call(arguments);
+        return function (callback){
+            args.push(callback);
+            return fn.apply(this,args);
+        }
+    };
+}
+
+// ES6版本
+const Thunk = function(fn){
+    return function(...args){
+        return function(callback){
+            return fn.call(this,...args,callback);
+        }
+    }
+};
+
+```
+
+#### 4.3 Generator 函数的流程管理
+
+Thunk 函数可以用于 Generator 函数的自动流程管理。
+
+```
+var fs = requires('fs');
+var thunkify = require('thunkify');
+var readFileThunk = thunkify(fs.readFile);
+
+var gen = function* (){
+    var r1 = yield readFileThunk('/etc/fstab');
+    console.log(r1.toString());
+    console.log(r2.toString())
+}
+```
+
+#### 4.4 Thunk 函数的自动流程管理
+
+基于 Thunk 函数的 Generator 执行器。
+
+```
+function run(fn){
+    var gen = fn();
+
+    function next(err,data){
+        var result = gen.next(data);
+        if(result.done)  return;
+        result.value(next);
+    }
+    next();
+}
+
+function* g() {
+  // ...
+}
+
+run(g);
+```
 
 ### 五、co 函数
 
 - 基本用法
 - co 模块的原理
-- 基于 Promise 对象的自动执行
 - co 模块的源码
 - 处理并发的异步操作
 
 #### 5.1 基本用法
 
-```
+`co`函数返回一个`Promise`对象，因此可以用`then`方法添加回调函数。
 
+```
+co.(gen).then(function(){
+    console.log('Generator 函数执行完成');
+})
 ```
 
 #### 5.2 co 模块的原理
 
-```
+Generator 是一个异步操作的容器。它的自动执行需要一种机制，当异步操作有了结果，能够自动交回执行权。
+
+两种方法可以做到这一点
+
+1. 回调函数。将异步操作包装成 Thunk 函数，在回调函数里面交回执行权。
+2. Promise 对象。将异步操作包装成 Promise 对象，用`then`方法交回执行权。
+
+co 模块其实就是将两种自动执行器（Thunk 函数和 Promise 对象），包装成一个模块。
+
+#### 5.3 co 模块的源码
+
+1. `co` 函数接受 Generator 函数作为参数，返回一个 Promise 对象。
+2. `co` 先检查参数 gen 是否为 Generator 函数。如果是，就执行该函数，得到一个内部指针对象；如果不是就返回，并将 Promise 对象的状态改为 resolved。
+3. `co` 将 Generator 函数的内部指针对象的 next 方法，包装成 `onFulfilled` 函数。这主要是为了能够捕捉抛出的错误。
+4. next 函数，它会反复调用自身。
 
 ```
+function co(gen){
+    var ctx = this;
+    return new Promise(function(resolve,reject){
+        if( type gen === 'function') gen = gen.call(ctx);
+        if(!gen || typeof gen.next !=='function') return resolve(gen);
 
-#### 5.3 基于 Promise 对象的自动执行
+        onFulfilled();
+        function onFulfilled(res){
+            var ret;
+            try{
+                ret = gen.next(res);
+            }catch(e){
+                return reject(e);
+            }
+            next(ret);
+        }
 
+        function next(ret){
+            if (ret.done) return resolve(ret.value);
+            var value = toPromise.call(ctx, ret.value);
+            if (value && isPromise(value)) return value.then(onFulfilled, onRejected);
+            return onRejected(
+                new TypeError(
+                'You may only yield a function, promise, generator, array, or object, '
+                + 'but the following object was passed: "'
+                + String(ret.value)
+                + '"'
+                )
+            );
+        }
+    });
+}
 ```
 
-```
+#### 5.4 处理并发的异步操作
 
-#### 5.4 co 模块的源码
-
-```
+co 支持迸发的异步操作，即允许某些操作同时进行，等到它们全部完成，才进行下一步。
 
 ```
+// 数组的写法
+co(function* (){
+    var res = yield[
+        Promise.resolve(1),
+        Promise.resolve(2)
+    ];
+    console.log(res);
+}).catch(onerror);
 
-#### 5.5 处理并发的异步操作
 
-```
+// 对象的写法
+co(function*() {
+    var res = yield{
+        1:Promise.resolve(1),
+        2:Promise.resolve(2)
+    };
+    console.log(res);
+}).catch(onerror);
 
 ```
 
