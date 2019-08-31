@@ -26,11 +26,11 @@ ES5 的继承，实质是先创造子类的实例对象`this`，然后再将父�
 
 ## 内容
 
-- Object.getPrototypeOf()
-- super 关键字
-- 类的 prototype 属性和**proto**属性
-- 原生构造函数的继承
-- Mixin 模式的实现
+- [Object.getPrototypeOf()](#一objectgetprototypeof)
+- [super 关键字](#二super-关键字)
+- [类的 prototype 属性和**proto**属性](#三类的-prototype-属性和proto属性)
+- [原生构造函数的继承](#四原生构造函数的继承)
+- [Mixin 模式的实现](#五mixin-模式的实现)
 
 ### 一、Object.getPrototypeOf()
 
@@ -227,6 +227,9 @@ class DistributedEdit extends mix(Loggable, Serializable) {
 ```
 
 ### 参考资料
+
+- [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/class-extends)
+- [《ECMAScript 6 入门》 第三版]()
 
 ## 联系作者
 
