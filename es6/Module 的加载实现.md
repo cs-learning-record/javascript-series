@@ -172,6 +172,7 @@ myModule.foo()
 - 基本语法
 - 模块的加载机制
 - 服务器端实现
+- 浏览器端实现(借助Browserify)
 
 #### 2.1 概述
 
@@ -188,15 +189,91 @@ Node 应用由模块组成，采用CommonJS模块规范。每个文件就是一�
 - 暴露模块：`module.exports = value`或`expors.xxx=value`
 - 引入模块：`require(xxx)`如果是第三方模块，xxx为模块名；如果是自定义模块，xxx为模块文件路径
 
+```
+// example.js
+var x = 5;
+var addX = function (value){
+    return value + x;
+};
+module.exports.x = x;
+module.exports.addX = addX;
+```
+
+上面代码通过module.exports输出变量x和函数addX。
+
+```
+var example = require('./example.js');//如果参数字符串以“./”开头，则表示加载的是一个位于相对路径
+console.log(example.x); // 5
+console.log(example.addX(1)); // 6
+```
+
+require命令用于加载模块文件。**require命令的基本功能是，读入并执行一个JavaScript文件，然后返回该模块的exports对象。如果没有发现在指定模块，会报错。**
+
 #### 2.4 模块的加载机制
 
 **CommonJS模块的加载机制是，输入的是被输出的值的拷贝。也就是说，一旦输出一个值，模块内部的变化就影响不到这个值**。
 
+#### 2.5 服务器端实现
+
+- 下载安装node.js
+- 创建项目结构
+- 下载第三方模块
+- 定义模块代码
+- 通过node运行app.js
+
+#### 2.6 浏览器端实现(借助Browserify)
+
+- 创建项目结构
+- 下载browserify
+- 定义模块代码(同服务器端)
+- 打包处理js
+- 页面使用引入
+
 ### 三、AMD
+
+CommonJS规范加载模块是同步的，也就是说，只有加载完成，才能执行后面的操作。AMD规范则是非同步加载模块，允许指定回调函数。由于Node.js主要用于服务器编程，模块文件一般都已经存在于本地硬盘，所以加载起来比较快，不用考虑非同步加载的方式，所以CommonJS规范比较适用。但是，**如果是浏览器环境，要从服务器端加载模块，这里就必须采用非同步模式，因此浏览器端一般采用AMD规范**。此外AMD规范比CommonJS规范在浏览器实现要来着早。
+
+- AMD规范基本语法
+- 未使用AMD规范与使用require.js
+
+#### 3.1 AMD规范基本语法
+
+**定义暴露模块**
+
+```
+// 定义没有依赖的模块
+define(function(){
+    return 模块
+})
+```
+
+```
+//  定义有依赖的模块
+define(['module1','module2'],function(m1,m2){
+    return 模块
+})
+```
+
+**引入使用模块**
+
+```
+require(['module1','module2'],function(m1,m2){
+    使用m1/m2
+})
+```
+
+
+#### 3.2 未使用AMD规范与使用require.js
+
+
 
 ### 四、CMD
 
 CMD 规范专门用于浏览器端，模块的加载是异步的，模块使用时会加载执行。CMD规范整合了CommonJS和AMD规范的特点。在Sea.js中所有JavaScript模块都遵循CMD模块定义规范。
+
+- CMD规范基本语法
+- sea.js简单使用教程
+
 
 ### 五、ES6模块
 
@@ -236,6 +313,7 @@ CMD 规范专门用于浏览器端，模块的加载是异步的，模块使用�
 - [ES6 系列之模块加载方案](https://github.com/mqyqingfeng/Blog/issues/108)
 - [前端模块化：CommonJS,AMD,CMD,ES6](https://juejin.im/post/5aaa37c8f265da23945f365c)
 - [《JavaScript 标准参考教程（alpha）》](http://javascript.ruanyifeng.com/nodejs/module.html)
+- [前端模块化之AMD与CMD原理(附源码)](https://juejin.im/post/5c3592b26fb9a049aa6f4456)
 
 ## 联系作者
 
