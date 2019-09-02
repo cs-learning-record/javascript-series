@@ -216,18 +216,83 @@ require命令用于加载模块文件。**require命令的基本功能是，读�
 #### 2.5 服务器端实现
 
 - 下载安装node.js
+
+略
+
 - 创建项目结构
+  
+略
+
 - 下载第三方模块
+
+略
+
 - 定义模块代码
+
+```
+// module1.js
+module.exports={
+    msg:'module1',
+    foo(){
+        console.log(this.msg)
+    }
+}
+```
+
+```
+//module2.js
+module.exports = function() {
+  console.log('module2')
+}
+```
+
+```
+//module3.js
+exports.foo = function() {
+  console.log('foo() module3')
+}
+exports.arr = [1, 2, 3, 3, 2]
+```
+
+```
+// app.js文件
+// 引入第三方库，应该放置在最前面
+let uniq = require('uniq')
+let module1 = require('./modules/module1')
+let module2 = require('./modules/module2')
+let module3 = require('./modules/module3')
+
+module1.foo()   // module1
+module2()   // module2
+module3.foo();  // foo() module3
+console.log(uniq(module3.arr))  // [1,2,3]
+```
+
 - 通过node运行app.js
+
+命令行输入`node app.js`，运行JS文件
 
 #### 2.6 浏览器端实现(借助Browserify)
 
 - 创建项目结构
+
+略
+
 - 下载browserify
+
+略
+
 - 定义模块代码(同服务器端)
+
+略
+
 - 打包处理js
+
+根目录下运行`browserify js/src/app.js -o js/dist/bundle.js`
+
 - 页面使用引入
+
+在index.html文件中引入`<script type="text/javascript" src="js/dist/bundle.js"></script>`
 
 ### 三、AMD
 
@@ -262,9 +327,123 @@ require(['module1','module2'],function(m1,m2){
 })
 ```
 
-
 #### 3.2 未使用AMD规范与使用require.js
 
+通过比较两者的实现方法，来说明使用AMD规范的好处。
+
+- 未使用AMD规范
+
+```
+// dataService.js文件
+(function(window){
+    let msg = 'www.baidu.com'
+    function getMsg(){
+        return msg.toUpperCase()
+    }
+    window.dataService = {getMsg}
+})(window)
+
+```
+
+```
+// alerter.js文件
+(function(window,dataService){
+    let name = 'Tom'
+    function showMsg(){
+        alert(dataService.getMsg() + ','+name)
+    }
+    window.alerter = {showMsg}
+})(window,dataService)
+```
+
+```
+// main.js文件
+(function(alerter){
+    alerter.showMsg()
+})(alerter)
+```
+
+```
+// index.html文件
+<div><h1>Modular Demo 1: 未使用AMD(require.js)</h1></div>
+<script type="text/javascript" src="js/modules/dataService.js"></script>
+<script type="text/javascript" src="js/modules/alerter.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+```
+
+这种方式缺点很明显：**首先会发送多个请求，其次引入的js文件顺序不能搞错，否则会报错！**
+
+- 使用require.js
+- 
+RequireJS是一个工具库，主要用于客户端的模块管理。它的模块管理遵守AMD规范，RequireJS**的基本思想是，通过define方法，将代码定义为模块；通过require方法，实现代码的模块加载**。
+
+**定义require.js的模块代码**
+
+```
+// dataService.js文件
+// 定义没有依赖的模块
+define(function(){
+    let msg = 'www.baidu.com'
+    function getMsg(){
+        return msg.toUpperCase()
+    }
+    return {getMsg} // 暴露模块
+})
+```
+
+```
+//alerter.js文件
+// 定义有依赖的模块
+define(['dataService'], function(dataService) {
+  let name = 'Tom'
+  function showMsg() {
+    alert(dataService.getMsg() + ', ' + name)
+  }
+  // 暴露模块
+  return { showMsg }
+})
+```
+
+```
+// main.js文件
+(function(){
+    require.config({
+        baseUrl:'js/',  // 基本路径，出发点在根目录下
+        paths:{
+            // 映射：模块标识名：路径
+            alerter:'./modules/alerter',    // 此处不能写alerter.js，会报错
+            dataService:'./modules/dataService'
+        }
+    })
+    require(['alerter'], function(alerter) {
+        alerter.showMsg()
+    })
+})()
+
+```
+
+```
+// index.html文件
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modular Demo</title>
+  </head>
+  <body>
+    <!-- 引入require.js并指定js主文件的入口 -->
+    <script data-main="js/main" src="js/libs/require.js"></script>
+  </body>
+</html>
+
+```
+
+**页面引入require.js模块**
+
+在index.html引入 `<script data-main="js/main" src="js/libs/require.js"></script>`
+
+关于require.js实现方式可以参考资料：[前端模块化之AMD与CMD原理(附源码)](https://juejin.im/post/5c3592b26fb9a049aa6f4456)
+
+**小结：**通过两者的比较，可以得出**AMD模块定义的方法非常清晰，不会污染全局环境，能够清楚地显示依赖关系**。AMD模式可以用于浏览器环境，并且允许非同步加载模块，也可以根据需要动态加载模块。
 
 
 ### 四、CMD
@@ -274,6 +453,111 @@ CMD 规范专门用于浏览器端，模块的加载是异步的，模块使用�
 - CMD规范基本语法
 - sea.js简单使用教程
 
+#### 4.1 CMD规范基本语法
+
+**定义暴露模块**
+
+```
+//定义没有依赖的模块
+define(function(require, exports, module){
+  exports.xxx = value
+  module.exports = value
+})
+```
+
+```
+//定义有依赖的模块
+define(function(require, exports, module){
+  //引入依赖模块(同步)
+  var module2 = require('./module2')
+  //引入依赖模块(异步)
+    require.async('./module3', function (m3) {
+    })
+  //暴露模块
+  exports.xxx = value
+})
+```
+
+**引入使用模块**
+
+```
+define(function (require) {
+  var m1 = require('./module1')
+  var m4 = require('./module4')
+  m1.show()
+  m4.show()
+})
+```
+
+#### 4.2 sea.js简单使用教程
+
+**定义sea.js的模块代码**
+
+```
+// module1.js文件
+define(function (require, exports, module) {
+  //内部变量数据
+  var data = 'atguigu.com'
+  //内部函数
+  function show() {
+    console.log('module1 show() ' + data)
+  }
+  //向外暴露
+  exports.show = show
+})
+```
+
+```
+// module2.js文件
+define(function (require, exports, module) {
+  module.exports = {
+    msg: 'I Will Back'
+  }
+})
+```
+
+```
+// module3.js文件
+define(function(require, exports, module) {
+  const API_KEY = 'abc123'
+  exports.API_KEY = API_KEY
+})
+```
+
+```
+// module4.js文件
+define(function (require, exports, module) {
+  //引入依赖模块(同步)
+  var module2 = require('./module2')
+  function show() {
+    console.log('module4 show() ' + module2.msg)
+  }
+  exports.show = show
+  //引入依赖模块(异步)
+  require.async('./module3', function (m3) {
+    console.log('异步引入依赖模块3  ' + m3.API_KEY)
+  })
+})
+```
+
+```
+// main.js文件
+define(function (require) {
+  var m1 = require('./module1')
+  var m4 = require('./module4')
+  m1.show()
+  m4.show()
+})
+```
+
+**在index.html中引入**
+
+```
+<script type="text/javascript" src="js/libs/sea.js"></script>
+<script type="text/javascript">
+  seajs.use('./js/modules/main')
+</script>
+```
 
 ### 五、ES6模块
 
