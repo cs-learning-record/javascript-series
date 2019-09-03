@@ -70,8 +70,8 @@ getJSON("/post/1.json")
 
 `Promise.prototype.catch`方法是`.then(null, rejection)`的别名，用于指定发生错误时的回调函数。
 
-- 基本用法
-- Promise 的异常捕获方式
+- [基本用法](#31-基本用法)
+- [Promise 的异常捕获方式](#32-promise-的异常捕获方式)
 
 #### 3.1 基本用法
 
@@ -101,11 +101,11 @@ promise
 
 #### 3.2 Promise 的异常捕获方式
 
-- 在 Promise 的构造体内进行错误处理
-- 通过 Promise.prototype.catch 来进行错误处理
-- Promise.all 中的异常捕获
-- Promise.try 中的异常捕获
-- 在 Promise 中无法被捕获的错误
+- [在 Promise 的构造体内进行错误处理](#321-在-promise-的构造体内进行错误处理)
+- [通过 Promise.prototype.catch 来进行错误处理](#322-通过-promiseprototypecatch-来进行错误处理)
+- [Promise.all 中的异常捕获](#323-promiseall-中的异常捕获)
+- [Promise.try 中的异常捕获](#324-promisetry-中的异常捕获)
+- [在 Promise 中无法被捕获的错误](#325-在-promise-中无法被捕获的错误)
 
 ##### 3.2.1 在 Promise 的构造体内进行错误处理
 
@@ -403,9 +403,9 @@ Promise.resolve().then(f)
 
 ### 十、应用
 
-- 加载图片
-- 通过 Promise 封装 ajax 解决回调地狱问题
-- Generator 函数与 Promise 的结合
+- [加载图片](#101-加载图片)
+- [通过 Promise 封装 ajax 解决回调地狱问题](#102-通过-promise-封装-ajax-解决回调地狱问题)
+- [Generator 函数与 Promise 的结合](#103-generator-函数与-promise-的结合)
 
 #### 10.1 加载图片
 
@@ -464,13 +464,13 @@ function getFoo(){
 
 ### 十一、错误用法及误区
 
-- 当作回调来用 Callback Hell
-- 怎样用 forEach() 处理 promise
-- 没有返回值
-- 没有 Catch
-- catch()与 then(null, fn)
-- 断链 The Broken Chain
-- 穿透 Fall Through
+- [当作回调来用 Callback Hell](#111-当作回调来用-callback-hell)
+- [怎样用 forEach() 处理 promise](#112-怎样用-foreach-处理-promise)
+- [没有返回值](#113-没有返回值)
+- [没有 Catch](#114-没有-catch)
+- [catch()与 then(null, fn)](#115-catch与-thennull-fn并不完全相同)
+- [断链 The Broken Chain](#116-断链-the-broken-chain)
+- [穿透 Fall Through](#117-穿透-fall-through)
 
 #### 11.1 当作回调来用 Callback Hell
 
@@ -619,12 +619,12 @@ Promise.resolve('foo').then(Promise.resolve('bar')).then(function(result){
 
 ### 十二、promise 你可能不知道的 6 件事
 
-- `then()`返回一个 forked Promise(分叉的 Promise)
-- 回调函数应该传递结果
-- 只能捕获来自上一级的异常
-- 错误能被恢复
-- Promise 能被暂停
-- resolved 状态的 Promise 不会立即执行
+- [`then()`返回一个 forked Promise(分叉的 Promise)](#121-then返回一个-forked-promise分叉的-promise)
+- [回调函数应该传递结果](#122-回调函数应该传递结果)
+- [只能捕获来自上一级的异常](#123-只能捕获来自上一级的异常)
+- [错误能被恢复](#124-错误能被恢复)
+- [Promise 能被暂停](#125-promise-能被暂停)
+- [resolved 状态的 Promise 不会立即执行](#126-resolved-状态的-promise-不会立即执行)
 
 #### 12.1 `then()`返回一个 forked Promise(分叉的 Promise)
 
@@ -948,17 +948,16 @@ Promise.race = function(promises){
 
 ### 十四、Promise 几道面试题
 
-- 题目一
-- 题目二
-- 题目三
-- 题目三
-- 题目四
-- 题目五
-- 题目六
-- 题目七
-- 题目八
-- 题目九
-- 题目十
+- [题目一](#141-题目一)
+- [题目二](#142-题目二)
+- [题目三](#143-题目三)
+- [题目四](#144-题目四)
+- [题目五](#145-题目五)
+- [题目六](#146-题目六)
+- [题目七](#147-题目七)
+- [题目八](#148-题目八)
+- [题目九](#149-题目九)
+- [题目十](#1410-题目十)
 
 #### 14.1 题目一
 
