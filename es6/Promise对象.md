@@ -537,7 +537,8 @@ loadAsync1().then(function(data1){
 
 }).then(okFn,failFn)
 ```
-这里的调用，并没有添加catch方法，那么如果中间某个环节发生错误，将不会被捕获，控制台将看不到任何错误，不利于调试查错，所以最好在最后添加catch方法用于捕获错误。
+
+这里的调用，并没有添加 catch 方法，那么如果中间某个环节发生错误，将不会被捕获，控制台将看不到任何错误，不利于调试查错，所以最好在最后添加 catch 方法用于捕获错误。
 
 ```
 loadAsync1()
@@ -585,7 +586,7 @@ function asyncFn(){
 asyncFn().then(res=>console.log(res)).catch(err=>console.log(err))      // 1
 ```
 
-从执行结果来看，then中架设的参数其实并不是doSth()返回的结果，而是loadAsyncFnX()返回的结果，catch到的错误也是loadAsyncFnX()中的错误，所以doSth()的结果和错误将不会被后而的then中的回调捕获到，形成了断链，因为then方法将返回一个新的Promise对象，而不是原来的Promise对象
+从执行结果来看，then 中架设的参数其实并不是 doSth()返回的结果，而是 loadAsyncFnX()返回的结果，catch 到的错误也是 loadAsyncFnX()中的错误，所以 doSth()的结果和错误将不会被后而的 then 中的回调捕获到，形成了断链，因为 then 方法将返回一个新的 Promise 对象，而不是原来的 Promise 对象
 
 ```
 function loadAsyncFnX(){ return Promise.resolve(1); }
@@ -611,7 +612,7 @@ Promise.resolve('foo').then(Promise.resolve('bar')).then(function(result){
 
 如果你认为输出的是 bar，那么你就错了。实际上它输出的是 foo！
 
-产生这样的输出是因为你给then方法传递了一个非函数的值，代码会这样理解：`then(null)`，因此导致前一个promise的结果产生了坠落的效果。
+产生这样的输出是因为你给 then 方法传递了一个非函数的值，代码会这样理解：`then(null)`，因此导致前一个 promise 的结果产生了坠落的效果。
 
 参考资料：[深入理解 Promise (上)](http://coderlt.coding.me/2016/12/03/promise-in-depth-an-introduction-1/)
 
@@ -632,13 +633,14 @@ var p = new Promise(/*...*/);
 p.then(func1);
 p.then(func2);
 ```
+
 ```
 // Exhitbit B
 var p = new Promise(/*...*/);
 p.then(func1).then(func2);
 ```
 
-如果你认为两段代码等价，那么你可能认为promise仅仅就是一维回调函数的数组。然而，这两段代码并不等价。`p`每次调用`then()`都会返回一个`forked promise`。因此，在A中，如果`func1`抛出一个异常，`func2`依然能执行，而在B中，`func2`不会被执行，因为第一次调用返回了一个新`promise`，由于`func1`中抛出异常，这个`promise`被`rejected`了，结果`func2`被跳过不执行了。
+如果你认为两段代码等价，那么你可能认为 promise 仅仅就是一维回调函数的数组。然而，这两段代码并不等价。`p`每次调用`then()`都会返回一个`forked promise`。因此，在 A 中，如果`func1`抛出一个异常，`func2`依然能执行，而在 B 中，`func2`不会被执行，因为第一次调用返回了一个新`promise`，由于`func1`中抛出异常，这个`promise`被`rejected`了，结果`func2`被跳过不执行了。
 
 #### 12.2 回调函数应该传递结果
 
@@ -654,7 +656,7 @@ p.then(function(str){
 })
 ```
 
-第二个`then()`中的`console.log`显示的是`undefined`，因为在promise的上下文中，回调函数像普通的回调函数一样传递结果。promise 期望你的回调函数或者返回同一个结果，或者返回其它结果，返回的结果会被传给下一个回调。
+第二个`then()`中的`console.log`显示的是`undefined`，因为在 promise 的上下文中，回调函数像普通的回调函数一样传递结果。promise 期望你的回调函数或者返回同一个结果，或者返回其它结果，返回的结果会被传给下一个回调。
 
 #### 12.3 只能捕获来自上一级的异常
 
@@ -679,18 +681,18 @@ new Promise(function(resolve,reject){
 });
 ```
 
-在A中，当第一个`then`抛出异常时，第二个`then`能捕获到该异常，并会弹出`uh oh`。这符合只捕获来自上一级异常的规则。
+在 A 中，当第一个`then`抛出异常时，第二个`then`能捕获到该异常，并会弹出`uh oh`。这符合只捕获来自上一级异常的规则。
 
-在B中，正确的回调函数和错误的回调函数在同一级，也就是说，尽管在回调中抛出了异常，但是这个异常不会被捕获。事实上，B中的错误回调只有在`promise`被`rejected`或者`promise`自身抛出一个异常时才会被执行。
+在 B 中，正确的回调函数和错误的回调函数在同一级，也就是说，尽管在回调中抛出了异常，但是这个异常不会被捕获。事实上，B 中的错误回调只有在`promise`被`rejected`或者`promise`自身抛出一个异常时才会被执行。
 
 #### 12.4 错误能被恢复
 
-在一个错误回调中，如果没有重新抛出错误，promise会认为你已经恢复了该错误，promise的状态会转变为`resolved`。
+在一个错误回调中，如果没有重新抛出错误，promise 会认为你已经恢复了该错误，promise 的状态会转变为`resolved`。
 
 ```
 var p = new Promise(function(resolve,reject){
     reject(new Error('pebkac'));
-});  
+});
 
 p.then(
     undefined,
@@ -703,21 +705,21 @@ p.then(
     function(error){
      alert('Bad computer!');
     }
-);   
+);
 ```
 
 #### 12.5 Promise 能被暂停
 
-仅仅因为你已经在一个`then()`函数中执行过代码，并不意味着你不能够暂停promise去做其他事情。为了暂停当前的 promise，或者要它等待另一个 promise 完成，只需要简单地在 then() 函数中返回另一个 promise。
+仅仅因为你已经在一个`then()`函数中执行过代码，并不意味着你不能够暂停 promise 去做其他事情。为了暂停当前的 promise，或者要它等待另一个 promise 完成，只需要简单地在 then() 函数中返回另一个 promise。
 
 ```
-var p = new Promise(/*...*/);   
+var p = new Promise(/*...*/);
 
 p.then(function(str){
     if(!loggedIn){
         return new Promise(/*...*/);
     }
-}) 
+})
  .then(function(str){
     alert("Done!");
  });
@@ -741,7 +743,7 @@ function runme() {
 }
 ```
 
-你可能会认为弹出2，因为 promise 已经是 resolved ，then() 会立即执行(同步)。然而，promise 规范要求所有回调都是异步的，因此，alert 执行时 i 的值还没有被修改。
+你可能会认为弹出 2，因为 promise 已经是 resolved ，then() 会立即执行(同步)。然而，promise 规范要求所有回调都是异步的，因此，alert 执行时 i 的值还没有被修改。
 
 参考资料：[关于 Promise：你可能不知道的 6 件事](https://github.com/dwqs/blog/issues/1)
 
@@ -940,26 +942,158 @@ Promise.race = function(promises){
 参考资料：
 
 - [手写 promise](https://github.com/xieranmaya/blog/issues/3)
-- [BAT前端经典面试问题：史上最最最详细的手写Promise教程](https://juejin.im/post/5b2f02cd5188252b937548ab)
-- [Promise原理讲解 && 实现一个Promise对象 ](https://juejin.im/post/5aa7868b6fb9a028dd4de672)
+- [BAT 前端经典面试问题：史上最最最详细的手写 Promise 教程](https://juejin.im/post/5b2f02cd5188252b937548ab)
+- [Promise 原理讲解 && 实现一个 Promise 对象 ](https://juejin.im/post/5aa7868b6fb9a028dd4de672)
 
 ### 十四、Promise 几道面试题
 
-> 问：下面四个使用 promise 的语句之间的不同点在哪儿？
+- 题目一
+- 题目二
+- 题目三
+- 题目三
+- 题目四
+- 题目五
+- 题目六
+- 题目七
+- 题目八
+- 题目九
+- 题目十
+
+#### 14.1 题目一
 
 ```
-doSomething().then(function () {
-    return doSomethingElse();
-})；
+const promise = new Promise((resolve,reject)=>{
+    console.log(1)
+    resolve()
+    console.log(2)
+})
+promise.then(()=>{
+    console.log(3)
+})
+console.log(4)
+```
 
-doSomethin().then(functiuoin () {
-    doSomethingElse();
-});
+#### 14.2 题目二
 
-doSomething().then(doSomethingElse());
+```
+const promise1 = new Promise(resolve,reject)=>{
+    setTimeout(()=>{
+        resolve('success')
+    },1000)
+})
+const promise2 = promise1.then(()=>{
+    throw new Error('error!!!')
+})
 
-doSomething().then(doSomethingElse);
+console.log('promise1',promise1)
+console.log('promise2',promise2)
 
+setTimeout(()=>{
+    console.log('promise1',promise1)
+    console.log('promise2',promise2)
+},2000)
+```
+
+#### 14.3 题目三
+
+```
+const promise = new Promise((resolve,reject)=>{
+    resolve('success1')
+    reject('error')
+    resolve('success2')
+})
+
+promise.then((res)=>{
+    console.log('then:',res)
+}).catch((err)=>{
+    console.log('catch:',err)
+})
+```
+
+#### 14.4 题目四
+
+```
+Promise.resolve(1).then((res)=>{
+    console.log(res)
+    return 2
+}).catch((err)=>{
+    return 3
+}).then((res)=>{
+    console.log(res)
+})
+```
+
+#### 14.5 题目五
+
+```
+const promise = new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        console.log('once')
+        resolve('success')
+    },1000)
+})
+
+const start = Date.now()
+promise.then((res)=>{
+    console.log(res,Date.now()-start)
+})
+promise.then((res)=>{
+    console.log(res,Date.now()-start)
+})
+```
+
+#### 14.6 题目六
+
+```
+Promise.resolve().then(()=>{
+    return new Error('error!!')
+}).then((res)=>{
+    console.log('then:',res)
+}).catch((err)=>[
+    cosnole.log('catch:',err)
+])
+```
+
+#### 14.7 题目七
+
+```
+const promise = Promise.resolve().then(()=>{
+    return promise
+})
+promise.catch(console.error)
+```
+
+#### 14.8 题目八
+
+```
+Promise.resolve(1).then(2).then(Promise.resolve(3)).then(console.log)
+```
+
+#### 14.9 题目九
+
+```
+Promise.resolve().then(function(res){
+    throw new Error('error')
+},function (e){
+    console.log(e)
+}).catch((e)=>{
+    console.log('fail:',e)
+})
+```
+
+#### 14.10 题目十
+
+```
+process.nextTick(()=>{
+    console.log('nextTick')
+})
+Promise.resolve().then(()=>{
+    console.log('then')
+})
+setImmediate(()=>{
+    console.log('setImmediate')
+})
+console.log('end')
 ```
 
 [Promise 必知必会（十道题）](https://juejin.im/post/5a04066351882517c416715d)
@@ -969,7 +1103,7 @@ doSomething().then(doSomethingElse);
 - [Promise A+ 规范](https://malcolmyu.github.io/2015/06/12/Promises-A-Plus/)
 - [JavaScript Promise 迷你书](http://liubin.org/promises-book/)
 - [你了解 Promise 吗？](https://mp.weixin.qq.com/s/mvqR4oEq1VcTYB57QqGIvQ)
-- [promise是什么？](https://mp.weixin.qq.com/s/0DVOqFQYSzCaviSv_3AF-g)
+- [promise 是什么？](https://mp.weixin.qq.com/s/0DVOqFQYSzCaviSv_3AF-g)
 - [《ECMAScript 6 入门》 第三版](https://yjhenan.gitbooks.io/-ecmascript-6/content/docs/promise.html)
 - [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/promise)
 
