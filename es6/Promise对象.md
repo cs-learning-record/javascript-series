@@ -16,19 +16,20 @@
 
 ## 内容
 
-- 基本用法
-- then()
-- catch()
-- finally()
-- all()
-- ace()
-- resolve()
-- reject()
-- try()
-- 应用
-- 错误用法及误区
-- promise 你可能不知道的 6 件事
-- 手写 Promise
+- [基本用法](#一基本用法)
+- [then()](#二then)
+- [catch()](#三catch)
+- [finally()](#四finally)
+- [all()](#五all)
+- [ace()](#六ace)
+- [resolve()](#七resolve)
+- [reject()](#八reject)
+- [try()](#九try)
+- [应用](#十一应用)
+- [错误用法及误区](#十一错误用法及误区)
+- [promise 你可能不知道的 6 件事](#十二promise-你可能不知道的-6-件事)
+- [手写 Promise](#十三手写-promise)
+- [Promise 几道面试题](##十四promise-几道面试题)
 
 ### 一、基本用法
 
@@ -400,13 +401,13 @@ Promise.resolve().then(f)
 
 上面的写法有一个缺点，就是如果 f 是同步函数，那么它会在本轮事件循环的末尾执行。
 
-### 十一、应用
+### 十、应用
 
 - 加载图片
 - 通过 Promise 封装 ajax 解决回调地狱问题
 - Generator 函数与 Promise 的结合
 
-#### 11.1 加载图片
+#### 10.1 加载图片
 
 我们可以将图片的加载写成一个`Promise`，一旦加载完成，`Promise`的状态就发生变化。
 
@@ -421,7 +422,7 @@ const preloadImage = function(path){
 }
 ```
 
-#### 11.2 通过 Promise 封装 ajax 解决回调地狱问题
+#### 10.2 通过 Promise 封装 ajax 解决回调地狱问题
 
 ```
 
@@ -451,7 +452,7 @@ function getJSON(url){
 
 ```
 
-#### 11.3 Generator 函数与 Promise 的结合
+#### 10.3 Generator 函数与 Promise 的结合
 
 使用`Generator`函数管理流程，遇到异步操作的时候，通常返回一个`Promise`对象。
 
