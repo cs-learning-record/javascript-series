@@ -44,6 +44,8 @@
 21. [Node.js区块链开发](https://github.com/imfly/bitcoin-on-nodejs)
 22. [Node.js 是什么？为什么要用它？](https://mp.weixin.qq.com/s/_00iHL1a-CbLCRsDY2mi5A)
 23. [饿了么 Node.js 面试](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
+24. [深入理解Node.js：核心思想与源码分析](https://yjhjstz.gitbooks.io/deep-into-node/content/)
+25. [nodejs](https://github.com/fairyly/mynodejs)
 
 ## 联系作者
 
