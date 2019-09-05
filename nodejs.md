@@ -46,6 +46,9 @@
 23. [饿了么 Node.js 面试](https://github.com/ElemeFE/node-interview/tree/master/sections/zh-cn)
 24. [深入理解Node.js：核心思想与源码分析](https://yjhjstz.gitbooks.io/deep-into-node/content/)
 25. [nodejs](https://github.com/fairyly/mynodejs)
+26. [nodejs面试题](https://interview.nodejs.red/#/zh/)
+27. [Node.js技术栈](https://www.nodejs.red/#/README)
+28. [libuv中文教程](http://luohaha.github.io/Chinese-uvbook/)
 
 ## 联系作者
 
