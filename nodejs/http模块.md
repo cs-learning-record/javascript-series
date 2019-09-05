@@ -11,8 +11,8 @@ Node.js 标准库提供了 http 模块，其中封装了一个高效的 HTTP 服
 
 ## 内容
 
-- HTTP 服务器
-- HTTP 客户端
+- [HTTP 服务器](#一http-服务器)
+- [HTTP 客户端](#二http-客户端)
 
 ### 一、HTTP 服务器
 
@@ -32,11 +32,11 @@ console.log('HTTP server is listenging at port 3000.');
 
 上面代码中，http.createServer 创建了一个 http.Server 的实例，将一个函数作为 HTTP 请求处理函数。最后该实例还调用了 listen 函数，启动服务器并监听 3000 端口。
 
-- http.Server 的事件
-- http.ServerRequest
-- 获取 GET 请求内容
-- 获取 POST 请求内容
-- http.ServerResponse
+- [http.Server 的事件](#11-httpserver-的事件)
+- [http.ServerRequest](#12-httpserverrequest)
+- [获取 GET 请求内容](#13-获取-get-请求内容)
+- [获取 POST 请求内容](#14-获取-post-请求内容)
+- [http.ServerResponse](#15-httpserverresponse)
 
 #### 1.1 http.Server 的事件
 
@@ -130,10 +130,10 @@ http.ServerResponse 有三个重要的成员函数，用于返回响应头、响
 
 http 模块提供了两个函数 http.request 和 http.get，功能是作为客户端向 HTTP 服务器发起请求。
 
-- http.request
-- http.get
-- http.ClientRequest
-- http.ClientResponse
+- [http.request](#21-httprequestoptions-callback)
+- [http.get](#22-httpgetoptions-callback)
+- [http.ClientRequest](#23-httpclientrequest)
+- [http.ClientResponse](#24-httpclientresponse)
 
 #### 2.1 http.request(options, callback)
 
