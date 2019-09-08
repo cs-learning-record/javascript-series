@@ -3,7 +3,7 @@
 
 ## 前言
 
-本人平时学习及收集内容，欢迎参入一起讨论。
+querystring 模块是用来处理 query 字符串的简单辅助模块。
 
 ## 关于作者
 
@@ -11,9 +11,35 @@
 
 ## 内容
 
+- 字符串转对象
+- 对象转字符串
+
+### 一、字符串转对象
+
+```
+var querystring = require('querystring');
+var str = 'firstname=dk&url=http%3A%2F%2Fdk-lan.com&lastname=tom&passowrd=123456';
+var param = querystring.parse(param);
+//结果
+//{firstname:"dk", url:"http://dk-lan.com", lastname: 'tom', passowrd: 123456};
+```
+
+### 二、对象转字符串
+
+```
+var querystring = require('querystring');
+
+var obj = {firstname:"dk", url:"http://dk-lan.com", lastname: 'tom', passowrd: 123456};
+//将对象转换成字符串
+var param = querystring.stringify(obj);
+//结果
+//firstname=dk&url=http%3A%2F%2Fdk-lan.com&lastname=tom&passowrd=123456
+```
+
 ### 参考资料
 
 - 《Nodejs 即学即用》
+- [nodejs v12.1 文档](https://nodejs.org/api/querystring.html)
 
 ## 联系作者
 
