@@ -5,25 +5,31 @@
 
 URL 模块提供了解析和处理 URL 字符串的便利工具，当你需要和 URL 打交道时会非常有用。
 
-- 模块方法
-- url 解析：url.parse()
-- 关于 urlObject
-- url 拼接：url.format(urlObject)
-- url.resolve(from, to)
+## 关于作者
+
+一个工作八年的草根程序员。
+
+## 内容
+
+- [模块方法](#一模块方法)
+- [url 解析：url.parse()](#二url-解析urlparse)
+- [关于 urlObject](#三关于-urlobject)
+- [url 拼接：url.format(urlObject)](#url-拼接urlformaturlobject)
+- [url.resolve(from, to)](#urlresolvefrom-to)
 
 ### 一、模块方法
 
 url 模块三个方法分别是：
 
-- **.parse(usrString)：**将 url 字符串，解析成 object，便于开发者进行操作。
+- **.parse(usrString)：** 将 url 字符串，解析成 object，便于开发者进行操作。
 - **.format(urlObj)：**.parse()方法的反向操作。
-- **.resove(from,to)：**以 from 作为起始地址，解析出完整的目标地址
+- **.resove(from,to)：** 以 from 作为起始地址，解析出完整的目标地址
 
 ### 二、url 解析：url.parse()
 
 > 完整语法：url.parse(urlString[, parseQueryString[, slashesDenoteHost]])
 
-- **urlString：**url 链接。
+- **urlString：** url 链接。
 - **parseQueryString：**（默认为 false）如为 false，则 `urlObject.query`为未解析的字符串，比如`nick=%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%B0%8F%E5%8D%A1`，且对应的值不会 `decode`；如果 `parseQueryString` 为 true，则 `urlObject.query` 为 object，比如{ nick: '程序猿小卡' }，且值会被 decode；
 - **slashesDenoteHos：**（默认为 false）如果为`true`，那么类似`//foo/bar` 里的 foo 就会被认为是`hostname`；如果为 false，则 foo 被认为是 pathname 的一部分。
 
@@ -62,13 +68,29 @@ Url {
 代码如下：
 
 ```
+var url = require('url');
+var str = 'http://Chyingp:HelloWorld@ke.qq.com:8080/index.html?nick=%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%B0%8F%E5%8D%A1#part=1';
 
+var obj = url.parse(str, true);
+console.log(obj);
 ```
 
 输出结果如下：
 
 ```
-
+Url {
+  protocol: 'http:',
+  slashes: true,
+  auth: 'Chyingp:HelloWorld',
+  host: 'ke.qq.com:8080',
+  port: '8080',
+  hostname: 'ke.qq.com',
+  hash: '#part=1',
+  search: '?nick=%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%B0%8F%E5%8D%A1',
+  query: { nick: '程序猿小卡' },
+  pathname: '/index.html',
+  path: '/index.html?nick=%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%B0%8F%E5%8D%A1',
+  href: 'http://Chyingp:HelloWorld@ke.qq.com:8080/index.html?nick=%E7%A8%8B%E5%BA%8F%E7%8C%BF%E5%B0%8F%E5%8D%A1#part=1' }
 ```
 
 #### 2.3 针对路径 //foo/bar 的处理
@@ -76,13 +98,45 @@ Url {
 代码如下：
 
 ```
+var url = require('url');
+var str = '//foo/bar';
 
+var obj = url.parse(str, true, false);
+console.log(obj);
+
+obj = url.parse(str, true, true);
+console.log(obj);
 ```
 
 输出如下：
 
 ```
-
+Url {
+  protocol: null,
+  slashes: null,
+  auth: null,
+  host: null,
+  port: null,
+  hostname: null,
+  hash: null,
+  search: '',
+  query: {},
+  pathname: '//foo/bar',
+  path: '//foo/bar',
+  href: '//foo/bar' }
+Url {
+  protocol: null,
+  slashes: true,
+  auth: null,
+  host: 'foo',
+  port: null,
+  hostname: 'foo',
+  hash: null,
+  search: '',
+  query: {},
+  pathname: '/bar',
+  path: '/bar',
+  href: '//foo/bar' }
 ```
 
 ### 三、关于 urlObject
@@ -129,12 +183,6 @@ url.resolve('/one/two/three', 'four')         // '/one/two/four'
 url.resolve('http://example.com/', '/one')    // 'http://example.com/one'
 url.resolve('http://example.com/one', '/two') // 'http://example.com/two'
 ```
-
-## 关于作者
-
-一个工作八年的草根程序员。
-
-## 内容
 
 ### 参考资料
 
