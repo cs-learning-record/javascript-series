@@ -49,6 +49,7 @@
 30. [JS全局变量是如何工作的？](https://mp.weixin.qq.com/s/VFZ7Fvly4Zk8bHi0X-tXuA)
 31. [现代 JavaScript 教程](https://zh.javascript.info/)
 32. [剖析并手写十五个重要 API 的实现](https://mp.weixin.qq.com/s/BTzLPZpU6VeDEmeocgQSGA)
+33. [36 个JS 面试题为你助力金九银十(面试必读)](https://mp.weixin.qq.com/s/vTvKJ1r2ifHHgwRjOrZ2MA)
 
 ## 联系作者
 
