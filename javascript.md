@@ -48,6 +48,7 @@
 29. [JavaScript 深入系列](https://github.com/mqyqingfeng/Blog)
 30. [JS全局变量是如何工作的？](https://mp.weixin.qq.com/s/VFZ7Fvly4Zk8bHi0X-tXuA)
 31. [现代 JavaScript 教程](https://zh.javascript.info/)
+32. [剖析并手写十五个重要 API 的实现](https://mp.weixin.qq.com/s/BTzLPZpU6VeDEmeocgQSGA)
 
 ## 联系作者
 
