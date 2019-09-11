@@ -26,10 +26,10 @@ const stream = require('stream');
 
 在nodejs中，有四种stream类型：
 
-- **Readable：**用来读取数据，比如`fs.createReadStrem()`。
-- **Writable：**用来写数据，比如`fs.createWriteStream()`。
-- **Duplex：**可读+可写，比如`net.Socket()`。
-- **Transform：**在读写的过程中，可以对数据进行修改，比如`zlib.createDeflat()`（数据压缩/解压）。
+- **Readable：** 用来读取数据，比如`fs.createReadStrem()`。
+- **Writable：** 用来写数据，比如`fs.createWriteStream()`。
+- **Duplex：** 可读+可写，比如`net.Socket()`。
+- **Transform：** 在读写的过程中，可以对数据进行修改，比如`zlib.createDeflat()`（数据压缩/解压）。
 
 #### 2.1 Readable
 
