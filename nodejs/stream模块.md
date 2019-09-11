@@ -33,22 +33,122 @@ const stream = require('stream');
 
 #### 2.1 Readable
 
+可读流是对提供数据的来源的一种抽象。
+
+`Readable`的例子包括：
+
+- 客户端的HTTP响应
+- 服务端的HTTP请求
+- fs的读取流
+
+例一
+
 ```
+var fs = require('fs');
+
+fs.readFile('./sample.txt', 'utf8', function(err, content){
+	// 文件读取完成，文件内容是 [你好，我是程序猿小卡]
+	console.log('文件读取完成，文件内容是 [%s]', content);
+});
+```
+
+例二
+
+这里使用了`.pipe(dest)`，好处在于，如果源文件较大，对于降低内存占用有好处。
+
+```
+var fs = require('fs');
+
+fs.createReadStream('./sample.txt').pipe(process.stdout);
 ```
 
 #### 2.2 Writable
 
+`Writable`的例子包括：
+
+- 客户端的HTTP响应
+- 服务端的HTTP请求
+- fs的写入流
+
 ```
+var fs = require('fs');
+var content = 'hello world';
+var filepath = './sample.txt';
+
+fs.writeFile(filepath, content);
 ```
 
 #### 2.3 Duplex
 
+双工流（Duplex）是同时实现了`Readable`和`Writable`接口的流。
+
+最常见的Duplex stream应该就是`net.Socket`实例了
+
+`Duplex`流的例子包括：
+
+- TCP socket
+
+服务端代码：
+
 ```
+var net = require('net');
+var opt = {
+	host: '127.0.0.1',
+	port: '3000'
+};
+
+var server = net.createServer((socket) => {
+    socket.on('data', (data) => {
+        console.log('client send message: ', data.toString());
+    });
+    socket.write('hello client');
+});
+server.listen(opt.port, opt.host, ()=>{
+    console.log(server.address());
+});
+```
+
+客户端代码：
+
+```
+var net = require('net');
+var opt = {
+	host: '127.0.0.1',
+	port: '3000'
+};
+
+var client = net.connect(opt, function(){
+	client.write('msg from client');  // 可写
+});
+
+// 可读
+client.on('data', function(data){
+    // lient: got reply from server [reply from server]
+	console.log('client: got reply from server [%s]', data);
+	client.end();
+});
 ```
 
 #### 2.4 Transform
 
+Transform 是Duplex的特殊，也就是说，Transform也同时可读可写。
+
+`Transform` 流的例子包括：
+
+- zlib流
+- crypto流
+
+
 ```
+var fs = require('fs');
+var zlib = require('zlib');
+
+var gzip = zlib.createGzip();
+
+var inFile = fs.createReadStream('./extra/fileForCompress.txt');
+var out = fs.createWriteStream('./extra/fileForCompress.txt.gz');
+
+inFile.pipe(gzip).pipe(out);
 ```
 
 ### 参考资料
