@@ -18,6 +18,7 @@ const process = require('process');
 ### 参考资料
 
 - [Node.js 中文文档](http://nodejs.cn/api/process.html)
+- [浅谈NodeJS多进程服务架构基本原理](https://www.cnblogs.com/tugenhua0707/p/11141076.html)
 
 ## 联系作者
 
