@@ -50,6 +50,7 @@
 31. [现代 JavaScript 教程](https://zh.javascript.info/)
 32. [剖析并手写十五个重要 API 的实现](https://mp.weixin.qq.com/s/BTzLPZpU6VeDEmeocgQSGA)
 33. [36 个JS 面试题为你助力金九银十(面试必读)](https://mp.weixin.qq.com/s/vTvKJ1r2ifHHgwRjOrZ2MA)
+34. [灵活运用JS开发技巧](https://juejin.im/post/5cc7afdde51d456e671c7e48)
 
 ## 联系作者
 
