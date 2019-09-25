@@ -96,13 +96,152 @@ var cp = require('child_process');
 var n = cp.fork(__dirname + '/sub.js');
 
 n.on('message',function(m){
-
+    console.log('PARENT got message:',m);
 });
+
+n.send({hello:'world'});
+```
+
+```
+process.on('message',function(m){
+    console.log('CHILD got message:',m);
+});
+
+process.send({foo:'bar'});
 ```
 
 ### 四、句柄传递
 
+#### 4.1 Master实现对Worker的请求进行分发
+
+master.js
+
 ```
+const childProcess = require('child_process');
+const net = require('net');
+
+// 获取cpu的数量
+const cpuNum = require('os').cpus().length;
+
+let workers = [];
+let cur = 0;
+
+for(let i=0;i<cpuNum;++i){
+    workers.push(childProcess.fork('./workder.js'));
+    console.log('worker process-' + workers[i].pid);
+}
+
+// 创建TCP服务器
+const tcpServer = net.createServer();
+
+/*
+    服务器收到请求后颁发给工作进程去处理
+*/
+tcpServer.on('connection',(socket)=>{
+    worker[cur].send('socket',socket);
+    cur = Number.parseInt((cur+1)%cpuNum);
+});
+
+tcpServer.listen(8989,()=>{
+    console.log('Tcp Server:127.0.0.1:8989');
+});
+```
+
+worker.js代码如下：
+
+```
+// 接收主进程发来的消息
+process.on('message',(msg,socket)=>{
+    if(msg === 'socket' && socker){
+        // 利用setTimeout 模拟异步请求
+        setTimeout(()=>{
+            socket.end('Request handled by worker-'+process.pid);
+        },100);
+    }
+});
+
+```
+
+tcp.client.js代码如下：
+
+```
+const net = require('net');
+const maxConnectCount = 10;
+
+for(let i=0;i<maxConnectCount;++i){
+    net.createConnection({
+        port:8989,
+        host:'127.0.0.1'
+    }).on('data',(d)=>{
+        console.log(d.toString());
+    })
+}
+```
+
+#### 4.1 Worker监听同一个端口
+
+master.js代码如下：
+
+```
+const childProcess = require('child_process');
+const net = require('net');
+
+// 获取cpu数量
+const cpuNum = require('os').cpus().length;
+
+let workers = [];
+let cur = 0;
+
+for(let i=0;i<cpuNum;++i){
+    workers.push(childProcess.fork('./worker.js'));
+    console.log('worker process-'+workers[i].pid);
+}
+
+// 创建TCP服务器
+const tcpServer = net.createServer();
+
+tcpServer.listen(8989,()=>{
+    console.log('Tcp Server:127.0.0.1:8989');
+    // 监听端口后将服务器句柄发送给worker进程
+    fot(let i=0;i<cpuNum;++i){
+        workers[i].send('tcpServer',tcpServer);
+    }
+    // 关闭master线程的端口监听
+    tcpServer.close();
+})
+
+```
+
+worker.js代码如下:
+
+```
+// 接收主进程发来的消息
+process.on('message',(msg,tcpServer)=>{
+    if(msg === 'tcpServer' && tcpServer){
+        tcpServer.on('connection',(socket)=>{
+            setTimeout(()=>{
+                socket.end('Request handled by worker-'+process.pid);
+            },100);
+        })
+    }
+});
+
+```
+
+tcp_client.js代码如下：
+
+```
+const net = require('net');
+const maxConnectCount =10;
+
+for(let i=0;i<maxConnectCount;++i){
+    net.createConnection({
+        port:8989,
+        host:'127.0.0.1'
+    }).on('data',(d)=>{
+        console.log(d.toString());
+    })
+}
 ```
 
 ### 参考资料
