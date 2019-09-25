@@ -1,4 +1,4 @@
-![image](./img/timg.jpg)
+![image](../img/timg.jpg)
 <br>
 
 ## 前言
