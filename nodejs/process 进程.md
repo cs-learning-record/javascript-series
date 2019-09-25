@@ -96,8 +96,8 @@ var cp = require('child_process');
 var n = cp.fork(__dirname + '/sub.js');
 
 n.on('message',function(m){
-    
-})
+
+});
 ```
 
 ### 四、句柄传递
