@@ -12,6 +12,7 @@ Express 是一个保持最小规模的灵活的 Node.js Web 应用程序开发�
 ## 内容
 
 - 安装
+- Express 使用
 - 路由
 - GET
 - POST
@@ -19,13 +20,23 @@ Express 是一个保持最小规模的灵活的 Node.js Web 应用程序开发�
 
 ### 一、安装
 
-### 二、路由
+局部安装，进入项目根目录下，执行以下命令
 
-### 三、GET
+`npm install express --save`
 
-### 四、POST
+全局安装，执行以下命令
 
-### 五、Session与Cookie操作
+`npm install express -g`
+
+### 二、Express 使用
+
+### 三、路由
+
+### 四、GET
+
+### 五、POST
+
+### 六、Session与Cookie操作
 
 ### 参考资料
 
