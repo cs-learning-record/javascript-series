@@ -16,9 +16,10 @@ const process = require('process');
 ## 内容
 
 - [服务器进程进化](#一服务器进程进化)
-- [创建子进程](#二创建子进程)
-- [进程间通信](#三进程间通信)
-- [句柄传递](#四句柄传递)
+- [进程相关属性及方法](#二进程相关属性及方法)
+- [创建子进程](#三创建子进程)
+- [进程间通信](#四进程间通信)
+- [句柄传递](#五句柄传递)
 
 ### 一、服务器进程进化
 
@@ -57,7 +58,28 @@ Node提供了child_process模块和cluster模块来实现多进程以及进程�
 
 ![image](./img/process.png)
 
-### 二、创建子进程
+### 二、进程相关属性及方法
+
+- `process.env`：返回当前服务运行的环境
+- `process.nextTick`：异步操作
+- `process.argv`：属性返回一个数组，其中包含当启动 Node.js 进程时传入的命令行参数。
+- `process.cwd`：返回当前工作路径。
+- `process.stdin`：标准输入。
+- `process.stdout`：标准输出。
+- `process.seteuid`：获得当前用户的id。
+- `process.getgid`：获得当前群组的id
+- `process.pid`：返回进程id
+- `process.title`：可以用它来修改进程的名字，当你用ps命令，同时有多个node进程在跑的时候，作用就出来了。
+- `process.uptime`：当前node进程已经运行了多长时间（单位是秒）。
+- `process.memoryUsage`：返回进程占用的内存，单位为字节。
+- `process.hrtime`：一般用于做性能基准测试。返回一个数组，数组里的值为 [[seconds, nanoseconds] （1秒等10的九次方毫微秒）。
+- `process.version`：返回当前node的版本，比如'v6.1.0'。
+- `process.arch`：返回当前系统的处理器架构（字符串），比如`arm`, `ia32`, or `x64`。
+- `process.platform`：返回关于平台描述的字符串，比如 darwin、win32 等。
+- `process.kill`：它并不是用来杀死进程的，而是用来向进程发送信号。
+- `process.exit`：可以用来立即退出进程。
+
+### 三、创建子进程
 
 创建子进程，有四个方法分别：
 
@@ -86,7 +108,7 @@ cp.fork('./worker.js');
 | fork()     | x         | node     | javascript文件 | x          |
 
 
-### 三、进程间通信
+### 四、进程间通信
 
 在nodejs中父子进程之间通信可以通过on('message')和send()方法来实现通信，on('message')是监听message事件的。当该进程收到其他进程发送的消息时，便会触发message事件。send()方法则是用于向其他进程发送消息的。
 
@@ -110,7 +132,7 @@ process.on('message',function(m){
 process.send({foo:'bar'});
 ```
 
-### 四、句柄传递
+### 五、句柄传递
 
 - [Master实现对Worker的请求进行分发](#41-master实现对worker的请求进行分发)
 - [Worker监听同一个端口](#42-worker监听同一个端口)
