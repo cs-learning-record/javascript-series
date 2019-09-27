@@ -1104,6 +1104,7 @@ console.log('end')
 - [JavaScript Promise 迷你书](http://liubin.org/promises-book/)
 - [你了解 Promise 吗？](https://mp.weixin.qq.com/s/mvqR4oEq1VcTYB57QqGIvQ)
 - [promise 是什么？](https://mp.weixin.qq.com/s/0DVOqFQYSzCaviSv_3AF-g)
+- [100 行代码实现 Promises/A+ 规范](https://zhuanlan.zhihu.com/p/83965949)
 - [《ECMAScript 6 入门》 第三版](https://yjhenan.gitbooks.io/-ecmascript-6/content/docs/promise.html)
 - [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/promise)
 

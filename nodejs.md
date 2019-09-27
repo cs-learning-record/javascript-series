@@ -53,6 +53,7 @@
 30. [nodejs面试题](https://interview.nodejs.red/#/zh/)
 31. [Node.js技术栈](https://www.nodejs.red/#/README)
 32. [libuv中文教程](http://luohaha.github.io/Chinese-uvbook/)
+33. [Node.js 服务 Docker 容器化应用实践](https://mp.weixin.qq.com/s/vTD63u6F1hQYZcMkoSaj6g)
 
 ## 联系作者
 
