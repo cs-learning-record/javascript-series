@@ -424,9 +424,7 @@ for (task of doStuff()) {
 - [ECMAScript 6 入门](http://es6.ruanyifeng.com/#docs/generator)
 - [《ECMAScript 6 入门》 第三版](https://yjhenan.gitbooks.io/-ecmascript-6/content/docs/generator.html)
 
-
 ## 联系作者
-
 
 <div align="center">
     <p>
