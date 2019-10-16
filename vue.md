@@ -45,6 +45,7 @@
 32. [30 道 Vue 面试题，内含详细讲解（涵盖入门到精通，自测 Vue 掌握程度）](https://juejin.im/post/5d59f2a451882549be53b170)
 33. [前端开发需要了解的「路由跳转原理」](https://mp.weixin.qq.com/s/2RXM0c22e30mZbtrPNzrYw)
 34. [Vue 开发必须知道的 36 个技巧【近 1W 字】](https://juejin.im/post/5d9d386fe51d45784d3f8637)
+35. [30 道 Vue 面试题，内含详细讲解（涵盖入门到精通，自测 Vue 掌握程度）](https://github.com/fengshi123/blog/issues/14)
 
 ## 联系作者
 
