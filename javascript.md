@@ -51,6 +51,8 @@
 32. [剖析并手写十五个重要 API 的实现](https://mp.weixin.qq.com/s/BTzLPZpU6VeDEmeocgQSGA)
 33. [36 个JS 面试题为你助力金九银十(面试必读)](https://mp.weixin.qq.com/s/vTvKJ1r2ifHHgwRjOrZ2MA)
 34. [灵活运用JS开发技巧](https://juejin.im/post/5cc7afdde51d456e671c7e48)
+35. [(建议收藏)原生JS灵魂之问, 请问你能接得住几个？(上)](https://juejin.im/post/5dac5d82e51d45249850cd20)
+36. [JS 原生面经从初级到高级【近1.5W字】](https://juejin.im/post/5daeefc8e51d4524f007fb15)
 
 ## 联系作者
 
