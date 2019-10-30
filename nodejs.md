@@ -57,6 +57,7 @@
 34. [libuv 中文教程](http://luohaha.github.io/Chinese-uvbook/)
 35. [Node.js 服务 Docker 容器化应用实践](https://mp.weixin.qq.com/s/vTD63u6F1hQYZcMkoSaj6g)
 36. [深入学习 Node.js](https://github.com/semlinker/node-deep)
+37. [记一次京东Nodejs性能优化，从分析问题到解决问题](https://mp.weixin.qq.com/s/hsxaKrS3Vil0swOtQhb4lA)
 
 ## 联系作者
 
