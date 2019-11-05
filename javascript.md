@@ -54,7 +54,8 @@
 35. [(建议收藏)原生JS灵魂之问, 请问你能接得住几个？(上)](https://juejin.im/post/5dac5d82e51d45249850cd20)
 36. [JS 原生面经从初级到高级【近1.5W字】](https://juejin.im/post/5daeefc8e51d4524f007fb15)
 37. [JavaScript 工具函数大全（新）](https://juejin.im/post/5da1a04ae51d45783d6122bf)
-38. [[JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)]
+38. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)]
+39. [(建议精读)原生JS灵魂之问(中)，检验自己是否真的熟悉JavaScript？](https://juejin.im/post/5dbebbfa51882524c507fddb)
 
 ## 联系作者
 
