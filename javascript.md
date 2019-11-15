@@ -56,6 +56,7 @@
 37. [JS 原生面经从初级到高级【近1.5W字】](https://juejin.im/post/5daeefc8e51d4524f007fb15)
 38. [JavaScript 工具函数大全（新）](https://juejin.im/post/5da1a04ae51d45783d6122bf)
 39. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)]
+40. [常用正则表达式](https://juejin.im/post/5dccdd24f265da0c09156fb3)
 
 ## 联系作者
 
