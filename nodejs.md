@@ -65,6 +65,7 @@
 42. [分享 10 道 Nodejs 进程相关面试题](https://mp.weixin.qq.com/s/dKN95zcRI7qkwGYKhPXrcg)
 43. [Node.js环境性能监控](https://juejin.im/post/5c71324b6fb9a049d37fbb7c)
 44. [Nodejs 之 RPC 协议简介](https://mp.weixin.qq.com/s/AhKoUpYA4mCwhbxMRRqjBA)
+45. [聊聊 Node.js RPC（一）— 协议](https://zhuanlan.zhihu.com/p/38012481)
 
 ## 联系作者
 
