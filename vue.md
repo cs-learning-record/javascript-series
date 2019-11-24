@@ -27,6 +27,7 @@
 14. [前端开发需要了解的「路由跳转原理」](https://mp.weixin.qq.com/s/2RXM0c22e30mZbtrPNzrYw)
 15. [Vue 开发必须知道的 36 个技巧【近 1W 字】](https://juejin.im/post/5d9d386fe51d45784d3f8637)
 16. [Vue 项目性能优化 — 实践指南（网上最全 / 详细）](https://juejin.im/post/5d548b83f265da03ab42471d)
+17. [公司要求会使用框架 vue，面试题会被问及哪些？](https://juejin.im/post/5cf495e96fb9a07ef5622025)
 
 ## 联系作者
 
