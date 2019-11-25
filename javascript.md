@@ -53,11 +53,12 @@
 34. [灵活运用JS开发技巧](https://juejin.im/post/5cc7afdde51d456e671c7e48)
 35. [(建议收藏)原生JS灵魂之问, 请问你能接得住几个？(上)](https://juejin.im/post/5dac5d82e51d45249850cd20)
 36. [(建议精读)原生JS灵魂之问(中)，检验自己是否真的熟悉JavaScript？](https://juejin.im/post/5dbebbfa51882524c507fddb)
-37. [JS 原生面经从初级到高级【近1.5W字】](https://juejin.im/post/5daeefc8e51d4524f007fb15)
-38. [JavaScript 工具函数大全（新）](https://juejin.im/post/5da1a04ae51d45783d6122bf)
-39. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)]
-40. [可爱的JavaScript](http://js.pingan8787.com/)
-41. [常用正则表达式](https://juejin.im/post/5dccdd24f265da0c09156fb3)
+37. [(建议精读)原生JS灵魂之问(下), 冲刺🚀进阶最后一公里(附个人成长经验分享)](https://juejin.im/post/5dd8b3a851882572f56b578f)
+38. [JS 原生面经从初级到高级【近1.5W字】](https://juejin.im/post/5daeefc8e51d4524f007fb15)
+39. [JavaScript 工具函数大全（新）](https://juejin.im/post/5da1a04ae51d45783d6122bf)
+40. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)]
+41. [可爱的JavaScript](http://js.pingan8787.com/)
+42. [常用正则表达式](https://juejin.im/post/5dccdd24f265da0c09156fb3)
 
 ## 联系作者
 
