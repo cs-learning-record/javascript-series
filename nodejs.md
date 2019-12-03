@@ -68,6 +68,7 @@
 45. [聊聊 Node.js RPC（一）— 协议](https://zhuanlan.zhihu.com/p/38012481)
 46. [腾讯视频 Node.js 服务是如何支撑国庆阅兵直播高并发的？](https://mp.weixin.qq.com/s/WKhALCAarFNOCQylBUryfQ)
 47. [消息队列助你成为高薪 Node.js 工程师](https://juejin.im/post/5dd8cd7ae51d4523501f7331)
+48. [nodejs 基本原理总结](https://mp.weixin.qq.com/s/XFMAIoac4KH1bvoqRlnGlA)
 
 ## 联系作者
 
