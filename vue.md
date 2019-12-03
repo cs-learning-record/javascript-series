@@ -20,14 +20,15 @@
 7. [underscore-1.8.3.js 源码解读 & 系列文章（完）](https://github.com/lessfish/underscore-analysis)
 8. [underscore 源码分析](https://yoyoyohamapi.gitbooks.io/undersercore-analysis/content/)
 9. [深入了解 Vue | Vue-Router | Vuex 源码与架构](https://github.com/biaochenxuying/vue-family-mindmap)
-10. [面试必备的 13 道可以举一反三的 Vue 面试题](https://juejin.im/post/5d41eec26fb9a06ae439d29f)
-11. [渲染器](http://hcysun.me/vue-design/zh/)
-12. [Vue 项目性能优化 — 实践指南（网上最全 / 详细）](https://juejin.im/post/5d548b83f265da03ab42471d)
-13. [30 道 Vue 面试题，内含详细讲解（涵盖入门到精通，自测 Vue 掌握程度）](https://juejin.im/post/5d59f2a451882549be53b170)
-14. [前端开发需要了解的「路由跳转原理」](https://mp.weixin.qq.com/s/2RXM0c22e30mZbtrPNzrYw)
-15. [Vue 开发必须知道的 36 个技巧【近 1W 字】](https://juejin.im/post/5d9d386fe51d45784d3f8637)
-16. [Vue 项目性能优化 — 实践指南（网上最全 / 详细）](https://juejin.im/post/5d548b83f265da03ab42471d)
-17. [公司要求会使用框架 vue，面试题会被问及哪些？](https://juejin.im/post/5cf495e96fb9a07ef5622025)
+10. [「vue 基础」Vue Router 使用指南下篇](https://mp.weixin.qq.com/s/wiuIwybeSEUjxw-WN_Fm6A)
+11. [面试必备的 13 道可以举一反三的 Vue 面试题](https://juejin.im/post/5d41eec26fb9a06ae439d29f)
+12. [渲染器](http://hcysun.me/vue-design/zh/)
+13. [Vue 项目性能优化 — 实践指南（网上最全 / 详细）](https://juejin.im/post/5d548b83f265da03ab42471d)
+14. [30 道 Vue 面试题，内含详细讲解（涵盖入门到精通，自测 Vue 掌握程度）](https://juejin.im/post/5d59f2a451882549be53b170)
+15. [前端开发需要了解的「路由跳转原理」](https://mp.weixin.qq.com/s/2RXM0c22e30mZbtrPNzrYw)
+16. [Vue 开发必须知道的 36 个技巧【近 1W 字】](https://juejin.im/post/5d9d386fe51d45784d3f8637)
+17. [Vue 项目性能优化 — 实践指南（网上最全 / 详细）](https://juejin.im/post/5d548b83f265da03ab42471d)
+18. [公司要求会使用框架 vue，面试题会被问及哪些？](https://juejin.im/post/5cf495e96fb9a07ef5622025)
 
 ## 联系作者
 
