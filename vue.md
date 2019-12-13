@@ -29,6 +29,7 @@
 16. [Vue 开发必须知道的 36 个技巧【近 1W 字】](https://juejin.im/post/5d9d386fe51d45784d3f8637)
 17. [Vue 项目性能优化 — 实践指南（网上最全 / 详细）](https://juejin.im/post/5d548b83f265da03ab42471d)
 18. [公司要求会使用框架 vue，面试题会被问及哪些？](https://juejin.im/post/5cf495e96fb9a07ef5622025)
+19. [高性能渲染大数据 Tree 组件](https://segmentfault.com/a/1190000021228976)
 
 ## 联系作者
 

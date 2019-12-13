@@ -69,6 +69,8 @@
 46. [腾讯视频 Node.js 服务是如何支撑国庆阅兵直播高并发的？](https://mp.weixin.qq.com/s/WKhALCAarFNOCQylBUryfQ)
 47. [消息队列助你成为高薪 Node.js 工程师](https://juejin.im/post/5dd8cd7ae51d4523501f7331)
 48. [nodejs 基本原理总结](https://mp.weixin.qq.com/s/XFMAIoac4KH1bvoqRlnGlA)
+49. [不容错过的 Node.js 项目架构](https://mp.weixin.qq.com/s/nivph5JV_sovSDDSCsKmAA)
+50. [浅谈阿里 Node 框架 Midway 在企业产品中的应用实践](https://mp.weixin.qq.com/s/W_XuZGYCQMbfeEQEPAkTTg)
 
 ## 联系作者
 
