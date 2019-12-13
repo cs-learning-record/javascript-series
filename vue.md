@@ -30,6 +30,7 @@
 17. [Vue 项目性能优化 — 实践指南（网上最全 / 详细）](https://juejin.im/post/5d548b83f265da03ab42471d)
 18. [公司要求会使用框架 vue，面试题会被问及哪些？](https://juejin.im/post/5cf495e96fb9a07ef5622025)
 19. [高性能渲染大数据 Tree 组件](https://segmentfault.com/a/1190000021228976)
+20. [如何优雅的在 vue 中添加权限控制](https://juejin.im/post/5c7bae3ff265da2db27950f3)
 
 ## 联系作者
 
