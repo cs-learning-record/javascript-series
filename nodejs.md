@@ -73,6 +73,7 @@
 50. [不容错过的 Node.js 项目架构](https://mp.weixin.qq.com/s/nivph5JV_sovSDDSCsKmAA)
 51. [浅谈阿里 Node 框架 Midway 在企业产品中的应用实践](https://mp.weixin.qq.com/s/W_XuZGYCQMbfeEQEPAkTTg)
 52. [【第 1808 期】2019 年终云时代的 Node FaaS 技术展望](https://mp.weixin.qq.com/s/N-XwPTVPDBHUKaaZ5mrAtA)
+53. [「万字整理 」这里有一份 Node.js 入门指南和实践,请注意查收](https://juejin.im/post/5e0006c251882512795675f9)
 
 ## 联系作者
 

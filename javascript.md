@@ -55,11 +55,13 @@
 36. [(建议精读)原生 JS 灵魂之问(中)，检验自己是否真的熟悉 JavaScript？](https://juejin.im/post/5dbebbfa51882524c507fddb)
 37. [(建议精读)原生 JS 灵魂之问(下), 冲刺 🚀 进阶最后一公里(附个人成长经验分享)](https://juejin.im/post/5dd8b3a851882572f56b578f)
 38. [JS 原生面经从初级到高级【近 1.5W 字】](https://juejin.im/post/5daeefc8e51d4524f007fb15)
-39. [JavaScript 工具函数大全（新）](https://juejin.im/post/5da1a04ae51d45783d6122bf)
-40. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)]
-41. [可爱的 JavaScript](http://js.pingan8787.com/)
-42. [常用正则表达式](https://juejin.im/post/5dccdd24f265da0c09156fb3)
-43. [浅谈如何学习 JavaScript？](https://zhuanlan.zhihu.com/p/23265155)
+39. [前端常用的 59 个工具类【持续更新】](https://juejin.im/post/5de5be53f265da05c33fcbb4)
+40. [编写自己的代码库（javascript 常用实例的实现与封装）](https://juejin.im/post/5a2a7a5051882535cd4abfce)
+41. [JavaScript 工具函数大全（新）](https://juejin.im/post/5da1a04ae51d45783d6122bf)
+42. [JavaScript 资源大全中文版](https://github.com/jobbole/awesome-javascript-cn)]
+43. [可爱的 JavaScript](http://js.pingan8787.com/)
+44. [常用正则表达式](https://juejin.im/post/5dccdd24f265da0c09156fb3)
+45. [浅谈如何学习 JavaScript？](https://zhuanlan.zhihu.com/p/23265155)
 
 ## 联系作者
 
