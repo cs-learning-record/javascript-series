@@ -27,14 +27,12 @@
 
 ## 参考资料
 
-1. 观察者
-2. 代理
-3. 策略模式
-4. [javascript 设计模式系列](https://www.cnblogs.com/webFrontDev/p/3553402.html)
-5. [谈谈观察者模式和发布订阅模式](https://juejin.im/post/5bb1bb616fb9a05d2b6dccfa)
-6. [《JavaScript 设计模式与开发实践》最全知识点汇总大全](https://juejin.im/post/5c2e10a76fb9a049c0432697)
-7. [JavaScript 中常见设计模式整理](https://juejin.im/post/5afe6430518825428630bc4d)
-8. [《javascript 设计模式》](https://github.com/yanlele/node-index/tree/master/book/04%E3%80%81js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
+1. [javascript 设计模式系列](https://www.cnblogs.com/webFrontDev/p/3553402.html)
+2. [谈谈观察者模式和发布订阅模式](https://juejin.im/post/5bb1bb616fb9a05d2b6dccfa)
+3. [《JavaScript 设计模式与开发实践》最全知识点汇总大全](https://juejin.im/post/5c2e10a76fb9a049c0432697)
+4. [JavaScript 中常见设计模式整理](https://juejin.im/post/5afe6430518825428630bc4d)
+5. [《javascript 设计模式》](https://github.com/yanlele/node-index/tree/master/book/04%E3%80%81js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
+6. [JavaScript 设计模式核⼼原理与应⽤实践](https://juejin.im/book/5c70fc83518825428d7f9dfb/section/5c70fc845188256282697b96)
 
 ## 联系作者
 
