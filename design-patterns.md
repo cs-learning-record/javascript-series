@@ -32,7 +32,8 @@
 3. [《JavaScript 设计模式与开发实践》最全知识点汇总大全](https://juejin.im/post/5c2e10a76fb9a049c0432697)
 4. [JavaScript 中常见设计模式整理](https://juejin.im/post/5afe6430518825428630bc4d)
 5. [《javascript 设计模式》](https://github.com/yanlele/node-index/tree/master/book/04%E3%80%81js%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F)
-6. [JavaScript 设计模式核⼼原理与应⽤实践](https://juejin.im/book/5c70fc83518825428d7f9dfb/section/5c70fc845188256282697b96)
+6. [JavaScript设计模式es6（23种)](https://juejin.im/post/5e021eb96fb9a01628014095)
+7. [JavaScript 设计模式核⼼原理与应⽤实践](https://juejin.im/book/5c70fc83518825428d7f9dfb/section/5c70fc845188256282697b96)
 
 ## 联系作者
 
