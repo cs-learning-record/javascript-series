@@ -16,6 +16,7 @@
 3. [Vue 项目性能优化 — 实践指南（网上最全 / 详细）](https://juejin.im/post/5d548b83f265da03ab42471d)
 4. [高性能渲染大数据 Tree 组件](https://segmentfault.com/a/1190000021228976)
 5. [如何优雅的在 vue 中添加权限控制](https://juejin.im/post/5c7bae3ff265da2db27950f3)
+6. [吃透 Vue 项目开发实践｜ 16 个方面深入前端工程化开发技巧《中》](https://juejin.im/post/5e15932ee51d4540f02fae27)
 
 ## 联系作者
 
