@@ -61,6 +61,9 @@
 42. [常用正则表达式](https://juejin.im/post/5dccdd24f265da0c09156fb3)
 43. [浅谈如何学习 JavaScript？](https://zhuanlan.zhihu.com/p/23265155)
 44. [一道常被人轻视的前端 JS 面试题](https://www.cnblogs.com/xxcanghai/p/5189353.html)
+45. [看完这几道 JavaScript 面试题，让你与考官对答如流（上）](https://juejin.im/post/5e166cc5f265da5d57543102)
+46. [看完这几道 JavaScript 面试题，让你与考官对答如流（中）](https://juejin.im/post/5e1bb37a5188254dbc25de92)
+47. [看完这几道 JavaScript 面试题，让你与考官对答如流（下）](https://juejin.im/post/5e1faa3d51882520a167df0e)
 
 ## 联系作者
 
