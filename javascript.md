@@ -64,6 +64,7 @@
 45. [看完这几道 JavaScript 面试题，让你与考官对答如流（上）](https://juejin.im/post/5e166cc5f265da5d57543102)
 46. [看完这几道 JavaScript 面试题，让你与考官对答如流（中）](https://juejin.im/post/5e1bb37a5188254dbc25de92)
 47. [看完这几道 JavaScript 面试题，让你与考官对答如流（下）](https://juejin.im/post/5e1faa3d51882520a167df0e)
+48. [8102 年如何写一个现代的 JavaScript 库](https://juejin.im/post/5bbafd78f265da0ad947e6ba)
 
 ## 联系作者
 
