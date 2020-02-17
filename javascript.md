@@ -66,7 +66,7 @@
 47. [看完这几道 JavaScript 面试题，让你与考官对答如流（下）](https://juejin.im/post/5e1faa3d51882520a167df0e)
 48. [8102 年如何写一个现代的 JavaScript 库](https://juejin.im/post/5bbafd78f265da0ad947e6ba)
 49. [动画：《大前端吊打面试官系列》 之原生 JavaScript 精华篇](https://juejin.im/post/5e34d19de51d4558864b1d1f)
-50. [127 个常用的 JS 代码片段，每段代码花 30 秒就能看懂（一）](https://mp.weixin.qq.com/s/sf7n59lX42ooqW4RinVyRQ)
+50. [127 个常用的 JS 代码片段，每段代码花 30 秒就能看懂（一）](https://juejin.im/post/5e4a6f815188254963275704)
 51. [127 个常用的 JS 代码片段，每段代码花 30 秒就能看懂（二）](https://mp.weixin.qq.com/s/kHYgFfO0aF2_bnH0zIRkAg)
 
 ## 联系作者
