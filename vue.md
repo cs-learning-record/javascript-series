@@ -18,6 +18,7 @@
 5. [如何优雅的在 vue 中添加权限控制](https://juejin.im/post/5c7bae3ff265da2db27950f3)
 6. [吃透 Vue 项目开发实践｜ 16 个方面深入前端工程化开发技巧《中》](https://juejin.im/post/5e15932ee51d4540f02fae27)
 7. [vue 插件开发、文档书写、github 发布、npm 包发布一波流](https://juejin.im/post/5b96586de51d450e7d0984a6)
+8. [2年vue项目实战经验汇总](https://juejin.im/post/5e390a6df265da57503cb415)
 
 ## 联系作者
 

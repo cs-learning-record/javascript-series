@@ -75,7 +75,8 @@
 52. [Node.js 模块系统源码探微](https://juejin.im/post/5dec60e8f265da33d645a631)
 53. [Node.js 在企业中的应用实践集锦](https://mp.weixin.qq.com/s/sJUtfEP_aJTXp0uQXi9Mug)
 54. [如何分析 Node.js 中的内存泄漏？](https://mp.weixin.qq.com/s/JAu6TInlwWtbs-dHD2jBKg)
-55. [这些年的体验技术部 · Node.js 基础服务 - 摸爬滚打才不负功名尘土](https://www.yuque.com/afx/about/nodejs)
+55. [这些年的体验技术部Node.js 基础服务 - 摸爬滚打才不负功名尘土](https://www.yuque.com/afx/about/nodejs)
+56. [基于nodejs线上代码热部署原理与实现](https://juejin.im/post/5e4e9c6451882549331ce8d4)
 
 ## 联系作者
 
