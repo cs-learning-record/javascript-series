@@ -77,6 +77,7 @@
 54. [如何分析 Node.js 中的内存泄漏？](https://mp.weixin.qq.com/s/JAu6TInlwWtbs-dHD2jBKg)
 55. [这些年的体验技术部Node.js 基础服务 - 摸爬滚打才不负功名尘土](https://www.yuque.com/afx/about/nodejs)
 56. [基于nodejs线上代码热部署原理与实现](https://juejin.im/post/5e4e9c6451882549331ce8d4)
+57. [看优酷 Node 重构之路，Serverless SSR 未来可期](https://mp.weixin.qq.com/s/ofLVwcCvbWLCfUD7ldvm5A)
 
 ## 联系作者
 
