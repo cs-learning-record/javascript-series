@@ -30,6 +30,7 @@
 7. [详解 ES2018 新特性（推荐）](https://mp.weixin.qq.com/s/CTM4hspa1KcMVPxtsMaIeg)
 8. [1.5 万字概括 ES6 全部特性(看图就能记下，值得收藏)](https://juejin.im/post/5d9bf530518825427b27639d)
 9. [从 ES6 到 ES10 的新特性万字大总结（不得不收藏）](https://juejin.im/post/5dfadb91e51d45584006e486)
+10. [种草 ES2020 新特性](https://juejin.im/post/5e09ca40518825499a5abff7)
 
 ## 联系作者
 
