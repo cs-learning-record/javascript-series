@@ -74,6 +74,7 @@
 51. [看优酷 Node 重构之路，Serverless SSR 未来可期](https://mp.weixin.qq.com/s/ofLVwcCvbWLCfUD7ldvm5A)
 52. [Node 应用没有错误监控怎么行？](https://mp.weixin.qq.com/s?__biz=MzA4Nzg0MDM5Nw==&mid=2247484574&idx=1&sn=939f45a0316bce3b47c5efe24a985c94&=41#wechat_redirect)
 53. [Node 学习笔记](https://github.com/Wscats/node-tutorial)
+54. [深入 Nodejs 源码探究 CPU 信息的获取与利用率计算](https://mp.weixin.qq.com/s/1VyMB7bpYIRQYzYFLFYZAQ)
 
 ## 联系作者
 
