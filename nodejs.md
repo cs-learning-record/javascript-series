@@ -77,6 +77,8 @@
 54. [深入 Nodejs 源码探究 CPU 信息的获取与利用率计算](https://mp.weixin.qq.com/s/1VyMB7bpYIRQYzYFLFYZAQ)
 55. [使用 Node.js 搭建一个 API 网关(助力微服务)](https://mp.weixin.qq.com/s/uZWXDjqBQQIAMESQBoR2IQ)
 56. [我用 EggJS 开发了一个日增量过亿的数据可视化平台](https://mp.weixin.qq.com/s/-rtvHQnFrUe4QhLQRArkgw)
+57. [《大前端进阶 Node.js》系列 异步非阻塞（上）](https://mp.weixin.qq.com/s/gEhIa1OW_R61fb4RA6GE0g)
+58. [《大前端进阶 Node.js》系列 异步非阻塞（下）](https://mp.weixin.qq.com/s/G_NMZ8MqFo9FTC0FLcOxCw)
 
 ## 联系作者
 
