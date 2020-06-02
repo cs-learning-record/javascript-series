@@ -80,6 +80,9 @@
 57. [《大前端进阶 Node.js》系列 异步非阻塞（上）](https://mp.weixin.qq.com/s/gEhIa1OW_R61fb4RA6GE0g)
 58. [《大前端进阶 Node.js》系列 异步非阻塞（下）](https://mp.weixin.qq.com/s/G_NMZ8MqFo9FTC0FLcOxCw)
 59. [《深入理解 Node.js：核心思想与源码分析》](https://yjhjstz.gitbooks.io/deep-into-node/content/)
+60. [基于 SFF 一站式 Nodejs 服务管理平台实践](https://mp.weixin.qq.com/s/wfMl-2wFXSpx8QjTckJxCw)
+61. [基于 Express 应用框架的技术方案选型浅谈](https://mp.weixin.qq.com/s/0vXYTyJgKFam7-EbvZShBQ)
+62. [Node.js 搭建一个 API 接口服务(实战)](https://mp.weixin.qq.com/s/jT4cZCij5XC350cfUFeJsQ)
 
 ## 联系作者
 
