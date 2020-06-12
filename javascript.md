@@ -54,6 +54,7 @@
 35. [127 个常用的 JS 代码片段，每段代码花 30 秒就能看懂（三）](https://mp.weixin.qq.com/s/-zgQGaFkUHqFLhBi42zdNQ)
 36. [127 个常用的 JS 代码片段，每段代码花 30 秒就能看懂（四）](https://mp.weixin.qq.com/s/i_Yqi2NclgMK6IUL4hXv3A)
 37. [127 个常用的 JS 代码片段，每段代码花 30 秒就能看懂（五）](https://mp.weixin.qq.com/s/DUEFgjuSVMdKclyh66cqWg)
+38. [这些前端基础题你能答对几道？(测试你的基础掌握,附答案解析)](https://juejin.im/post/5ee03947e51d457889262921)
 
 ## 联系作者
 
