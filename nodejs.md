@@ -83,6 +83,7 @@
 60. [基于 SFF 一站式 Nodejs 服务管理平台实践](https://mp.weixin.qq.com/s/wfMl-2wFXSpx8QjTckJxCw)
 61. [基于 Express 应用框架的技术方案选型浅谈](https://mp.weixin.qq.com/s/0vXYTyJgKFam7-EbvZShBQ)
 62. [Node.js 搭建一个 API 接口服务(实战)](https://mp.weixin.qq.com/s/jT4cZCij5XC350cfUFeJsQ)
+63. [基于 Egg 的 Node.js 性能监控解决方案 Easy-Monitor 3.0 开源了](https://mp.weixin.qq.com/s/gDauTCr_M3o6BYhXCnCf_Q)
 
 ## 联系作者
 
