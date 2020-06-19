@@ -86,6 +86,7 @@
 63. [基于 Egg 的 Node.js 性能监控解决方案 Easy-Monitor 3.0 开源了](https://mp.weixin.qq.com/s/gDauTCr_M3o6BYhXCnCf_Q)
 64. [Node.js 全栈秒杀系统](https://mp.weixin.qq.com/s/HgM4k8Q7361TTB7BrnlK0A)
 65. [Node 接入层可视化逻辑编排，还可以这样做？](https://mp.weixin.qq.com/s/qDIUGrthYpMu7ERnpWuGcA)
+66. [NodeX Component - 滴滴集团 Node.js 生态组件体系](https://mp.weixin.qq.com/s/IsnQCEC8oehDmdmpbXWKwQ)
 
 ## 联系作者
 
