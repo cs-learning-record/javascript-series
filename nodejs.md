@@ -88,6 +88,7 @@
 65. [Node 接入层可视化逻辑编排，还可以这样做？](https://mp.weixin.qq.com/s/qDIUGrthYpMu7ERnpWuGcA)
 66. [NodeX Component - 滴滴集团 Node.js 生态组件体系](https://mp.weixin.qq.com/s/IsnQCEC8oehDmdmpbXWKwQ)
 67. [Node.js 实现抢票小工具&短信通知提醒](https://juejin.im/post/5dadd0236fb9a04de04d968e)
+68. [如何为团队定制自己的 Node.js 框架？（基于 EggJS）](https://mp.weixin.qq.com/s/Mosjm0TtbEnncb_kiv_17g)
 
 ## 联系作者
 
