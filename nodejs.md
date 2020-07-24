@@ -91,6 +91,8 @@
 68. [如何为团队定制自己的 Node.js 框架？（基于 EggJS）](https://mp.weixin.qq.com/s/Mosjm0TtbEnncb_kiv_17g)
 69. [Node.js CLI 工具最佳实践](http://mp.weixin.qq.com/s?__biz=MzIyNDU2NTc5Mw==&mid=2247486782&idx=1&sn=1a417486a6e3723e170861aab414a82d&chksm=e80c4270df7bcb663c6bc2986ce4f323de500bbc1d0e535916bbce6e169dae220751555f47e5&mpshare=1&scene=24&srcid=0713heGO330QtFMYcIJthh8L&sharer_sharetime=1594603037894&sharer_shareid=6a5a35b9e8a974e6f3aeeebf7f2eda82#rd)
 70. [使用 Node 开发服务器项目时如何高效地打日志？](https://mp.weixin.qq.com/s/PhaKErlv65eE4YxEXCeFGw)
+71. [Node 多进程多线程](https://mp.weixin.qq.com/s/L-plwzJZy-USQCc3ImzQgA)
+72. [【第 2004 期】弄明白 Deno 与 node 的区别](https://mp.weixin.qq.com/s/h1ZNewMZZC20o80P37KqsQ)
 
 ## 联系作者
 
