@@ -56,6 +56,7 @@
 37. [127 个常用的 JS 代码片段，每段代码花 30 秒就能看懂（五）](https://mp.weixin.qq.com/s/DUEFgjuSVMdKclyh66cqWg)
 38. [这些前端基础题你能答对几道？(测试你的基础掌握,附答案解析)](https://juejin.im/post/5ee03947e51d457889262921)
 39. [由浅入深，66 条 JavaScript 面试知识点](https://juejin.im/post/5ef8377f6fb9a07e693a6061)
+40. [【第 2030 期】JavaScript 启动性能瓶颈分析与解决方案](https://mp.weixin.qq.com/s/K-QOsOFfaQLU8MLkG6Skow)
 
 ## 联系作者
 
