@@ -91,6 +91,8 @@
 68. [如何为团队定制自己的 Node.js 框架？（基于 EggJS）](https://mp.weixin.qq.com/s/Mosjm0TtbEnncb_kiv_17g)
 69. [Node.js CLI 工具最佳实践](http://mp.weixin.qq.com/s?__biz=MzIyNDU2NTc5Mw==&mid=2247486782&idx=1&sn=1a417486a6e3723e170861aab414a82d&chksm=e80c4270df7bcb663c6bc2986ce4f323de500bbc1d0e535916bbce6e169dae220751555f47e5&mpshare=1&scene=24&srcid=0713heGO330QtFMYcIJthh8L&sharer_sharetime=1594603037894&sharer_shareid=6a5a35b9e8a974e6f3aeeebf7f2eda82#rd)
 70. [使用 Node 开发服务器项目时如何高效地打日志？](https://mp.weixin.qq.com/s/PhaKErlv65eE4YxEXCeFGw)
+71. [一篇文章构建你的 NodeJS 知识体系](https://juejin.im/post/6844903767926636558)
+72. [如何定制企业级 Node.js 代码检查规范](https://mp.weixin.qq.com/s/-BoTriTlV9Jepws7ELEQcg)
 
 ## 联系作者
 
