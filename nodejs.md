@@ -93,6 +93,7 @@
 70. [使用 Node 开发服务器项目时如何高效地打日志？](https://mp.weixin.qq.com/s/PhaKErlv65eE4YxEXCeFGw)
 71. [一篇文章构建你的 NodeJS 知识体系](https://juejin.im/post/6844903767926636558)
 72. [如何定制企业级 Node.js 代码检查规范](https://mp.weixin.qq.com/s/-BoTriTlV9Jepws7ELEQcg)
+73. [运维类：Node应用性能压测](https://mp.weixin.qq.com/s/R-IkfOGQzAkFiNkFKN87Hg)
 
 ## 联系作者
 
