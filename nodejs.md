@@ -94,6 +94,12 @@
 71. [一篇文章构建你的 NodeJS 知识体系](https://juejin.im/post/6844903767926636558)
 72. [如何定制企业级 Node.js 代码检查规范](https://mp.weixin.qq.com/s/-BoTriTlV9Jepws7ELEQcg)
 73. [运维类：Node应用性能压测](https://mp.weixin.qq.com/s/R-IkfOGQzAkFiNkFKN87Hg)
+71. [Node 多进程多线程](https://mp.weixin.qq.com/s/L-plwzJZy-USQCc3ImzQgA)
+72. [【第 2004 期】弄明白 Deno 与 node 的区别](https://mp.weixin.qq.com/s/h1ZNewMZZC20o80P37KqsQ)
+73. [你不知道的 node 爬虫原来这么简单](https://juejin.im/post/5eca37f951882543345e81df)
+74. [Node.js 在大前端领域的应用分析](https://zhuanlan.zhihu.com/p/121055042)
+75. [用（Node+MongoDB）搭建简单的图床或者网盘](https://mp.weixin.qq.com/s/UKGdGhHx1MdbMcygIRL-Rg)
+76. [Nest.js 从零到壹系列（四）：使用中间件、拦截器、过滤器打造日志系统](https://mp.weixin.qq.com/s/4-llxnido1z8OvyMpLU0Ng)
 
 ## 联系作者
 
