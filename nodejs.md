@@ -102,6 +102,7 @@
 77. [Node.js 案发现场揭秘 —— 文件句柄泄露导致进程假死](https://mp.weixin.qq.com/s/QXQQYaUDQaVX4ueadZzDbg)
 78. [运维的报表之路，用 Node.js 轻松发送 grafana 报表](https://mp.weixin.qq.com/s/TC4amINyQsIn_zEu5Tbwxw)
 79. [亿级 ELK 日志平台构建实践](https://mp.weixin.qq.com/s/TkjgI2XytAV2oSfJRvoPyg)
+80. [基于nodejs线上代码热部署原理与实现](https://mp.weixin.qq.com/s/njPx1u3CCrBNo3l-yAMi3g)
 
 ## 联系作者
 
